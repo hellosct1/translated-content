@@ -1,9 +1,8 @@
 ---
 title: MediaStream.addTrack()
 slug: Web/API/MediaStream/addTrack
-translation_of: Web/API/MediaStream/addTrack
-original_slug: Web/API/MediaStream.addTrack
 ---
+
 {{APIRef("Media Capture and Streams")}}
 
 **`MediaStream.addTrack()`** 方法会给流添加一个新轨道。指定一个{{domxref("MediaStreamTrack")}}对象作为参数。

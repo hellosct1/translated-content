@@ -1,16 +1,8 @@
 ---
 title: system
 slug: Web/CSS/@counter-style/system
-tags:
-  - '@counter-style'
-  - At-rule descriptor
-  - CSS
-  - CSS Counter Styles
-  - CSS Descriptor
-  - Reference
-browser-compat: css.at-rules.counter-style.system
-translation_of: Web/CSS/@counter-style/system
 ---
+
 {{CSSRef}}
 
 **`system`** 記述子は、整数値のカウンターを文字列表現に変換するために使用するアルゴリズムを指定します。これは {{cssxref("@counter-style")}} で使用され、定義されたスタイルの動作を定義するために使用されます。
@@ -113,13 +105,13 @@ additive                           |
 
 ```css
 @counter-style fisheye {
- system: cyclic;
- symbols: ◉;
- suffix: " ";
+  system: cyclic;
+  symbols: ◉;
+  suffix: " ";
 }
 
 ul {
- list-style: fisheye;
+  list-style: fisheye;
 }
 ```
 
@@ -143,23 +135,23 @@ ul {
 
 ```html hidden
 <ul>
- <li>One</li>
- <li>Two</li>
- <li>Three</li>
- <li>Four</li>
- <li>Five</li>
+  <li>One</li>
+  <li>Two</li>
+  <li>Three</li>
+  <li>Four</li>
+  <li>Five</li>
 </ul>
 ```
 
 ```css
 @counter-style circled-digits {
- system: fixed;
- symbols: ➀ ➁ ➂;
- suffix: ' ';
+  system: fixed;
+  symbols: ➀ ➁ ➂;
+  suffix: " ";
 }
 
 ul {
- list-style: circled-digits;
+  list-style: circled-digits;
 }
 ```
 
@@ -186,26 +178,26 @@ bbb. Eight
 
 ```html hidden
 <ul>
- <li>One</li>
- <li>Two</li>
- <li>Three</li>
- <li>Four</li>
- <li>Five</li>
- <li>Six</li>
- <li>Seven</li>
- <li>Eight</li>
+  <li>One</li>
+  <li>Two</li>
+  <li>Three</li>
+  <li>Four</li>
+  <li>Five</li>
+  <li>Six</li>
+  <li>Seven</li>
+  <li>Eight</li>
 </ul>
 ```
 
 ```css
 @counter-style abc {
- system: symbolic;
- symbols: a b c;
- suffix: ". ";
+  system: symbolic;
+  symbols: a b c;
+  suffix: ". ";
 }
 
 ul {
- list-style: abc;
+  list-style: abc;
 }
 ```
 
@@ -232,26 +224,26 @@ bb. Seven
 
 ```html hidden
 <ul>
- <li>One</li>
- <li>Two</li>
- <li>Three</li>
- <li>Four</li>
- <li>Five</li>
- <li>Six</li>
- <li>Seven</li>
- <li>Eight</li>
+  <li>One</li>
+  <li>Two</li>
+  <li>Three</li>
+  <li>Four</li>
+  <li>Five</li>
+  <li>Six</li>
+  <li>Seven</li>
+  <li>Eight</li>
 </ul>
 ```
 
 ```css
 @counter-style abc {
- system: alphabetic;
- symbols: a b c;
- suffix: ". ";
+  system: alphabetic;
+  symbols: a b c;
+  suffix: ". ";
 }
 
 ul {
- list-style: abc;
+  list-style: abc;
 }
 ```
 
@@ -280,26 +272,26 @@ cc. Eight
 
 ```html hidden
 <ul>
- <li>One</li>
- <li>Two</li>
- <li>Three</li>
- <li>Four</li>
- <li>Five</li>
- <li>Six</li>
- <li>Seven</li>
- <li>Eight</li>
+  <li>One</li>
+  <li>Two</li>
+  <li>Three</li>
+  <li>Four</li>
+  <li>Five</li>
+  <li>Six</li>
+  <li>Seven</li>
+  <li>Eight</li>
 </ul>
 ```
 
 ```css
 @counter-style abc {
- system: numeric;
- symbols: a b c;
- suffix: ". ";
+  system: numeric;
+  symbols: a b c;
+  suffix: ". ";
 }
 
 ul {
- list-style: abc;
+  list-style: abc;
 }
 ```
 
@@ -315,28 +307,28 @@ ul {
 
 ```html hidden
 <ul class="list">
- <li>One</li>
- <li>Two</li>
- <li>Three</li>
- <li>Four</li>
- <li>Five</li>
- <li>Six</li>
- <li>Seven</li>
- <li>Eight</li>
- <li>Nine</li>
- <li>Ten</li>
+  <li>One</li>
+  <li>Two</li>
+  <li>Three</li>
+  <li>Four</li>
+  <li>Five</li>
+  <li>Six</li>
+  <li>Seven</li>
+  <li>Eight</li>
+  <li>Nine</li>
+  <li>Ten</li>
 </ul>
 ```
 
 ```css
 @counter-style numbers {
- system: numeric;
- symbols: "0" "1" "2" "3" "4" "5" "6" "7" "8" "9";
- suffix: ".";
+  system: numeric;
+  symbols: "0" "1" "2" "3" "4" "5" "6" "7" "8" "9";
+  suffix: ".";
 }
 
 ul {
- list-style: numbers;
+  list-style: numbers;
 }
 ```
 
@@ -352,11 +344,11 @@ ul {
 
 ```html
 <ul class="list">
- <li>One</li>
- <li>Two</li>
- <li>Three</li>
- <li>Four</li>
- <li>Five</li>
+  <li>One</li>
+  <li>Two</li>
+  <li>Three</li>
+  <li>Four</li>
+  <li>Five</li>
 </ul>
 ```
 
@@ -364,13 +356,26 @@ ul {
 
 ```css
 @counter-style upper-roman {
- system: additive;
- range: 1 3999;
- additive-symbols: 1000 M, 900 CM, 500 D, 400 CD, 100 C, 90 XC, 50 L, 40 XL, 10 X, 9 IX, 5 V, 4 IV, 1 I;
+  system: additive;
+  range: 1 3999;
+  additive-symbols:
+    1000 M,
+    900 CM,
+    500 D,
+    400 CD,
+    100 C,
+    90 XC,
+    50 L,
+    40 XL,
+    10 X,
+    9 IX,
+    5 V,
+    4 IV,
+    1 I;
 }
 
 ul {
- list-style: upper-roman;
+  list-style: upper-roman;
 }
 ```
 
@@ -386,11 +391,11 @@ ul {
 
 ```html
 <ul class="list">
- <li>One</li>
- <li>Two</li>
- <li>Three</li>
- <li>Four</li>
- <li>Five</li>
+  <li>One</li>
+  <li>Two</li>
+  <li>Three</li>
+  <li>Four</li>
+  <li>Five</li>
 </ul>
 ```
 
@@ -398,13 +403,13 @@ ul {
 
 ```css
 @counter-style alpha-modified {
- system: extends lower-alpha;
- prefix: "(";
- suffix: ") ";
+  system: extends lower-alpha;
+  prefix: "(";
+  suffix: ") ";
 }
 
 ul {
- list-style: alpha-modified;
+  list-style: alpha-modified;
 }
 ```
 

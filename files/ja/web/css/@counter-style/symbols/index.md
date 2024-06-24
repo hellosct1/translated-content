@@ -1,16 +1,8 @@
 ---
 title: symbols
 slug: Web/CSS/@counter-style/symbols
-tags:
-  - '@counter-style'
-  - At-rule descriptor
-  - CSS
-  - CSS Counter Styles
-  - CSS Descriptor
-  - Reference
-browser-compat: css.at-rules.counter-style.symbols
-translation_of: Web/CSS/@counter-style/symbols
 ---
+
 {{CSSRef}}
 
 **`symbols`** は [CSS](/ja/docs/Web/CSS) の記述子で、指定されたカウンターシステムがカウンター表現を構築するために使用する記号を指定するために使用します。
@@ -37,7 +29,7 @@ translation_of: Web/CSS/@counter-style/symbols
 symbols: A B C D E;
 symbols: "\24B6" "\24B7" "\24B8" D E;
 symbols: "0" "1" "2" "4" "5" "6" "7" "8" "9";
-symbols: url('first.svg') url('second.svg') url('third.svg');
+symbols: url("first.svg") url("second.svg") url("third.svg");
 symbols: indic-numbers;
 ```
 

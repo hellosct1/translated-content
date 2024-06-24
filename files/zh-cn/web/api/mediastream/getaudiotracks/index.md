@@ -1,18 +1,8 @@
 ---
 title: MediaStream.getAudioTracks()
 slug: Web/API/MediaStream/getAudioTracks
-tags:
-  - API
-  - getAudioTracks
-  - 媒体
-  - 媒体流
-  - 媒体流 API
-  - 媒体流轨道
-  - 方法
-  - 轨道
-  - 音频
-translation_of: Web/API/MediaStream/getAudioTracks
 ---
+
 {{APIRef("Media Capture and Streams")}}
 
 {{domxref("MediaStream")}} 接口下的 **_`getAudioTracks()`_** 方法会返回一个包含
@@ -21,8 +11,8 @@ translation_of: Web/API/MediaStream/getAudioTracks
 
 ## 语法
 
-```js
-var mediaStreamTracks = mediaStream.getAudioTracks()
+```js-nolint
+getAudioTracks()
 ```
 
 ### 参数
@@ -44,15 +34,16 @@ var mediaStreamTracks = mediaStream.getAudioTracks()
 元素，然后设置一个计时器，计时器到期时会停止在该媒体流中找到的第一个音轨。
 
 ```js
-navigator.mediaDevices.getUserMedia({audio: true, video: true})
-.then(mediaStream => {
-  document.querySelector('video').srcObject = mediaStream;
-  // Stop the audio stream after 5 seconds
-  setTimeout(() => {
-    const tracks = mediaStream.getAudioTracks()
-    tracks[0].stop()
-  }, 5000)
-})
+navigator.mediaDevices
+  .getUserMedia({ audio: true, video: true })
+  .then((mediaStream) => {
+    document.querySelector("video").srcObject = mediaStream;
+    // Stop the audio stream after 5 seconds
+    setTimeout(() => {
+      const tracks = mediaStream.getAudioTracks();
+      tracks[0].stop();
+    }, 5000);
+  });
 ```
 
 ## 规范
@@ -61,4 +52,4 @@ navigator.mediaDevices.getUserMedia({audio: true, video: true})
 
 ## 浏览器兼容性
 
-{{Compat("api.MediaStream.getAudioTracks")}}
+{{Compat}}

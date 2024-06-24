@@ -1,17 +1,8 @@
 ---
 title: font-language-override
 slug: Web/CSS/font-language-override
-tags:
-  - CSS
-  - CSS Fonts
-  - CSS Property
-  - Reference
-  - font-language-override
-  - l10n
-  - recipe:css-property
-browser-compat: css.properties.font-language-override
-translation_of: Web/CSS/font-language-override
 ---
+
 {{CSSRef}}
 
 **`font-language-override`** は CSS のプロパティで、書体で言語に固有の字形の使用を制御します。
@@ -21,8 +12,8 @@ translation_of: Web/CSS/font-language-override
 font-language-override: normal;
 
 /* <string> 値 */
-font-language-override: "ENG";  /* 英語の字形 */
-font-language-override: "TRK";  /* トルコ語の字形 */
+font-language-override: "ENG"; /* 英語の字形 */
+font-language-override: "TRK"; /* トルコ語の字形 */
 
 /* グローバル値 */
 font-language-override: inherit;
@@ -63,7 +54,9 @@ font-language-override: unset;
 
 ```html
 <p class="para1">Default language setting.</p>
-<p class="para2">This is a string with the <code>font-language-override</code> set to Danish.</p>
+<p class="para2">
+  This is a string with the <code>font-language-override</code> set to Danish.
+</p>
 ```
 
 #### CSS

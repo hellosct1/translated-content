@@ -1,16 +1,8 @@
 ---
 title: range
 slug: Web/CSS/@counter-style/range
-tags:
-  - '@counter-style'
-  - At-rule descriptor
-  - CSS
-  - CSS Counter Styles
-  - CSS Descriptor
-  - Reference
-browser-compat: css.at-rules.counter-style.range
-translation_of: Web/CSS/@counter-style/range
 ---
+
 {{CSSRef}}
 
 カスタムカウンターのスタイルを定義する際、 **`range`** 記述子により、スタイルが適用されるカウンター値の範囲を指定することができます。カウンターの値が指定された範囲の外にある場合、代替スタイルがそのマーカーの表現を構築するために使用されます。
@@ -28,8 +20,12 @@ range: 6 infinite;
 range: infinite infinite;
 
 /* 複数の範囲の値 */
-range: 2 5, 8 10;
-range: infinite 6, 10 infinite;
+range:
+  2 5,
+  8 10;
+range:
+  infinite 6,
+  10 infinite;
 ```
 
 ### 値
@@ -89,7 +85,9 @@ auto
 @counter-style range-multi-example {
   system: cyclic;
   symbols: "\25A0" "\25A1";
-  range: 2 4, 7 9;
+  range:
+    2 4,
+    7 9;
 }
 
 .list {

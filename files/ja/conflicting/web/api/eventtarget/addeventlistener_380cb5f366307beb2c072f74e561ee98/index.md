@@ -1,21 +1,15 @@
 ---
 title: EventListener
-slug: >-
-  conflicting/Web/API/EventTarget/addEventListener_380cb5f366307beb2c072f74e561ee98
-tags:
-  - API
-  - DOM
-  - DOM Events
-  - NeedsContent
-translation_of: Web/API/EventListener
+slug: conflicting/Web/API/EventTarget/addEventListener_380cb5f366307beb2c072f74e561ee98
 original_slug: Web/API/EventListener
 ---
-{{APIRef("DOM Events")}}
 
-**`EventListener`** インターフェイスは、{{domxref("EventTarget")}} オブジェクトによってディスパッチされたイベントを処理できるオブジェクトを表します。
+{{APIRef("DOM")}}
 
-> **Note:** レガシーコンテンツとの互換性が必要なため、`EventListener` は、関数、`handleEvent()` メソッドをもつオブジェクト両方を受け入れます。
-> これを以下の [例](#例) に示します。
+**`EventListener`** インターフェイスは、{{domxref("EventTarget")}} オブジェクトによってディスパッチされたイベントを処理できるオブジェクトを表します。
+
+> **メモ:** レガシーコンテンツとの互換性が必要なため、`EventListener` は、関数、`handleEvent()` メソッドをもつオブジェクト両方を受け入れます。
+> これを以下の [例](#例) に示します。
 
 ## プロパティ
 

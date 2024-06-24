@@ -1,8 +1,8 @@
 ---
-title: 'Express 教程 6: 使用表单'
+title: "Express 教程 6: 使用表单"
 slug: Learn/Server-side/Express_Nodejs/forms
-translation_of: Learn/Server-side/Express_Nodejs/forms
 ---
+
 {{LearnSidebar}}{{PreviousMenuNext("Learn/Server-side/Express_Nodejs/Displaying_data", "Learn/Server-side/Express_Nodejs/deployment", "Learn/Server-side/Express_Nodejs")}}
 
 在此教程中我们会教你如何使用 Express 并且结合 Pug 来实现 HTML 表单，并且如何从数据库中创建，更新和删除文档。
@@ -10,11 +10,11 @@ translation_of: Learn/Server-side/Express_Nodejs/forms
 <table class="learn-box standard-table">
   <tbody>
     <tr>
-      <th scope="row">前提条件：</th>
+      <th scope="row">前提：</th>
       <td>
         <p>
           完成前面所有的教程，包括
-          <a href="/en-US/docs/Learn/Server-side/Express_Nodejs/Displaying_data"
+          <a href="/zh-CN/docs/Learn/Server-side/Express_Nodejs/Displaying_data"
             >Express 教程第 5 章：展示图书馆数据</a
           >
         </p>
@@ -31,7 +31,7 @@ translation_of: Learn/Server-side/Express_Nodejs/forms
 
 ## 概览
 
-[HTML 表单](/en-US/docs/Web/Guide/HTML/Forms)在网页中是一个或多个字段/小工具的集合，它被用来收集用户的信息，并将信息上传到服务器。表单作为一种用来收集用户的机制，非常的灵活，因为有各种合适的输入框，来接受各种类型的数据——文本框，复选框，单选按钮，时间选择器等。表单和服务器交互数据也相对安全，因为它使用 POST 请求发送数据，保护不受跨站点请求伪造攻击（cross-site request forgery）的威胁。
+[HTML 表单](/zh-CN/docs/Web/Guide/HTML/Forms)在网页中是一个或多个字段/小工具的集合，它被用来收集用户的信息，并将信息上传到服务器。表单作为一种用来收集用户的机制，非常的灵活，因为有各种合适的输入框，来接受各种类型的数据——文本框，复选框，单选按钮，时间选择器等。表单和服务器交互数据也相对安全，因为它使用 POST 请求发送数据，保护不受跨站点请求伪造攻击（cross-site request forgery）的威胁。
 
 但是表单同样也很复杂！开发者需要为表单编写 HTML，在服务器上验证，并且正确去除有害的数据（浏览器上也可能需要），对于任何不合法的字段，需要传给用户相应的错误信息，当数据成功提交后，处理数据，并设法通知用户提交成功。
 
@@ -47,13 +47,17 @@ translation_of: Learn/Server-side/Express_Nodejs/forms
 
 表单在 HTML 中，定义为`<form>...</form>`标记内的元素集合，包含至少一个`type="submit"`的`input`输入元素。
 
-请注意，我非常建议您这里使用 input 的 submit 而不是 button！这会使你感到愉悦。
+请注意，我非常建议你这里使用 input 的 submit 而不是 button！这会使你感到愉悦。
 
 ```html
 <form action="/team_name_url/" method="post">
-    <label for="team_name">Enter name: </label>
-    <input id="team_name" type="text" name="name_field" value="Default name for team.">
-    <input type="submit" value="OK">
+  <label for="team_name">Enter name: </label>
+  <input
+    id="team_name"
+    type="text"
+    name="name_field"
+    value="Default name for team." />
+  <input type="submit" value="OK" />
 </form>
 ```
 
@@ -61,13 +65,13 @@ translation_of: Learn/Server-side/Express_Nodejs/forms
 
 另外，有必要说一下，HTML 中 form 表单默认就是以 post 提交的。它比 get 方式存储量更大、传输更安全。
 
-提交输入（`submit`）将显示为按钮（默认情况下） - 用户可以按此按钮，将其他输入元素包含的数据，上传到服务器（在本例中，只有`team_name`）。表单属性，定义用于发送数据的 HTTP` method`方法，和服务器上数据的目标（`action`）：
+提交输入（`submit`）将显示为按钮（默认情况下） - 用户可以按此按钮，将其他输入元素包含的数据，上传到服务器（在本例中，只有`team_name`）。表单属性，定义用于发送数据的 HTTP `method`方法，和服务器上数据的目标（`action`）：
 
 - `action`: 提交表单时，要发送数据以进行处理的资源/ URL。如果未设置（或设置为空字符串），则表单将提交回当前页面 URL。
 - `method`: 用于发送数据的 HTTP 方法：`POST` 或 `GET`。
 
   - 如果数据将导致服务器数据库的更改，则始终应该使用`POST`方法，因为这更加可以抵抗跨站点伪造请求攻击。
-  - `GET`方法只应用于不更改用户数据的表单（例如，搜索表单）。当您希望能够为 URL 添加书签或共享时，建议使用此选项。
+  - `GET`方法只应用于不更改用户数据的表单（例如，搜索表单）。当你希望能够为 URL 添加书签或共享时，建议使用此选项。
 
 ### 表单处理流程
 
@@ -79,15 +83,15 @@ translation_of: Learn/Server-side/Express_Nodejs/forms
 
 如上图所示，构成处理代码所需要做的主要是：
 
-1.  在用户第一次请求时显示默认表单。
+1. 在用户第一次请求时显示默认表单。
 
-    - 表单可能包含空白字段（例如，如果您正在创建新记录），或者可能预先填充了初始值（例如，如果您要更改记录，或者具有有用的默认初始值）。
+   - 表单可能包含空白字段（例如，如果你正在创建新记录），或者可能预先填充了初始值（例如，如果你要更改记录，或者具有有用的默认初始值）。
 
-2.  接收用户提交的数据，通常是在 HTTP `POST`请求中。
-3.  验证并清理数据。
-4.  如果任何数据无效，请重新显示表单 - 这次使用用户填写的任何值，和问题字段的错误消息。
-5.  如果所有数据都有效，请执行所需的操作（例如，将数据保存在数据库中，发送通知电子邮件，返回搜索结果，上传文件等）
-6.  完成所有操作后，将用户重定向到另一个页面。
+2. 接收用户提交的数据，通常是在 HTTP `POST`请求中。
+3. 验证并清理数据。
+4. 如果任何数据无效，请重新显示表单 - 这次使用用户填写的任何值，和问题字段的错误消息。
+5. 如果所有数据都有效，请执行所需的操作（例如，将数据保存在数据库中，发送通知电子邮件，返回搜索结果，上传文件等）
+6. 完成所有操作后，将用户重定向到另一个页面。
 
 表格处理代码，通常使用`GET`路由，以实现表单的初始显示，以及`POST`路由到同一路径，以处理表单数据的验证和处理。这是将在本教程中使用的方法！Express 本身不提供表单处理操作的任何特定支持，但它可以使用中间件，以处理表单中的`POST`和`GET`参数，并验证/清理它们的值。
 
@@ -110,16 +114,16 @@ npm install express-validator --save
 
 #### 使用 express-validator
 
-> **备注：** Github 上的[express-validator](https://github.com/ctavan/express-validator#express-validator)指南，提供了 API 的良好概述。我们建议您阅读该内容，以了解其所有功能（包括创建自定义验证程序）。下面我们只介绍一个对 LocalLibrary 有用的子集。
+> **备注：** Github 上的[express-validator](https://github.com/ctavan/express-validator#express-validator)指南，提供了 API 的良好概述。我们建议你阅读该内容，以了解其所有功能（包括创建自定义验证程序）。下面我们只介绍一个对 LocalLibrary 有用的子集。
 
 要在我们的控制器中使用验证器，我们必须从'**express-validator/check**'和'**express-validator/filter**'模块中，导入我们想要使用的函数，如下所示：
 
 ```js
-const { body,validationResult } = require('express-validator/check');
-const { sanitizeBody } = require('express-validator/filter');
+const { body, validationResult } = require("express-validator/check");
+const { sanitizeBody } = require("express-validator/filter");
 ```
 
-有许多可用的功能，允许您一次检查和清理请求参数，正文，标头，cookie 等数据，或所有数据。对于本教程，我们主要使用`body`， `sanitizeBody`，和 `validationResult`（如上面“导入”的）。
+有许多可用的功能，允许你一次检查和清理请求参数，正文，标头，cookie 等数据，或所有数据。对于本教程，我们主要使用`body`， `sanitizeBody`，和 `validationResult`（如上面“导入”的）。
 
 功能定义如下：
 
@@ -130,14 +134,14 @@ const { sanitizeBody } = require('express-validator/filter');
   body('age', 'Invalid age').optional({ checkFalsy: true }).isISO8601(),
   ```
 
-  您还可以用菊花链式连接不同的验证器，并添加前面验证器为真时显示的消息。
+  你还可以用菊花链式连接不同的验证器，并添加前面验证器为真时显示的消息。
 
-- ```js
+  ```js
   body('name').isLength({ min: 1 }).trim().withMessage('Name empty.')
       .isAlpha().withMessage('Name must be alphabet letters.'),
   ```
 
-  > **备注：** 您还可以添加内联清理器，如`trim()`，如上所示。但是，此处应用清理器，仅适用于验证步骤。如果要对最终输出进行消毒，则需要使用单独的清理器方法，如下所示。
+  > **备注：** 你还可以添加内联清理器，如`trim()`，如上所示。但是，此处应用清理器，仅适用于验证步骤。如果要对最终输出进行消毒，则需要使用单独的清理器方法，如下所示。
 
 - [`sanitizeBody(fields)`](https://github.com/ctavan/express-validator#sanitizebodyfields): 指定一个正文要清理的字段。然后将清理操作，以菊花链形式连接到此方法。例如，下面的`escape()`清理操作，会从名称变量中，删除可能在 JavaScript 跨站点脚本攻击中使用的 HTML 字符。
 
@@ -150,17 +154,16 @@ const { sanitizeBody } = require('express-validator/filter');
 
   ```js
   (req, res, next) => {
-      // Extract the validation errors from a request.
-      const errors = validationResult(req);
+    // Extract the validation errors from a request.
+    const errors = validationResult(req);
 
-      if (!errors.isEmpty()) {
-          // There are errors. Render form again with sanitized values/errors messages.
-          // Error messages can be returned in an array using `errors.array()`.
-          }
-      else {
-          // Data from form is valid.
-      }
-  }
+    if (!errors.isEmpty()) {
+      // There are errors. Render form again with sanitized values/errors messages.
+      // Error messages can be returned in an array using `errors.array()`.
+    } else {
+      // Data from form is valid.
+    }
+  };
   ```
 
   我们使用验证结果的`isEmpty()`方法，来检查是否存在错误，并使用其`array()`方法，来获取错误消息集合。有关更多信息，请参[阅验证结果 API](https://github.com/ctavan/express-validator#validation-result-api)。
@@ -178,7 +181,7 @@ const { sanitizeBody } = require('express-validator/filter');
 在这个项目，我们将简单声明表单只能：
 
 - 使用已存在的对象创建对象（因此用户在尝试创建任何`Book`对象之前，必须创建任何所需的`Author`和`Genre`实例）。
-- 如果对象未被其他对象引用，则删除该对象（例如，在删除所有关联的`BookInstance`对象之前，您将无法删除该书）。
+- 如果对象未被其他对象引用，则删除该对象（例如，在删除所有关联的`BookInstance`对象之前，你将无法删除该书）。
 
 让我们看看更高级的内容吧：
 
@@ -194,7 +197,7 @@ const { sanitizeBody } = require('express-validator/filter');
 
 哦，如果你涉及文件上传，那么你可能需要“[multer](https://blog.csdn.net/qq_43624878/article/details/103607944)”中间件，你大概听说过“formidable”，但 multer 比它更强大！
 
-> **备注：** 更“牢固”的实现，可能允许您在创建新对象时创建依赖对象，并随时删除任何对象（例如，通过删除依赖对象，或从数据库中，删除对已删除对象的引用） 。
+> **备注：** 更“牢固”的实现，可能允许你在创建新对象时创建依赖对象，并随时删除任何对象（例如，通过删除依赖对象，或从数据库中，删除对已删除对象的引用） 。
 
 ### 路由
 
@@ -206,22 +209,22 @@ const { sanitizeBody } = require('express-validator/filter');
 
 ```js
 // GET request for creating a Genre. NOTE This must come before route that displays Genre (uses id).
-router.get('/genre/create', genre_controller.genre_create_get);
+router.get("/genre/create", genre_controller.genre_create_get);
 
 // POST request for creating Genre.
-router.post('/genre/create', genre_controller.genre_create_post);
+router.post("/genre/create", genre_controller.genre_create_post);
 ```
 
 ## Express 表单子文件
 
-以下子文件，将带我们完成向示例应用程序添加所需表单的过程。在进入下一个文件之前，您需要依次阅读并解决每个问题。
+以下子文件，将带我们完成向示例应用程序添加所需表单的过程。在进入下一个文件之前，你需要依次阅读并解决每个问题。
 
-1.  [创建种类表单](/zh-CN/docs/Learn/Server-side/Express_Nodejs/forms/Create_genre_form) — 定义我们的页面以创建`Genre`种类对象。
-2.  [创建作者表单](/zh-CN/docs/Learn/Server-side/Express_Nodejs/forms/Create_author_form) — 定义用于创建作者对象的页面。
-3.  [创建书本表单](/zh-CN/docs/Learn/Server-side/Express_Nodejs/forms/Create_book_form) — 定义页面/表单以创建书本对象。
-4.  [创建书本实例表单](/zh-CN/docs/Learn/Server-side/Express_Nodejs/forms/Create_BookInstance_form) — 定义页面/表单以创建书本实例对象。
-5.  [删除作者表单](/zh-CN/docs/Learn/Server-side/Express_Nodejs/forms/Delete_author_form) — 定义要删除作者对象的页面。
-6.  [更新书本表单](/zh-CN/docs/Learn/Server-side/Express_Nodejs/forms/Update_Book_form) — 定义页面以更新书本对象。
+1. [创建种类表单](/zh-CN/docs/Learn/Server-side/Express_Nodejs/forms/Create_genre_form) — 定义我们的页面以创建`Genre`种类对象。
+2. [创建作者表单](/zh-CN/docs/Learn/Server-side/Express_Nodejs/forms/Create_author_form) — 定义用于创建作者对象的页面。
+3. [创建书本表单](/zh-CN/docs/Learn/Server-side/Express_Nodejs/forms/Create_book_form) — 定义页面/表单以创建书本对象。
+4. [创建书本实例表单](/zh-CN/docs/Learn/Server-side/Express_Nodejs/forms/Create_BookInstance_form) — 定义页面/表单以创建书本实例对象。
+5. [删除作者表单](/zh-CN/docs/Learn/Server-side/Express_Nodejs/forms/Delete_author_form) — 定义要删除作者对象的页面。
+6. [更新书本表单](/zh-CN/docs/Learn/Server-side/Express_Nodejs/forms/Update_Book_form) — 定义页面以更新书本对象。
 
 ## 挑战自我
 
@@ -233,8 +236,8 @@ router.post('/genre/create', genre_controller.genre_create_post);
 一些提示：
 
 - 删除种类`Genre`就像删除作者`Author`一样，因为两个对象都是`Book`的依赖项（因此在这两种情况下，只有在删除相关书本时，才能删除对象）。
-- 删除书本`Book`也很相似，但您需要检查是否没有关联的书本实例`BookInstances`。
-- 删除书本实例`BookInstance`是最简单的，因为没有依赖对象。在这种情况下，您只需找到相关记录并将其删除即可。
+- 删除书本`Book`也很相似，但你需要检查是否没有关联的书本实例`BookInstances`。
+- 删除书本实例`BookInstance`是最简单的，因为没有依赖对象。在这种情况下，你只需找到相关记录并将其删除即可。
 
 实现`BookInstance`, `Author`, 和 `Genre`模型的更新页面，以与我们的书本更新页面相同的方式，将它们与关联的详细信息页面，链接起来。
 
@@ -242,7 +245,7 @@ router.post('/genre/create', genre_controller.genre_create_post);
 
 - 我们刚刚实施的图书更新页面是最难的！相同的模式可用于其他对象的更新页面。
 - 作者死亡日期和出生日期字段以及书本实例 due_date 字段，是输入到表单上日期输入字段的错误格式（它需要“YYYY-MM-DD”形式的数据）。解决此问题的最简单方法，是为适当格式化的日期，定义新的虚拟属性，然后在关联的视图模板中，使用此字段。
-- 如果您遇到困难，此处示例中的更新页面有一些[示例](https://github.com/mdn/express-locallibrary-tutorial)。
+- 如果你遇到困难，此处示例中的更新页面有一些[示例](https://github.com/mdn/express-locallibrary-tutorial)。
 
 ## 总结
 
@@ -255,15 +258,3 @@ Express, node, 与 NPM 上面的第三方套件，提供你需要的每样东西
 - [express-validator](https://www.npmjs.com/package/express-validator) (npm 文档).
 
 {{PreviousMenuNext("Learn/Server-side/Express_Nodejs/Displaying_data", "Learn/Server-side/Express_Nodejs/deployment", "Learn/Server-side/Express_Nodejs")}}
-
-## 本教程
-
-- [Express/Node 介绍](/zh-CN/docs/Learn/Server-side/Express_Nodejs/Introduction)
-- [架设 Node (Express) 开发环境](/zh-CN/docs/Learn/Server-side/Express_Nodejs/development_environment)
-- [Express 教程：本地图书馆网站](/zh-CN/docs/Learn/Server-side/Express_Nodejs/Tutorial_local_library_website)
-- [Express 教程 2: 创建骨架网站](/zh-CN/docs/Learn/Server-side/Express_Nodejs/skeleton_website)
-- [Express 教程 3: 使用数据库 (Mongoose)](/zh-CN/docs/Learn/Server-side/Express_Nodejs/mongoose)
-- [Express 教程 4: 路由与控制器](/zh-CN/docs/Learn/Server-side/Express_Nodejs/routes)
-- [Express 教程 5: 呈现图书馆数据](/zh-CN/docs/Learn/Server-side/Express_Nodejs/Displaying_data)
-- [Express 教程 6: 使用表单](/zh-CN/docs/Learn/Server-side/Express_Nodejs/forms)
-- [Express 教程 7: 部署到生产环境](/zh-CN/docs/Learn/Server-side/Express_Nodejs/deployment)
