@@ -1,8 +1,8 @@
 ---
 title: <defs>
 slug: Web/SVG/Element/defs
-translation_of: Web/SVG/Element/defs
 ---
+
 {{SVGRef}}
 
 SVG permet de définir des objets graphiques (génériques) pour une utilisation ultérieure. Autant qu'il est possible, cet usage est recommandé grâce aux propriétés offertes par l'élément `defs`.
@@ -36,10 +36,10 @@ Les éléments définis grâce à `defs` ne sont jamais directement générés (
 
 ### Attributs globaux
 
-- [Conditional processing attributes](/fr/docs/Web/SVG/Attribute#ConditionalProccessing)&nbsp;»
-- [Core attributes](/fr/docs/Web/SVG/Attribute#Core)&nbsp;»
-- [Graphical event attributes](/fr/docs/Web/SVG/Attribute#GraphicalEvent)&nbsp;»
-- [Presentation attributes](/fr/docs/Web/SVG/Attribute#Presentation)&nbsp;»
+- [Conditional processing attributes](/fr/docs/Web/SVG/Attribute#conditionalproccessing)&nbsp;»
+- [Core attributes](/fr/docs/Web/SVG/Attribute#core)&nbsp;»
+- [Graphical event attributes](/fr/docs/Web/SVG/Attribute#graphicalevent)&nbsp;»
+- [Presentation attributes](/fr/docs/Web/SVG/Attribute#presentation)&nbsp;»
 - {{SVGAttr("class")}}
 - {{SVGAttr("style")}}
 - {{SVGAttr("externalResourcesRequired")}}
@@ -55,11 +55,8 @@ Cet élément est implémenté par l'interface [`SVGDefsElement`](/fr/docs/Web/A
 
 ## Spécifications
 
-| Spécification                                                                | Status                   | Commentaire        |
-| ---------------------------------------------------------------------------- | ------------------------ | ------------------ |
-| {{SpecName('SVG2', 'struct.html#Head', '&lt;defs&gt;')}} | {{Spec2('SVG2')}} |                    |
-| {{SpecName('SVG1.1', 'struct.html#Head', '&lt;defs&gt;')}} | {{Spec2('SVG1.1')}} | Initial definition |
+{{Specifications}}
 
 ## Compatibilité des navigateurs
 
-{{Compat("svg.elements.defs")}}
+{{Compat}}

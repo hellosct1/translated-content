@@ -1,19 +1,15 @@
 ---
 title: box-shadow
 slug: Web/CSS/box-shadow
-tags:
-  - CSS
-  - Propriété
-  - Reference
-translation_of: Web/CSS/box-shadow
 ---
+
 {{CSSRef}}
 
 La propriété CSS **`box-shadow`** ajoute des ombres à la boîte d'un élément via une liste d'ombres séparées par des virgules. Une boîte d'ombre est définie avec des décalages horizontal et vertical par rapport à l'élément, avec des rayons de flou et d'étalement et avec une couleur.
 
 {{EmbedInteractiveExample("pages/css/box-shadow.html")}}Elle permet de projeter une ombre depuis un élément. Si une {{cssxref("border-radius")}} est définie sur l'élément avec l'ombre, la boîte de l'ombre prendra les mêmes arrondis. L'ordre des couches (_z order_) pour plusieurs ombres sera le même [que pour les ombres texte](/fr/docs/Web/CSS/text-shadow) (la première ombre est sur le dessus).
 
-[Le générateur de `box-shadow`](/fr/docs/Web/CSS/CSS_Box_Model/Box-shadow_generator) est un outil interactif qui permet de générer des valeurs pour `box-shadow`.
+[Le générateur de `box-shadow`](/fr/docs/Web/CSS/CSS_backgrounds_and_borders/Box-shadow_generator) est un outil interactif qui permet de générer des valeurs pour `box-shadow`.
 
 ## Syntaxe
 
@@ -31,7 +27,9 @@ box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 box-shadow: inset 5em 1em gold;
 
 /* Une liste d'ombres, séparées par des virgules */
-box-shadow: 3px 3px red, -1em 0 0.4em olive;
+box-shadow:
+  3px 3px red,
+  -1em 0 0.4em olive;
 
 /* Mots-clés globaux */
 box-shadow: inherit;
@@ -69,9 +67,13 @@ La propriété `box-shadow` peut être définie grâce :
 
 Chaque ombre de la liste (`none` sera traitée comme une liste de longueur nulle) est interpolée via la couleur, le décalage horizontal et vertical, le rayon de flou et l'étalement (lorsque c'est pertinent). Pour chaque ombre, si les deux ombres sont ou ne sont pas `inset`, l'ombre interpolée doit respecter cette valeur. Si l'une des ombres a `inset` et l'autre non, la liste d'ombres ne peut pas être interpolée. Si les listes d'ombres ont des longueurs différentes, la liste la plus courte sera complétée à la fin avec des ombres dont la couleur est `transparent`, toutes les longueurs valent `0` et `inset` pour que la valeur corresponde à la plus longue liste.
 
-### Syntaxe formelle
+## Définition formelle
 
-{{csssyntax}}
+{{CSSInfo}}
+
+## Syntaxe formelle
+
+{{CSSSyntax}}
 
 ## Exemples
 
@@ -81,7 +83,7 @@ Chaque ombre de la liste (`none` sera traitée comme une liste de longueur nulle
 p {
   height: 5em;
   width: 300px;
-  background-color: rgba(128,128,128,0.1);
+  background-color: rgba(128, 128, 128, 0.1);
 }
 .ombre_droite_haut {
   box-shadow: 60px -16px teal; /* la valeur négative décale vers le haut */
@@ -93,7 +95,9 @@ p {
 }
 
 .ombres_multiples_diffuses {
-  box-shadow: inset 0 0 1em gold, 0 0 2em red;
+  box-shadow:
+    inset 0 0 1em gold,
+    0 0 2em red;
   /* deux ombres dans la liste et des rayons de flou pour chacune */
 }
 ```
@@ -114,20 +118,16 @@ p {
 
 ## Spécifications
 
-| Spécification                                                                    | État                                     | Commentaires         |
-| -------------------------------------------------------------------------------- | ---------------------------------------- | -------------------- |
-| {{SpecName('CSS3 Backgrounds', '#box-shadow', 'box-shadow')}} | {{Spec2('CSS3 Backgrounds')}} | Définition initiale. |
-
-{{cssinfo}}
+{{Specifications}}
 
 ## Compatibilité des navigateurs
 
-{{Compat("css.properties.box-shadow")}}
+{{Compat}}
 
 ## Voir aussi
 
 - [Tutoriel et box-shadow tutorial and examples](https://markusstange.wordpress.com/2009/02/15/fun-with-box-shadows/)
 - [Générateur d'ombres CSS](https://cssgenerator.org/box-shadow-css-generator.html)
-- [Appliquer des couleurs sur des éléments HTML grâce à CSS](/fr/docs/Web/HTML/Applying_color)
+- [Appliquer des couleurs sur des éléments HTML grâce à CSS](/fr/docs/Web/CSS/CSS_colors/Applying_color)
 - Le type de données {{cssxref("&lt;color&gt;")}}
 - Les autres propriétés relatives aux couleurs : {{cssxref("color")}}, {{cssxref("background-color")}}, {{cssxref("border-color")}}, {{cssxref("outline-color")}}, {{cssxref("text-decoration-color")}}, {{cssxref("text-emphasis-color")}}, {{cssxref("text-shadow")}}, {{cssxref("caret-color")}} et {{cssxref("column-rule-color")}}.

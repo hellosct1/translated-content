@@ -1,17 +1,8 @@
 ---
 title: scroll-margin-right
 slug: Web/CSS/scroll-margin-right
-tags:
-  - CSS
-  - CSS プロパティ
-  - Reference
-  - Web
-  - recipe:css-property
-  - scroll-margin
-  - scroll-margin-right
-browser-compat: css.properties.scroll-margin-right
-translation_of: Web/CSS/scroll-margin-right
 ---
+
 {{CSSRef}}
 
 `scroll-margin-right` プロパティは、スクロールスナップ領域の右側のマージンを定義し、このボックスをスナップポートにスナップするために使用されます。スクロールスナップ領域は変換された境界ボックスによって定義され、四角形の囲みボックスを探して (スクロールコンテナーの座標空間における軸に合わせられ)、それから指定された外部距離が追加されます。
@@ -55,5 +46,5 @@ scroll-margin-right: unset;
 
 ## 関連情報
 
-- [CSS スクロールスナップ](/ja/docs/Web/CSS/CSS_Scroll_Snap)
+- [CSS スクロールスナップ](/ja/docs/Web/CSS/CSS_scroll_snap)
 - [Well-Controlled Scrolling with CSS Scroll Snap](https://web.dev/css-scroll-snap/)

@@ -1,17 +1,11 @@
 ---
 title: data-*
 slug: Web/HTML/Global_attributes/data-*
-tags:
-  - Attribut
-  - Attribut universel
-  - HTML
-  - Reference
-translation_of: Web/HTML/Global_attributes/data-*
-original_slug: Web/HTML/Attributs_universels/data-*
 ---
+
 {{HTMLSidebar("Global_attributes")}}
 
-Les [attributs universels](/fr/docs/Web/HTML/Attributs_universels) **`data-*`** forment une classe d'attributs, appelés attributs de données (_data attributes_). Ils permettent d'échanger des données propriétaire entre le [HTML](/fr/docs/Web/HTML) et la représentation du [DOM](/fr/docs/Web/API/Référence_du_DOM_Gecko), qu'on peut manipuler avec des scripts.
+Les [attributs universels](/fr/docs/Web/HTML/Global_attributes) **`data-*`** forment une classe d'attributs, appelés attributs de données (_data attributes_). Ils permettent d'échanger des données propriétaire entre le [HTML](/fr/docs/Web/HTML) et la représentation du [DOM](/fr/docs/Web/API/Document_Object_Model), qu'on peut manipuler avec des scripts.
 
 {{EmbedInteractiveExample("pages/tabbed/attribute-data.html","tabbed-standard")}}
 
@@ -36,21 +30,17 @@ Lorsqu'on ajoute des attributs de données `data-*`, on peut utiliser les élém
 </img>
 ```
 
-Pour un tutoriel plus avancé à propos des attributs de données HTML, lire l'article [Manipuler les attributs de données](/fr/Apprendre/HTML/Comment/Utiliser_attributs_donnes).
+Pour un tutoriel plus avancé à propos des attributs de données HTML, lire l'article [Manipuler les attributs de données](/fr/docs/Learn/HTML/Howto/Use_data_attributes).
 
 ## Spécifications
 
-| Spécification                                                                                                                                        | État                             | Commentaires                                                                                               |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| {{SpecName('HTML WHATWG', "dom.html#embedding-custom-non-visible-data-with-the-data-*-attributes", "data-*")}} | {{Spec2('HTML WHATWG')}} | Pas de modification depuis la dernière dérivation, {{SpecName('HTML5.1')}}                        |
-| {{SpecName('HTML5.1', "dom.html#embedding-custom-non-visible-data-with-the-data-*-attributes", "data-*")}}         | {{Spec2('HTML5.1')}}     | Dérivée de {{SpecName('HTML WHATWG')}}, pas de changement depuis {{SpecName('HTML5 W3C')}} |
-| {{SpecName('HTML5 W3C', "dom.html#embedding-custom-non-visible-data-with-the-data-*-attributes", "data-*")}}     | {{Spec2('HTML5 W3C')}}     | Dérivée de {{SpecName('HTML WHATWG')}}, définition initiale.                                      |
+{{Specifications}}
 
 ## Compatibilité des navigateurs
 
-{{Compat("html.global_attributes.data_attributes")}}
+{{Compat}}
 
 ## Voir aussi
 
-- [Les différents attributs universels](/fr/docs/Web/HTML/Attributs_universels)
+- [Les différents attributs universels](/fr/docs/Web/HTML/Global_attributes)
 - La propriété {{domxref("HTMLElement.dataset")}} qui permet d'accéder à ces valeurs et de les modifier.

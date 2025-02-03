@@ -1,16 +1,11 @@
 ---
 title: Modèle de mise en forme visuelle
 slug: Web/CSS/Visual_formatting_model
-tags:
-  - CSS
-  - Intermédiaire
-  - NeedsUpdate
-translation_of: Web/CSS/Visual_formatting_model
-original_slug: Web/CSS/Modèle_de_mise_en_forme_visuelle
 ---
+
 {{CSSRef}}
 
-En CSS, le modèle de mise en forme visuelle est un algorithme qui traite un document afin de l'afficher sur un support visuel. Chaque élément du document est ainsi transformé en zéro, une ou plusieurs boîtes qui s'inscrivent dans [le modèle de boîtes CSS](/en-US/docs/Learn/CSS/Building_blocks/The_box_model). La disposition de chaque boîte est dictée par :
+En CSS, le modèle de mise en forme visuelle est un algorithme qui traite un document afin de l'afficher sur un support visuel. Chaque élément du document est ainsi transformé en zéro, une ou plusieurs boîtes qui s'inscrivent dans [le modèle de boîtes CSS](/fr/docs/Learn/CSS/Building_blocks/The_box_model). La disposition de chaque boîte est dictée par :
 
 - Les dimensions de la boîte qui peuvent être définies explicitement, contraintes ou non
 - Le type de la boîte : en ligne, en ligne et de niveau (_inline-level_), atomique, en bloc
@@ -30,7 +25,7 @@ Lors de cette étape, on crée les boîtes à partir des éléments du document.
 
 Un élément est dit « de bloc » lorsque [la valeur calculée](/fr/docs/Web/CSS/computed_value) de la propriété {{cssxref("display")}} qui lui est appliquée vaut : `block`, `list-item` ou `table`. Un élément de bloc est représenté sous la forme d'un bloc (comme un paragraphe par exemple) et les blocs sont empilés verticalement les uns sur les autres.
 
-Chaque boîte de bloc contribue au [contexte de mise en forme des blocs](/fr/docs/Web/Guide/CSS/Block_formatting_context). Chaque élément de bloc génère au moins une boîte de niveau bloc, qu'on appelle la boîte de bloc principale. Certains éléments (comme les éléments d'une liste par exemple) génèrent d'autres boîtes afin de gérer les puces ou d'autres éléments typographiques.
+Chaque boîte de bloc contribue au [contexte de mise en forme des blocs](/fr/docs/Web/CSS/CSS_display/Block_formatting_context). Chaque élément de bloc génère au moins une boîte de niveau bloc, qu'on appelle la boîte de bloc principale. Certains éléments (comme les éléments d'une liste par exemple) génèrent d'autres boîtes afin de gérer les puces ou d'autres éléments typographiques.
 
 La boîte de bloc principale contient les boîtes générées par les descendants ete le contenu généré. Cette boîte participe au schéma de positionnement.
 
@@ -52,14 +47,14 @@ Si on prend le code HTML suivant, mis en forme avec les règles par défaut (`di
 
 ```html
 <div>
-   Some inline text
-   <p>followed by a paragraph</p>
-   followed by more inline text.
+  Some inline text
+  <p>followed by a paragraph</p>
+  followed by more inline text.
 </div>
 ```
 
 On aura deux boîtes de bloc anonymes qui seront créées : une pour le texte avant le paragraphe et une pour le texte après. On aura alors la structure suivante :
-  ![anonymous_block-level_boxes.png](anonymous_block-level_boxes.png)
+![anonymous_block-level_boxes.png](anonymous_block-level_boxes.png)
 
 À la différence de la boîte des éléments {{HTMLElement("p")}}, les développeurs ne peuvent pas contrôler la mise en forme des boîtes anonymes. Les propriétés qui héritent des éléments parents récupèreront la valeur obtenue pour l'élément {{HTMLElement("div")}} et les autres propriétés auront la valeur `initial`.
 
@@ -93,26 +88,25 @@ Les boîtes en lignes atomiques ne peuvent pas être divisées en plusieurs lign
 <style>
   span {
     /* La valeur par défaut */
-    display:inline;
+    display: inline;
   }
 </style>
 <div style="width:20em;">
-   Le texte dans le span <span>peut être divisé
-   en plusieurs lignes</span> dans une boîte en
-   ligne.
+  Le texte dans le span <span>peut être divisé en plusieurs lignes</span> dans
+  une boîte en ligne.
 </div>
 ```
 
 ```html
 <style>
   span {
-    display:inline-block;
+    display: inline-block;
   }
 </style>
 <div style="width:20em;">
-   Le texte dans le span <span>ne peut pas être
-   divisé en plusieurs lignes car</span> il est
-   dans une boîte de type inline-block.
+  Le texte dans le span
+  <span>ne peut pas être divisé en plusieurs lignes car</span> il est dans une
+  boîte de type inline-block.
 </div>
 ```
 
@@ -172,4 +166,19 @@ Pour un élément positionné de façon fixe, le bloc englobant sera la zone d'a
 ## Voir aussi
 
 - [La référence CSS](/fr/docs/Web/CSS/Reference)
-- {{css_key_concepts}}
+- Concepts clés de CSS&nbsp;:
+  - [Syntaxe CSS](/fr/docs/Web/CSS/Syntax)
+  - [Spécificité](/fr/docs/Web/CSS/Specificity)
+  - [Héritage](/fr/docs/Web/CSS/Inheritance)
+  - [Modèle de boîte](/fr/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)
+  - [Modes d'affichage](/fr/docs/Web/CSS/Layout_mode)
+  - [Modèles de formatage visuel](/fr/docs/Web/CSS/Visual_formatting_model)
+  - [Fusion des marges](/fr/docs/Web/CSS/CSS_box_model/Mastering_margin_collapsing)
+  - Valeurs
+    - [Initiales](/fr/docs/Web/CSS/initial_value)
+    - [Calculées](/fr/docs/Web/CSS/computed_value)
+    - [Utilisées](/fr/docs/Web/CSS/used_value)
+    - [Effectives](/fr/docs/Web/CSS/actual_value)
+  - [Syntaxe de définition des valeurs](/fr/docs/Web/CSS/Value_definition_syntax)
+  - [Propriétés raccourcies](/fr/docs/Web/CSS/Shorthand_properties)
+  - [Éléments remplacés](/fr/docs/Web/CSS/Replaced_element)

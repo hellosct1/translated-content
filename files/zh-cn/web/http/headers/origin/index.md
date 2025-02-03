@@ -1,17 +1,11 @@
 ---
 title: Origin
 slug: Web/HTTP/Headers/Origin
-tags:
-  - HTTP
-  - Reference
-  - Request header
-  - header
-  - origin
-translation_of: Web/HTTP/Headers/Origin
 ---
+
 {{HTTPSidebar}}
 
-请求标头 **`Origin`** 表示了请求的{{glossary("origin", "来源")}}（协议、主机、端口）。例如，如果一个用户代理需要请求一个页面中包含的资源，或者执行脚本中的 HTTP 请求（fetch），那么该页面的来源（origin）就可能被包含在这次请求中。
+请求标头 **`Origin`** 表示了请求的{{glossary("origin", "来源")}}（协议、主机、端口）。例如，如果一个用户代理需要请求一个页面中包含的资源，或者执行脚本中的 HTTP 请求（fetch），那么该页面的来源（origin）就可能被包含在这次请求中。
 
 <table class="properties">
   <tbody>
@@ -28,7 +22,7 @@ translation_of: Web/HTTP/Headers/Origin
 
 ## 语法
 
-```
+```http
 Origin: null
 Origin: <scheme>://<hostname>
 Origin: <scheme>://<hostname>:<port>
@@ -65,7 +59,8 @@ Origin: <scheme>://<hostname>:<port>
 - 没有为 sandbox 属性设置 `allow-same-origin` 值的 iframe。
 - 响应（response）是网络错误。
 
-> **备注：** 了解更详细的关于其值何时为 `null` 的清单，请参见 Stack Overflow：[When do browsers send the Origin header? When do browsers set the origin to null?](https://stackoverflow.com/a/42242802/)。
+> [!NOTE]
+> 了解更详细的关于其值何时为 `null` 的清单，请参见 Stack Overflow：[When do browsers send the Origin header? When do browsers set the origin to null?](https://stackoverflow.com/a/42242802/)。
 
 ## 示例
 
@@ -74,7 +69,7 @@ Origin: https://developer.mozilla.org
 ```
 
 ```http
-Origin: http://developer.mozilla.org:80
+Origin: https://developer.mozilla.org:80
 ```
 
 ## 规范

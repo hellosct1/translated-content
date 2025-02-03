@@ -1,14 +1,8 @@
 ---
 title: NDEFMessage.NDEFMessage()
 slug: Web/API/NDEFMessage/NDEFMessage
-tags:
-  - API
-  - コンストラクター
-  - リファレンス
-  - NDEFMessage
-browser-compat: api.NDEFMessage.NDEFMessage
-translation_of: Web/API/NDEFMessage/NDEFMessage
 ---
+
 {{securecontext_header}}{{APIRef()}}
 
 **`NDEFMessage()`** コンストラクターは新しい {{domxref("NDEFMessage")}} オブジェクトを生成し、指定された NDEF レコードで初期化します。
@@ -34,7 +28,7 @@ new NDEFMessage(records);
     - `lang` {{optional_inline}}
       - : {{RFC(5646, "Tags for Identifying Languages （BCP 47 とも呼ばれる）")}}による有効な言語タグです。
     - `mediaType` {{optional_inline}}
-      - : 有効な [MIME タイプ](/ja/docs/Web/HTTP/Basics_of_HTTP/MIME_types)です。
+      - : 有効な [MIME タイプ](/ja/docs/Web/HTTP/MIME_types)です。
     - `recordType`
 
       - : `data` に格納されているデータの種類を示す文字列です。以下の値のいずれかでなければなりません。
@@ -48,7 +42,7 @@ new NDEFMessage(records);
           - : 空の {{domxref("NDEFRecord")}} です。
 
         - `"mime"`
-          - : 有効な [MIME タイプ](/ja/docs/Web/HTTP/Basics_of_HTTP/MIME_types)です。
+          - : 有効な [MIME タイプ](/ja/docs/Web/HTTP/MIME_types)です。
         - `"smart-poster"`
           - : [NDEF-SMARTPOSTER](https://w3c.github.io/web-nfc/#bib-ndef-smartposter) 仕様書で定義されているようなスマートポスターです。
         - `"text"`

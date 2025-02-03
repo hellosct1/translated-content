@@ -1,15 +1,8 @@
 ---
 title: カード
 slug: Web/CSS/Layout_cookbook/Card
-tags:
-  - CSS
-  - CSS 料理帳
-  - CSS グリッド
-  - ガイド
-  - カード
-  - css レイアウト
-translation_of: Web/CSS/Layout_cookbook/Card
 ---
+
 {{CSSRef}}
 
 このパターンは、オプションでフッターが付く「カード」部品のリストです。
@@ -28,13 +21,13 @@ translation_of: Web/CSS/Layout_cookbook/Card
 
 {{EmbedGHLiveSample("css-examples/css-cookbook/card.html", '100%', 1720)}}
 
-> **Callout:**
+> [!CALLOUT]
 >
 > [この例をダウンロード](https://github.com/mdn/css-examples/blob/master/css-cookbook/card--download.html)
 
 ## 行った選択
 
-このカードは、 1 次元レイアウトであるにもかかわらず [CSS グリッドレイアウト](/ja/docs/Web/CSS/CSS_Grid_Layout)を使用してレイアウトされています。 これは、グリッドトラックに対してコンテンツのサイズ変更の使用が可能になるためです。 単一列グリッドを設定するときは、次のようにします。
+このカードは、 1 次元レイアウトであるにもかかわらず [CSS グリッドレイアウト](/ja/docs/Web/CSS/CSS_grid_layout)を使用してレイアウトされています。 これは、グリッドトラックに対してコンテンツのサイズ変更の使用が可能になるためです。 単一列グリッドを設定するときは、次のようにします。
 
 ```css
 .card {
@@ -47,13 +40,14 @@ translation_of: Web/CSS/Layout_cookbook/Card
 
 暗黙的にグリッドに作成された行は、既定で自動的にサイズ変更されるため、トラックにフッターがある場合は自動的にサイズ変更されます。 したがって、これは追加されたコンテンツに合わせられます。
 
-> **Note:** 各カードは独立したグリッドであるため、別々のカードのさまざまな要素は互いに整列しません。 Grid Level  2 で提案されたサブグリッド機能は、この問題を解決するでしょう。
+> [!NOTE]
+> 各カードは独立したグリッドであるため、別々のカードのさまざまな要素は互いに整列しません。 Grid Level 2 で提案されたサブグリッド機能は、この問題を解決するでしょう。
 
 ## 有用な代替策またはその他の方法
 
-[フレックスボックス](/ja/docs/Web/CSS/CSS_Flexible_Box_Layout)を使ってカードをレイアウトすることもできます。その場合は、コンテンツ領域を大きくし、他のアイテムは大きくしないようにする必要があります。これは合理的なカードのレイアウト方法ですが、私は、アイテムにルールを追加するよりも、コンテナーからトラックを制御できる方がやや好きです。
+[フレックスボックス](/ja/docs/Web/CSS/CSS_flexible_box_layout)を使ってカードをレイアウトすることもできます。その場合は、コンテンツ領域を大きくし、他のアイテムは大きくしないようにする必要があります。これは合理的なカードのレイアウト方法ですが、私は、アイテムにルールを追加するよりも、コンテナーからトラックを制御できる方がやや好きです。
 
-全体的なレイアウトのためにフレックスボックスを使うことができますが、この場合は最終的なフレックス業の上でカードが伸縮するでしょう。あるいは、[CSS 段組み](/ja/docs/Web/CSS/CSS_Columns)を使用することもできます。これにより、カードが段の上にレイアウトされることになりますが、これは問題になる場合もあれば、そうでない場合もあります。
+全体的なレイアウトのためにフレックスボックスを使うことができますが、この場合は最終的なフレックス業の上でカードが伸縮するでしょう。あるいは、[CSS 段組み](/ja/docs/Web/CSS/CSS_multicol_layout)を使用することもできます。これにより、カードが段の上にレイアウトされることになりますが、これは問題になる場合もあれば、そうでない場合もあります。
 
 これらの各レイアウト方法のデモについては、[欄のレシピ](/ja/docs/Web/CSS/Layout_cookbook/Column_layouts)を参照してください。
 
@@ -67,13 +61,13 @@ translation_of: Web/CSS/Layout_cookbook/Card
 
 #### grid-template-columns
 
-{{Compat("css.properties.grid-template-columns")}}
+{{Compat}}
 
 #### grid-template-rows
 
-{{Compat("css.properties.grid-template-rows")}}
+{{Compat}}
 
 ## 関連情報
 
-- {{Cssxref("grid-template-columns")}}, {{Cssxref("grid-template-rows")}}, {{Cssxref("gap")}}
+- {{Cssxref("grid-template-columns")}}, {{Cssxref("grid-template-rows")}}, {{Cssxref("gap")}}
 - [包括的な部品: カード](https://inclusive-components.design/cards/)（英語）

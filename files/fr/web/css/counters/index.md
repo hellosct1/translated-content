@@ -1,13 +1,8 @@
 ---
 title: counters()
 slug: Web/CSS/counters
-tags:
-  - CSS
-  - Fonction
-  - Reference
-translation_of: Web/CSS/counters()
-original_slug: Web/CSS/counters()
 ---
+
 {{CSSRef}}
 
 La fonction CSS **`counters()`** permet d'obtenir des compteurs imbriqués en renvoyant la concaténation des chaînes de caractères des valeurs des compteurs passés en arguments. La fonction `counters()` peut s'utiliser sous deux formes :
@@ -25,9 +20,10 @@ counters(countername, '-');
 counters(countername, '.', upper-roman)
 ```
 
-Un compteur n'est pas visible en tant que tel. Les fonctions `counters()` et [`counter()`](/fr/docs/Web/CSS/counter_function) doivent être utilisées pour créer du contenu.
+Un compteur n'est pas visible en tant que tel. Les fonctions `counters()` et [`counter()`](/fr/docs/Web/CSS/counter) doivent être utilisées pour créer du contenu.
 
-> **Note :** Bien que la fonction `counters()` puisse être utilisée avec n'importe quelle propriété CSS, la prise en charge des propriétés autres que {{CSSxRef("content")}} reste experimentale.
+> [!NOTE]
+> Bien que la fonction `counters()` puisse être utilisée avec n'importe quelle propriété CSS, la prise en charge des propriétés autres que {{CSSxRef("content")}} reste experimentale.
 >
 > Avant d'utiliser cette fonctionnalité en production, référez vous au tableau de compatibilité ci-après.
 
@@ -57,25 +53,25 @@ Un compteur n'est pas visible en tant que tel. Les fonctions `counters()` et [`c
 ```html
 <ol>
   <li>
-     <ol>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ol>
+    <ol>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ol>
   </li>
   <li></li>
   <li></li>
   <li>
-     <ol>
-        <li></li>
-        <li>
-           <ol>
-              <li></li>
-              <li></li>
-              <li></li>
-           </ol>
-        </li>
-      </ol>
+    <ol>
+      <li></li>
+      <li>
+        <ol>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ol>
+      </li>
+    </ol>
   </li>
 </ol>
 ```
@@ -90,10 +86,11 @@ li {
   counter-increment: listCounter;
 }
 li::marker {
-   content:  counters(listCounter, '.', upper-roman) ') ';
+  content: counters(listCounter, ".", upper-roman) ") ";
 }
 li::before {
-  content:  counters(listCounter, ".") " == " counters(listCounter, ".", lower-roman) ;
+  content: counters(listCounter, ".") " == "
+    counters(listCounter, ".", lower-roman);
 }
 ```
 
@@ -108,25 +105,25 @@ li::before {
 ```html
 <ol>
   <li>
-     <ol>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ol>
+    <ol>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ol>
   </li>
   <li></li>
   <li></li>
   <li>
-     <ol>
-        <li></li>
-        <li>
-           <ol>
-              <li></li>
-              <li></li>
-              <li></li>
-           </ol>
-        </li>
-      </ol>
+    <ol>
+      <li></li>
+      <li>
+        <ol>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ol>
+      </li>
+    </ol>
   </li>
 </ol>
 ```
@@ -141,10 +138,11 @@ li {
   counter-increment: count;
 }
 li::marker {
-   content: counters(count, '.', upper-alpha) ') ';
+  content: counters(count, ".", upper-alpha) ") ";
 }
 li::before {
-  content: counters(count, ".", decimal-leading-zero) " == " counters(count, ".", lower-alpha);
+  content: counters(count, ".", decimal-leading-zero) " == "
+    counters(count, ".", lower-alpha);
 }
 ```
 
@@ -154,20 +152,17 @@ li::before {
 
 ## Spécifications
 
-| Spécification                                                                                | État                             | Commentaires         |
-| -------------------------------------------------------------------------------------------- | -------------------------------- | -------------------- |
-| {{SpecName("CSS3 Lists", "#counter-functions", "CSS Counters")}}         | {{Spec2("CSS3 Lists")}} | Aucune modification. |
-| {{SpecName("CSS2.1", "generate.html#counter-styles", "CSS Counters")}} | {{Spec2("CSS2.1")}}         | Définition initiale. |
+{{Specifications}}
 
 ## Compatibilité des navigateurs
 
-{{Compat("css.types.counters")}}
+{{Compat}}
 
 ## Voir aussi
 
-- [Utiliser les compteurs CSS](/fr/docs/Web/CSS/CSS_Lists_and_Counters/Using_CSS_counters)
+- [Utiliser les compteurs CSS](/fr/docs/Web/CSS/CSS_counter_styles/Using_CSS_counters)
 - {{cssxref("counter-reset")}}
 - {{cssxref("counter-increment")}}
 - {{cssxref("@counter-style")}}
-- La fonction CSS [`counter()`](/fr/docs/Web/CSS/counter_function)
+- La fonction CSS [`counter()`](/fr/docs/Web/CSS/counter)
 - {{cssxref("::marker")}}

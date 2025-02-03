@@ -1,15 +1,11 @@
 ---
 title: transition-property
 slug: Web/CSS/transition-property
-tags:
-  - CSS
-  - Propriété
-  - Reference
-translation_of: Web/CSS/transition-property
 ---
+
 {{CSSRef}}
 
-La propriété **`transition-property`** désigne les noms des propriétés CSS sur lesquelles [un effet de transition](/fr/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions) devrait être appliqué.
+La propriété **`transition-property`** désigne les noms des propriétés CSS sur lesquelles [un effet de transition](/fr/docs/Web/CSS/CSS_transitions/Using_CSS_transitions) devrait être appliqué.
 
 {{EmbedInteractiveExample("pages/css/transition-property.html")}}
 
@@ -34,7 +30,10 @@ transition-property: sliding-vertically;
 /* Valeurs multiples */
 transition-property: test1, animation4;
 transition-property: all, height, all;
-transition-property: all, -moz-specific, sliding;
+transition-property:
+  all,
+  -moz-specific,
+  sliding;
 
 /* Avec des valeurs globales */
 transition-property: inherit;
@@ -51,27 +50,27 @@ transition-property: unset;
 - `<custom-ident>`
   - : Une chaîne de caractère qui identifie la propriété pour laquelle on doit appliquer un effet de transition lorsque sa valeur change. Pour plus de détails sur la forme de cet identifiant, voir la page sur le type {{cssxref("&lt;custom-ident&gt;")}}.
 
-### Syntaxe formelle
+## Définition formelle
 
-{{csssyntax}}
+{{CSSInfo}}
+
+## Syntaxe formelle
+
+{{CSSSyntax}}
 
 ## Exemples
 
-Il y a plusieurs exemples sur les transitions CSS qui se trouvent dans [l'article sur les transitions CSS](/fr/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions).
+Il y a plusieurs exemples sur les transitions CSS qui se trouvent dans [l'article sur les transitions CSS](/fr/docs/Web/CSS/CSS_transitions/Using_CSS_transitions).
 
 ## Spécifications
 
-| Spécification                                                                                                        | État                                     | Commentaires         |
-| -------------------------------------------------------------------------------------------------------------------- | ---------------------------------------- | -------------------- |
-| {{SpecName('CSS3 Transitions', '#transition-property-property', 'transition-property')}} | {{Spec2('CSS3 Transitions')}} | Définition initiale. |
-
-{{cssinfo}}
+{{Specifications}}
 
 ## Compatibilité des navigateurs
 
-{{Compat("css.properties.transition-property")}}
+{{Compat}}
 
 ## Voir aussi
 
-- [Utiliser les transitions CSS](/fr/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions)
+- [Utiliser les transitions CSS](/fr/docs/Web/CSS/CSS_transitions/Using_CSS_transitions)
 - {{domxref("TransitionEvent")}}

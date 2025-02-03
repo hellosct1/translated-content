@@ -1,13 +1,8 @@
 ---
 title: place-items
 slug: Web/CSS/place-items
-tags:
-  - CSS
-  - Propriété
-  - Propriété raccourcie
-  - Reference
-translation_of: Web/CSS/place-items
 ---
+
 {{CSSRef}}
 
 La propriété raccourcie **`place-items`** définit les valeurs utilisées pour les propriétés {{cssxref("align-items")}} et {{cssxref("justify-items")}}. La première valeur fournie est utilisée pour `align-items` et la seconde est utilisée pour `justify-items`. S'il n'y a pas de seconde valeur fournie, c'est la première qui est reprise pour `justify-items`.
@@ -95,7 +90,7 @@ place-items: unset;
 
 ```css
 #container {
-  height:200px;
+  height: 200px;
   width: 240px;
   place-items: center; /* Cette valeur peut être modifiée dans l'exemple */
   background-color: #8c8c8c;
@@ -208,15 +203,15 @@ select {
 ```
 
 ```js hidden
-var values = document.getElementById('values');
-var display = document.getElementById('display');
-var container = document.getElementById('container');
+var values = document.getElementById("values");
+var display = document.getElementById("display");
+var container = document.getElementById("container");
 
-values.addEventListener('change', function (evt) {
+values.addEventListener("change", function (evt) {
   container.style.placeItems = evt.target.value;
 });
 
-display.addEventListener('change', function (evt) {
+display.addEventListener("change", function (evt) {
   container.className = evt.target.value;
 });
 ```
@@ -227,28 +222,18 @@ display.addEventListener('change', function (evt) {
 
 ## Spécifications
 
-| Spécification                                                                                        | État                                     | Commentaires         |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------- | -------------------- |
-| {{SpecName("CSS3 Box Alignment", "#place-items-property", "place-items")}} | {{Spec2('CSS3 Box Alignment')}} | Définition initiale. |
-
-{{CSSInfo}}
+{{Specifications}}
 
 ## Compatibilité des navigateurs
 
-### Prise en charge pour les dispositions flexibles
-
-{{Compat("css.properties.place-items.flex_context")}}
-
-### Prise en charge pour les grilles
-
-{{Compat("css.properties.place-items.grid_context")}}
+{{Compat}}
 
 ## Voir aussi
 
-- Guide sur les grilles : _[Aligner des objets dans une grille](/fr/docs/Web/CSS/CSS_Grid_Layout/Alignement_des_boîtes_avec_les_grilles_CSS)_
-- Guide sur les boîtes flexibles : _[Les concepts de bases](/fr/docs/Web/CSS/Disposition_flexbox_CSS/Concepts_de_base_flexbox)_
-- Guide sur les boîtes flexibles : _[Aligner des objets dans un conteneur flexible](/fr/docs/Web/CSS/Disposition_flexbox_CSS/Aligner_des_éléments_dans_un_conteneur_flexible)_
-- [Le module de spécification CSS Box Alignment](/fr/docs/Web/CSS/CSS_Box_Alignment)
+- Guide sur les grilles : _[Aligner des objets dans une grille](/fr/docs/Web/CSS/CSS_grid_layout/Box_alignment_in_grid_layout)_
+- Guide sur les boîtes flexibles : _[Les concepts de bases](/fr/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox)_
+- Guide sur les boîtes flexibles : _[Aligner des objets dans un conteneur flexible](/fr/docs/Web/CSS/CSS_flexible_box_layout/Aligning_items_in_a_flex_container)_
+- [Le module de spécification CSS Box Alignment](/fr/docs/Web/CSS/CSS_box_alignment)
 - Les propriétés détaillées correspondantes :
 
   - {{cssxref("align-items")}}

@@ -1,13 +1,8 @@
 ---
 title: font-weight
 slug: Web/CSS/@font-face/font-weight
-tags:
-  - '@font-face'
-  - CSS
-  - Descripteur
-  - Reference
-translation_of: Web/CSS/@font-face/font-weight
 ---
+
 {{CSSRef}}
 
 Le descripteur CSS **`font-weight`** permet aux auteurs d'indiquer les graisses pour les polices fournies dans une règle {{cssxref("@font-face")}}. La propriété [`font-weight`](/fr/docs/Web/CSS/font-weight) peut être utilisée séparément pour indiquer la graisse des caractères d'un texte (c'est-à-dire s'ils sont en gras, normaux ou plus fins).
@@ -77,29 +72,27 @@ Dans l'exemple suivant, on récupère une police Open Sans et on l'importe en ut
 ```css
 @font-face {
   font-family: "Open Sans";
-  src: local("Open Sans") format("woff2"),
-        url("/fonts/OpenSans-Regular-webfont.woff") format("woff");
+  src:
+    local("Open Sans") format("woff2"),
+    url("/fonts/OpenSans-Regular-webfont.woff") format("woff");
   font-weight: 400;
 }
 ```
 
 ## Accessibilité
 
-Pour les personnes ayant une vision faible, il peut être extrêmement difficile de lire un texte avec `font-weight` qui vaut `100` ou `200`, notamment [si le contraste entre le texte et l'arrière-plan est faible](/fr/docs/Web/CSS/color#Accessibilité).
+Pour les personnes ayant une vision faible, il peut être extrêmement difficile de lire un texte avec `font-weight` qui vaut `100` ou `200`, notamment [si le contraste entre le texte et l'arrière-plan est faible](/fr/docs/Web/CSS/color#accessibilité).
 
-- [Comprendre les règles WCAG 1.4](/fr/docs/Web/Accessibility/Understanding_WCAG/Perceivable#Guideline_1.4_Make_it_easier_for_users_to_see_and_hear_content_including_separating_foreground_from_background)
+- [Comprendre les règles WCAG 1.4](/fr/docs/Web/Accessibility/Understanding_WCAG/Perceivable#guideline_1.4_make_it_easier_for_users_to_see_and_hear_content_including_separating_foreground_from_background)
 - [_Understanding Success Criterion 1.4.8 - W3C Understanding WCAG 2.0_ (en anglais)](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-visual-presentation.html)
 
 ## Spécifications
 
-| Spécification                                                                    | État                             | Commentaires |
-| -------------------------------------------------------------------------------- | -------------------------------- | ------------ |
-| {{SpecName('CSS4 Fonts', '#font-prop-desc', 'font-weight')}} | {{Spec2('CSS4 Fonts')}} |              |
-| {{SpecName('CSS3 Fonts', '#font-prop-desc', 'font-weight')}} | {{Spec2('CSS3 Fonts')}} |              |
+{{Specifications}}
 
 ## Compatibilité des navigateurs
 
-{{Compat("css.at-rules.font-face.font-weight")}}
+{{Compat}}
 
 ## Voir aussi
 

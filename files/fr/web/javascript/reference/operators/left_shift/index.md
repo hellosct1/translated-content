@@ -1,14 +1,8 @@
 ---
 title: Décalage binaire à gauche (<<)
 slug: Web/JavaScript/Reference/Operators/Left_shift
-tags:
-  - Bitwise operator
-  - JavaScript
-  - Language feature
-  - Operator
-  - Reference
-browser-compat: javascript.operators.left_shift
 ---
+
 {{jsSidebar("Operators")}}
 
 L'opérateur de **décalage binaire à gauche (`<<`)** décale la séquence de bits représentée par le premier opérande d'autant de bits vers la gauche que le nombre indiqué par le second opérande. Les bits en excès à gauche sont écartés et des bits à zéro sont introduits à droite.
@@ -18,7 +12,7 @@ L'opérateur de **décalage binaire à gauche (`<<`)** décale la séquence de b
 ## Syntaxe
 
 ```js
-a << b
+a << b;
 ```
 
 ## Description
@@ -55,5 +49,5 @@ Le décalage binaire de tout nombre `x` de `y` bits vers la gauche donnera comme
 
 ## Voir aussi
 
-- [Les opérateurs binaires dans le guide JavaScript](/fr/docs/Web/JavaScript/Guide/Expressions_and_Operators#bitwise)
+- [Les opérateurs binaires dans le guide JavaScript](/fr/docs/Web/JavaScript/Guide/Expressions_and_operators#bitwise)
 - [L'opérateur de décalage binaire à gauche et d'affectation](/fr/docs/Web/JavaScript/Reference/Operators/Left_shift_assignment)

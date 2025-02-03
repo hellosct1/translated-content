@@ -1,19 +1,9 @@
 ---
 title: webRequest.onBeforeRequest
 slug: Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeRequest
-tags:
-  - API
-  - Add-ons
-  - Event
-  - Extensions
-  - Non-standard
-  - Reference
-  - WebExtensions
-  - onBeforeRequest
-  - webRequest
-translation_of: Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeRequest
 ---
-{{AddonSidebar()}}
+
+{{AddonSidebar}}
 
 Cet événement est déclenché lorsqu'une demande est sur le point d'être faite et avant que les en-têtes ne soient disponibles. C'est un bon endroit pour écouter si vous voulez annuler ou rediriger la demande.
 
@@ -22,24 +12,24 @@ Pour annuler ou rediriger la requête, incluez d'abord `"blocking"` dans l'argum
 - pour annuler la demande, inclure une propriété `cancel` avec la valeur `true`.
 - pour rediriger la requête, inclure une propriété `redirectUrl` avec la valeur fixée à l'URL vers laquelle vous voulez rediriger.
 
-Si une extension veut rediriger une URL publique (par exemple HTTPS) ver une [page d'extension](/fr/Add-ons/WebExtensions/user_interface/Extension_pages), de l'extension doit contenir une clé [web_accessible_resources](/fr/Add-ons/WebExtensions/manifest.json/web_accessible_resources) qui liste l'URL de la page d'extension.
+Si une extension veut rediriger une URL publique (par exemple HTTPS) ver une [page d'extension](/fr/docs/Mozilla/Add-ons/WebExtensions/user_interface/Extension_pages), de l'extension doit contenir une clé [web_accessible_resources](/fr/docs/Mozilla/Add-ons/WebExtensions/manifest.json/web_accessible_resources) qui liste l'URL de la page d'extension.
 
-Lorsque plusieurs gestionnaires de blocage modifient une requête, une seule série de modifications prend effet. Les redirections et les annulations ont la même priorité. Ainsi, si vous avez annulé une requête, vous pouvez voir une autre requête avec la même  `requestId` à nouveau si un autre gestionnaire de blocage a redirigé la requête.
+Lorsque plusieurs gestionnaires de blocage modifient une requête, une seule série de modifications prend effet. Les redirections et les annulations ont la même priorité. Ainsi, si vous avez annulé une requête, vous pouvez voir une autre requête avec la même `requestId` à nouveau si un autre gestionnaire de blocage a redirigé la requête.
 
-A partir de Firefox 52, au lieu de renvoyer `BlockingResponse`, l'auditeur peut renvoyer une  [`Promise`](/fr/docs/Web/JavaScript/Reference/Objets_globaux/Promise) qui est résolue avec un `BlockingResponse`. Ceci permet à l'auditeur de traiter la demande de manière asynchrone.
+A partir de Firefox 52, au lieu de renvoyer `BlockingResponse`, l'auditeur peut renvoyer une [`Promise`](/fr/docs/Web/JavaScript/Reference/Global_Objects/Promise) qui est résolue avec un `BlockingResponse`. Ceci permet à l'auditeur de traiter la demande de manière asynchrone.
 
-Si vous utilisez le `"blocking"`, vous devez avoir la [permission de l'API "webRequestBlocking"](/fr/Add-ons/WebExtensions/manifest.json/permissions#API_permissions) dans votre manifest.json.
+Si vous utilisez le `"blocking"`, vous devez avoir la [permission de l'API "webRequestBlocking"](/fr/docs/Mozilla/Add-ons/WebExtensions/manifest.json/permissions#api_permissions) dans votre manifest.json.
 
 ## Syntaxe
 
 ```js
 browser.webRequest.onBeforeRequest.addListener(
-  listener,             // function
-  filter,               //  object
-  extraInfoSpec         //  optional array of strings
-)
-browser.webRequest.onBeforeRequest.removeListener(listener)
-browser.webRequest.onBeforeRequest.hasListener(listener)
+  listener, // function
+  filter, //  object
+  extraInfoSpec, //  optional array of strings
+);
+browser.webRequest.onBeforeRequest.removeListener(listener);
+browser.webRequest.onBeforeRequest.hasListener(listener);
 ```
 
 Les événements ont trois fonctions :
@@ -62,7 +52,7 @@ Les événements ont trois fonctions :
     - `details`
       - : [`object`](#details). Détails sur la demande. Voir les [`details`](#details) ci-dessous.
 
-    Les retours : {{WebExtAPIRef('webRequest.BlockingResponse')}}. Si `"blocking"`est spécifié dans le paramètre `extraInfoSpec`, l'auditeur d'événement doit retourner un objet `BlockingResponse`, et peut définir soit son `annulation`, soit ses propriétés  `redirectUrl`. A partir de Firefox 52, au lieu de renvoyer `BlockingResponse`,l'auditeur peut renvoyer une [`Promise`](/fr/docs/Web/JavaScript/Reference/Objets_globaux/Promise) qui est résolue avec un `BlockingResponse`. Ceci permet à l'auditeur de traiter la demande de manière asynchrone.
+    Les retours : {{WebExtAPIRef('webRequest.BlockingResponse')}}. Si `"blocking"`est spécifié dans le paramètre `extraInfoSpec`, l'auditeur d'événement doit retourner un objet `BlockingResponse`, et peut définir soit son `annulation`, soit ses propriétés `redirectUrl`. A partir de Firefox 52, au lieu de renvoyer `BlockingResponse`,l'auditeur peut renvoyer une [`Promise`](/fr/docs/Web/JavaScript/Reference/Global_Objects/Promise) qui est résolue avec un `BlockingResponse`. Ceci permet à l'auditeur de traiter la demande de manière asynchrone.
 
 - `filter`
   - : {{WebExtAPIRef('webRequest.RequestFilter')}}. Un filtre qui restreint les événements qui seront envoyés à cet auditeur.
@@ -152,9 +142,9 @@ Les événements ont trois fonctions :
 - `url`
   - : `string`. Cible de la demande.
 
-## Compatibilité du navigateur
+## Compatibilité des navigateurs
 
-{{Compat("webextensions.api.webRequest.onBeforeRequest", 10)}}
+{{Compat}}
 
 ### Ordre de résolution DNS lorsque BlockingResponse est utilisé
 
@@ -162,17 +152,16 @@ En ce qui concerne la résolution DNS lorsque BlockingResponse est utilisé avec
 
 ## Exemples
 
-Ce code enregistre l'URL de chaque ressource demandée qui correspond au modèle  [\<all_urls>](/fr/Add-ons/WebExtensions/Match_patterns#<all_urls>) :
+Ce code enregistre l'URL de chaque ressource demandée qui correspond au modèle [\<all_urls>](/fr/docs/Mozilla/Add-ons/WebExtensions/Match_patterns#<all_urls>) :
 
 ```js
 function logURL(requestDetails) {
   console.log("Loading: " + requestDetails.url);
 }
 
-browser.webRequest.onBeforeRequest.addListener(
-  logURL,
-  {urls: ["<all_urls>"]}
-);
+browser.webRequest.onBeforeRequest.addListener(logURL, {
+  urls: ["<all_urls>"],
+});
 ```
 
 Ce code annule les demandes d'images qui sont faites aux URLs sous "https\://mdn.mozillademos.org/" (pour voir l'effet, visitez n'importe quelle page de MDN qui contient des images, comme [Firefox Developer Edition](/fr/docs/Mozilla/Firefox/Developer_Edition)):
@@ -185,15 +174,15 @@ var pattern = "https://mdn.mozillademos.org/*";
 // which contains a property `cancel` set to `true`
 function cancel(requestDetails) {
   console.log("Canceling: " + requestDetails.url);
-  return {cancel: true};
+  return { cancel: true };
 }
 
 // add the listener,
 // passing the filter argument and "blocking"
 browser.webRequest.onBeforeRequest.addListener(
   cancel,
-  {urls: [pattern], types: ["image"]},
-  ["blocking"]
+  { urls: [pattern], types: ["image"] },
+  ["blocking"],
 );
 ```
 
@@ -209,7 +198,8 @@ var pattern = "https://mdn.mozillademos.org/*";
 function redirect(requestDetails) {
   console.log("Redirecting: " + requestDetails.url);
   return {
-    redirectUrl: "https://38.media.tumblr.com/tumblr_ldbj01lZiP1qe0eclo1_500.gif"
+    redirectUrl:
+      "https://38.media.tumblr.com/tumblr_ldbj01lZiP1qe0eclo1_500.gif",
   };
 }
 
@@ -217,19 +207,20 @@ function redirect(requestDetails) {
 // passing the filter argument and "blocking"
 browser.webRequest.onBeforeRequest.addListener(
   redirect,
-  {urls:[pattern], types:["image"]},
-  ["blocking"]
+  { urls: [pattern], types: ["image"] },
+  ["blocking"],
 );
 ```
 
-Ce code est exactement comme l'exemple précédent, sauf que l'auditeur traite la requête de manière asynchrone. Il renvoie une [`Promise`](/fr/docs/Web/JavaScript/Reference/Objets_globaux/Promise) qui définit une minuterie et se résout avec l'URL de redirection lorsque la minuterie expire :
+Ce code est exactement comme l'exemple précédent, sauf que l'auditeur traite la requête de manière asynchrone. Il renvoie une [`Promise`](/fr/docs/Web/JavaScript/Reference/Global_Objects/Promise) qui définit une minuterie et se résout avec l'URL de redirection lorsque la minuterie expire :
 
 ```js
 // match pattern for the URLs to redirect
 var pattern = "https://mdn.mozillademos.org/*";
 
 // URL we will redirect to
-var redirectUrl = "https://38.media.tumblr.com/tumblr_ldbj01lZiP1qe0eclo1_500.gif";
+var redirectUrl =
+  "https://38.media.tumblr.com/tumblr_ldbj01lZiP1qe0eclo1_500.gif";
 
 // redirect function returns a Promise
 // which is resolved with the redirect URL when a timer expires
@@ -237,7 +228,7 @@ function redirectAsync(requestDetails) {
   console.log("Redirecting async: " + requestDetails.url);
   return new Promise((resolve, reject) => {
     window.setTimeout(() => {
-      resolve({redirectUrl});
+      resolve({ redirectUrl });
     }, 2000);
   });
 }
@@ -246,20 +237,21 @@ function redirectAsync(requestDetails) {
 // passing the filter argument and "blocking"
 browser.webRequest.onBeforeRequest.addListener(
   redirectAsync,
-  {urls: [pattern], types: ["image"]},
-  ["blocking"]
+  { urls: [pattern], types: ["image"] },
+  ["blocking"],
 );
 ```
 
 {{WebExtExamples}}
 
-> **Note :**
+> [!NOTE]
 >
-> Cette API est basée sur l'API Chromium [`chrome.webRequest`](https://developer.chrome.com/extensions/webRequest). Cette documentation est dérivée de [`web_request.json`](https://chromium.googlesource.com/chromium/src/+/master/extensions/common/api/web_request.json) dans le code Chromium.
+> Cette API est basée sur l'API Chromium [`chrome.webRequest`](https://developer.chrome.com/docs/extensions/reference/api/webRequest). Cette documentation est dérivée de [`web_request.json`](https://chromium.googlesource.com/chromium/src/+/master/extensions/common/api/web_request.json) dans le code Chromium.
 >
 > Les données de compatibilité relatives à Microsoft Edge sont fournies par Microsoft Corporation et incluses ici sous la licence Creative Commons Attribution 3.0 pour les États-Unis.
 
-<div class="hidden"><pre>// Copyright 2015 The Chromium Authors. All rights reserved.
+<!--
+// Copyright 2015 The Chromium Authors. All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -286,4 +278,4 @@ browser.webRequest.onBeforeRequest.addListener(
 // THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-</pre></div>
+-->

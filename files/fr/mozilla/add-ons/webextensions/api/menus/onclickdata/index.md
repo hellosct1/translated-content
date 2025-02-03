@@ -1,19 +1,9 @@
 ---
 title: menus.OnClickData
 slug: Mozilla/Add-ons/WebExtensions/API/menus/OnClickData
-tags:
-  - API
-  - Add-ons
-  - Extensions
-  - Non-standard
-  - OnClickData
-  - Reference
-  - Type
-  - WebExtensions
-  - contextMenus
-translation_of: Mozilla/Add-ons/WebExtensions/API/menus/OnClickData
 ---
-{{AddonSidebar()}}
+
+{{AddonSidebar}}
 
 Informations transmises à l'écouteur d'événement {{WebExtAPIRef("menus.onClicked")}} lorsque vous cliquez sur un élément de menu.
 
@@ -24,7 +14,7 @@ Les valeurs de ce type sont des objets. Ils contiennent les propriétés suivant
 - `bookmarkId` {{optional_inline}}
   - : `string`. L'ID du signet dans lequel le menu contextuel a été cliqué.
 - `button` {{optional_inline}}
-  - : `integer`. Quel bouton de la souris a été enfoncé. Les valeurs sont les mêmes que pour  [`MouseEvent.button`](/fr/docs/Web/API/MouseEvent/button).
+  - : `integer`. Quel bouton de la souris a été enfoncé. Les valeurs sont les mêmes que pour [`MouseEvent.button`](/fr/docs/Web/API/MouseEvent/button).
 - `checked` {{optional_inline}}
   - : `boolean`. Un _flag_ indiquant si une case à cocher ou un élément radio a été vérifié après avoir été cliqué.
 - `editable`
@@ -42,7 +32,7 @@ Les valeurs de ce type sont des objets. Ils contiennent les propriétés suivant
 - `menuItemId`
   - : `integer` ou `string`. ID de l'élément de menu sur lequel vous avez cliqué.
 - `modifiers`
-  - : `Array` de`string`. Un tableau contenant toutes les touches de modification qui ont été pressées lorsque l'élément a été cliqué. Les valeurs possibles sont : "Alt", "Command", "Ctrl", "MacCtrl", et "Shift". Sur un Mac, si l'utilisateur a la touche Ctrl enfoncée, alors  "Ctrl" et "MacCtrl" sont inclus.
+  - : `Array` de`string`. Un tableau contenant toutes les touches de modification qui ont été pressées lorsque l'élément a été cliqué. Les valeurs possibles sont : "Alt", "Command", "Ctrl", "MacCtrl", et "Shift". Sur un Mac, si l'utilisateur a la touche Ctrl enfoncée, alors "Ctrl" et "MacCtrl" sont inclus.
 - `pageUrl` {{optional_inline}}
   - : `string`. L'URL de la page sur laquelle l'élément de menu a été cliqué. Cette propriété n'est pas présente si le clic s'est produit dans un contexte où il n'y a pas de page en cours, comme dans le cas d'une action du navigateur.
 - `parentMenuItemId` {{optional_inline}}
@@ -52,23 +42,24 @@ Les valeurs de ce type sont des objets. Ils contiennent les propriétés suivant
 - `srcUrl` {{optional_inline}}
   - : `string`. Sera présent pour les éléments avec une URL "src".
 - `targetElementId`{{optional_inline}}
-  - : `integer`. Un identificateur de l'élément, le cas échéant, sur lequel le menu contextuel a été créé. Utilisez {{WebExtAPIRef("menus.getTargetElement()")}} dans le script de contenu pour localiser l'élément. Notez que ce n'est pas l'attribut [id](/fr/docs/Web/HTML/Attributs_universels/id) de l'élément page.
+  - : `integer`. Un identificateur de l'élément, le cas échéant, sur lequel le menu contextuel a été créé. Utilisez {{WebExtAPIRef("menus.getTargetElement()")}} dans le script de contenu pour localiser l'élément. Notez que ce n'est pas l'attribut [`id`](/fr/docs/Web/HTML/Global_attributes/id) de l'élément page.
 - `viewType` {{optional_inline}}
   - : {{WebExtAPIRef("extension.ViewType", "ViewType")}}. Le type de vue de l'extension.
 - `wasChecked` {{optional_inline}}
   - : `boolean`. Un indicateur indiquant si une case à cocher ou un élément radio a été vérifié avant d'avoir cliqué.
 
-## Compatibilité du navigateur
+## Compatibilité des navigateurs
 
-{{Compat("webextensions.api.menus.OnClickData", 10)}}
+{{Compat}}
 
 {{WebExtExamples}}
 
-> **Note :**
+> [!NOTE]
 >
-> Cette API est basée sur l'API [`chrome.contextMenus`](https://developer.chrome.com/extensions/contextMenus) de chromium. Cette documentation est dérivée de [`context_menus.json`](https://chromium.googlesource.com/chromium/src/+/master/chrome/common/extensions/api/context_menus.json) dans le code Chromium.
+> Cette API est basée sur l'API [`chrome.contextMenus`](https://developer.chrome.com/docs/extensions/reference/api/contextMenus) de chromium. Cette documentation est dérivée de [`context_menus.json`](https://chromium.googlesource.com/chromium/src/+/master/chrome/common/extensions/api/context_menus.json) dans le code Chromium.
 
-<div class="hidden"><pre>// Copyright 2015 The Chromium Authors. All rights reserved.
+<!--
+// Copyright 2015 The Chromium Authors. All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -95,4 +86,4 @@ Les valeurs de ce type sont des objets. Ils contiennent les propriétés suivant
 // THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-</pre></div>
+-->

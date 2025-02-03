@@ -1,12 +1,8 @@
 ---
 title: <munderover>
 slug: Web/MathML/Element/munderover
-tags:
-  - MathML
-  - MathML:Element
-  - Référence MathML
-translation_of: Web/MathML/Element/munderover
 ---
+
 {{MathMLRef()}}
 
 L'élément MathML `<munderover>` est utilisé pour attacher des accents et limites à la fois en-dessous et au-dessus d'une expression.
@@ -23,13 +19,13 @@ La syntaxe est la suivante: `<munder> base script-en-dessous script-au-dessus </
 - align {{deprecated_inline}}
   - : L'alignment des scripts en dessous et au dessus. Les valeurs possibles sont: `left`, `center`, et `right`.
 - class, id, style
-  - : Afin d'être utilisés avec les [feuilles de styles](/fr/docs/CSS).
+  - : Afin d'être utilisés avec les [feuilles de styles](/fr/docs/Web/CSS).
 - href
   - : Un hyperlien pointant vers un URI donné.
 - mathbackground
-  - : La couleur de fond. Il est possible d'utiliser les codes au format `#rgb`, `#rrggbb` et les [noms de couleurs HTML](/fr/docs/CSS/valeur_de_couleur#Mots-cl.C3.A9s).
+  - : La couleur de fond. Il est possible d'utiliser les codes au format `#rgb`, `#rrggbb` et les [noms de couleurs HTML](/fr/docs/Web/CSS/color_value#mots-cl.c3.a9s).
 - mathcolor
-  - : La couleur du texte. Il est possible d'utiliser les codes au format `#rgb`, `#rrggbb` et les [noms de couleurs HTML](/fr/docs/CSS/valeur_de_couleur#Mots-cl.C3.A9s).
+  - : La couleur du texte. Il est possible d'utiliser les codes au format `#rgb`, `#rrggbb` et les [noms de couleurs HTML](/fr/docs/Web/CSS/color_value#mots-cl.c3.a9s).
 
 ## Exemples
 
@@ -37,13 +33,17 @@ Exemple de rendu: ![integral-0-infinity](munderover.png)
 
 ```html
 <math displaystyle="true">
-
-  <munderover >
-    <mo> &#x222B; <!--INTEGRAL--> </mo>
+  <munderover>
+    <mo>
+      &#x222B;
+      <!--INTEGRAL-->
+    </mo>
     <mn> 0 </mn>
-    <mi> &#x221E; <!--INFINITY--> </mi>
+    <mi>
+      &#x221E;
+      <!--INFINITY-->
+    </mi>
   </munderover>
-
 </math>
 ```
 
@@ -51,14 +51,11 @@ Exemple de rendu: ![integral-0-infinity](munderover.png)
 
 ## Spécifications
 
-| Specification                                                                                    | Status                       | Comment               |
-| ------------------------------------------------------------------------------------------------ | ---------------------------- | --------------------- |
-| {{ SpecName('MathML3', 'chapter3.html#presm.munderover', 'munderover') }} | {{ Spec2('MathML3') }} | Current specification |
-| {{ SpecName('MathML2', 'chapter3.html#presm.munderover', 'munderover') }} | {{ Spec2('MathML2') }} | Initial specification |
+{{Specifications}}
 
 ## Compatibilité des navigateurs
 
-{{Compat("mathml.elements.munderover")}}
+{{Compat}}
 
 ## Voir aussi
 

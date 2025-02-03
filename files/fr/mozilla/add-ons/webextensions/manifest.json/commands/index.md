@@ -1,13 +1,8 @@
 ---
 title: commands
 slug: Mozilla/Add-ons/WebExtensions/manifest.json/commands
-tags:
-  - Add-ons
-  - Extensions
-  - Keyboard Shortcuts
-  - WebExtensions
-translation_of: Mozilla/Add-ons/WebExtensions/manifest.json/commands
 ---
+
 {{AddonSidebar}}
 
 <table class="standard-table">
@@ -41,7 +36,7 @@ translation_of: Mozilla/Add-ons/WebExtensions/manifest.json/commands
 
 Utilisez la clé **`commands`** pour définir un ou plusieurs raccourcis clavier pour votre extension.
 
-Chaque raccourci clavier est défini avec un **nom**, une **combination de clé**, et un **description**. Une fois que vous avez défini des commandes dans le fichier `manifest.json`, de votre extension, vous pouvez écouter leurs combinaisons de touches associées avec l'API JavaScript  {{WebExtAPIRef("commands")}}.
+Chaque raccourci clavier est défini avec un **nom**, une **combination de clé**, et un **description**. Une fois que vous avez défini des commandes dans le fichier `manifest.json`, de votre extension, vous pouvez écouter leurs combinaisons de touches associées avec l'API JavaScript {{WebExtAPIRef("commands")}}.
 
 ## Syntaxe
 
@@ -128,7 +123,7 @@ Cela définit deux raccourcis :
 Vous pouvez alors écouter la commande `"toggle-feature"` avec un code comme celui-ci :
 
 ```js
-browser.commands.onCommand.addListener(function(command) {
+browser.commands.onCommand.addListener(function (command) {
   if (command == "toggle-feature") {
     console.log("toggling the feature!");
   }
@@ -137,11 +132,11 @@ browser.commands.onCommand.addListener(function(command) {
 
 ### Raccourcis spéciaux
 
-Il existe 3 **raccourci spéciaux avec des actions par défaut**, pour lesquels l'événement  {{WebExtAPIRef("commands.onCommand")}} n'est pas déclenché :
+Il existe 3 **raccourci spéciaux avec des actions par défaut**, pour lesquels l'événement {{WebExtAPIRef("commands.onCommand")}} n'est pas déclenché :
 
-- `_execute_browser_action`: fonctionne comme un clic sur une [action de navigateur](/fr/docs/Mozilla/Add-ons/WebExtensions/Browser_action) de l'extension.
-- `_execute_page_action`: fonctionne comme un clic sur une [action de page](/fr/docs/Mozilla/Add-ons/WebExtensions/Page_actions) de l'extension.
-- `_execute_sidebar_action`: ouvre le [panneau latéral](/fr/docs/Mozilla/Add-ons/WebExtensions/Sidebars) de l'extension. Uniquement pris en charge par Firefox et uniquement à partir de Firefox version 54.
+- `_execute_browser_action`: fonctionne comme un clic sur une [action de navigateur](/fr/docs/Mozilla/Add-ons/WebExtensions/user_interface/Toolbar_button) de l'extension.
+- `_execute_page_action`: fonctionne comme un clic sur une [action de page](/fr/docs/Mozilla/Add-ons/WebExtensions/user_interface/Page_actions) de l'extension.
+- `_execute_sidebar_action`: ouvre le [panneau latéral](/fr/docs/Mozilla/Add-ons/WebExtensions/user_interface/Sidebars) de l'extension. Uniquement pris en charge par Firefox et uniquement à partir de Firefox version 54.
 
 Par exemple, ce JSON définit une combinaison de touches qui clique sur l'action du navigateur de l'extension :
 
@@ -169,10 +164,10 @@ Les combinaisons de touches doivent être composées de deux ou trois touches :
 2. **second modificateur** (facultatif). S'il est fourni, il doit être `"Shift"` ou (pour Firefox ≥ 63) l'un quelconque des `"Ctrl"`, `"Alt"`, `"Command"`, ou `"MacCtrl"`. Ne doit pas être le modificateur déjà utilisé comme modificateur principal.
 3. **touche** (obligatoire). Ce peut être l'une des touches :
 
-    - lettres `A`–`Z`
-    - chiffres `0`–`9`
-    - fonctions `F1`–`F12`
-    - `Comma`(virgule), `Period`(point), `Home` (début), `End` (Fin), `PageUp`(page précédente), `PageDown` (page suivante), `Space` (espace), `Insert`(inser), `Delete`(Suppr), `Up` (haut), `Down` (bas), `Left`(gauche), `Right` (droite)
+   - lettres `A` – `Z`
+   - chiffres `0` – `9`
+   - fonctions `F1` – `F12`
+   - `Comma` (virgule), `Period` (point), `Home` (début), `End` (Fin), `PageUp` (page précédente), `PageDown` (page suivante), `Space` (espace), `Insert` (inser), `Delete` (Suppr), `Up` (haut), `Down` (bas), `Left` (gauche), `Right` (droite)
 
 La clé est ensuite donnée sous la forme d'une chaîne contenant l'ensemble des valeurs de clé, dans l'ordre indiqué ci-dessus, séparées "`+`". Par exemple, `"Ctrl+Shift+Z"`.
 
@@ -225,6 +220,6 @@ Définissez deux raccourcis clavier, l'un avec une combinaison de touches spéci
 }
 ```
 
-## Compatibilité du navigateur
+## Compatibilité des navigateurs
 
-{{Compat("webextensions.manifest.commands")}}
+{{Compat}}

@@ -1,18 +1,13 @@
 ---
 title: border-top-left-radius
 slug: Web/CSS/border-top-left-radius
-tags:
-  - CSS
-  - CSS 境界
-  - CSS プロパティ
-  - リファレンス
-  - recipe:css-property
-browser-compat: css.properties.border-top-left-radius
-translation_of: Web/CSS/border-top-left-radius
+l10n:
+  sourceCommit: 4e508e2f543c0d77c9c04f406ebc8e9db7e965be
 ---
+
 {{CSSRef}}
 
-**`border-top-left-radius`** は [CSS](/en-US/docs/Web/CSS) のプロパティは、角の曲率を定義する楕円の半径 (または半長軸と半短軸の半径) を指定することで、要素の左上の角を丸くします。
+**`border-top-left-radius`** は [CSS](/ja/docs/Web/CSS) のプロパティは、角の曲率を定義する楕円の半径 (または半長軸と半短軸の半径) を指定することで、要素の左上の角を丸くします。
 
 {{EmbedInteractiveExample("pages/css/border-top-left-radius.html")}}
 
@@ -22,7 +17,8 @@ translation_of: Web/CSS/border-top-left-radius
 
 背景は、画像または単色ですが、丸みがあっても境界で切り取られます。切り取られる正確な位置は、 {{cssxref("background-clip")}} プロパティの値で定義されます。
 
-> **Note:** このプロパティの値が `border-top-left-radius` プロパティの後の {{cssxref("border-radius")}} 一括指定プロパティで設定されなかった場合、このプロパティは[一括指定プロパティ](/ja/docs/Web/CSS/Shorthand_properties)によって初期値にリセットされます。
+> [!NOTE]
+> このプロパティの値が `border-top-left-radius` プロパティの後の {{cssxref("border-radius")}} 一括指定プロパティで設定されなかった場合、このプロパティは[一括指定プロパティ](/ja/docs/Web/CSS/Shorthand_properties)によって初期値にリセットされます。
 
 ## 構文
 
@@ -41,6 +37,7 @@ border-top-left-radius: inherit;
 border-top-left-radius: inherit;
 border-top-left-radius: initial;
 border-top-left-radius: revert;
+border-top-left-radius: revert-layer;
 border-top-left-radius: unset;
 ```
 
@@ -68,7 +65,7 @@ border-top-left-radius: unset;
 
 ## 例
 
-<h3 id="Arc_of_a_circle">円弧</h3>
+### 円弧
 
 単一の `<length>` 値は円弧を生成します。
 
@@ -88,7 +85,7 @@ div {
 
 {{EmbedLiveSample("Arc_of_a_circle")}}
 
-<h3 id="Arc_of_an_ellipse">楕円弧</h3>
+### 楕円弧
 
 2 つの異なる `<length>` 値は楕円弧を生成します。
 
@@ -108,7 +105,7 @@ div {
 
 {{EmbedLiveSample("Arc_of_an_ellipse")}}
 
-<h3 id="Square_element_with_percentage_radius">パーセント値で丸みをつけた正方形の要素</h3>
+### パーセント値で丸みをつけた正方形の要素
 
 正方形の要素に単一の `<percentage>` 値を指定すると、円弧を生成します。
 
@@ -128,7 +125,7 @@ div {
 
 {{EmbedLiveSample("Square_element_with_percentage_radius")}}
 
-<h3 id="Non-square_element_with_percentage_radius">パーセント値で丸みをつけた長方形の要素</h3>
+### パーセント値で丸みをつけた長方形の要素
 
 正方形ではない要素に単一の `<percentage>` 値を指定すると、楕円弧を生成します。
 
@@ -158,4 +155,5 @@ div {
 
 ## 関連情報
 
-CSS の border-radius に関するプロパティ: 一括指定の {{cssxref("border-radius")}}, 他の角のための {{cssxref("border-top-right-radius")}}, {{cssxref("border-bottom-right-radius")}}, {{cssxref("border-bottom-left-radius")}}
+- 一括指定の {{cssxref("border-radius")}} プロパティ
+- {{cssxref("border-top-right-radius")}}, {{cssxref("border-bottom-right-radius")}}, {{cssxref("border-bottom-left-radius")}}

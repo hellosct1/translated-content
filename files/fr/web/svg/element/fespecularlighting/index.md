@@ -1,13 +1,8 @@
 ---
 title: <feSpecularLighting>
 slug: Web/SVG/Element/feSpecularLighting
-tags:
-  - Element
-  - SVG
-  - SVG Filter
-  - SVG Light Source
-translation_of: Web/SVG/Element/feSpecularLighting
 ---
+
 {{SVGRef}}
 
 La primitive de filtre [SVG](/fr/docs/Web/SVG) **`<feSpecularLighting>`** éclaire une image en utilisant son canal alpha en tant que relief. L'image résultante est une image RGBA qui dépend de la couleur de la lumière, de sa position et du relief de l'image en entrée. Le calcul de l'éclairage se fait suivant le [modèle d'illumination de Phong](https://fr.wikipedia.org/wiki/Ombrage_de_Phong).
@@ -22,9 +17,9 @@ La lumière crée par cette primitive de filtre peut être combinée avec une im
 
 ### Attributs globaux
 
-- [Attributs de base](/fr/docs/Web/SVG/Attribute#Attributs_de_base)
-- [Attributs de présentation](/fr/docs/Web/SVG/Attribute#Attributs_de_présentation)
-- [Attributs de primitive de filtre](/fr/docs/Web/SVG/Attribute#Attributs_de_primitives_de_filtre)
+- [Attributs de base](/fr/docs/Web/SVG/Attribute#attributs_de_base)
+- [Attributs de présentation](/fr/docs/Web/SVG/Attribute#attributs_de_présentation)
+- [Attributs de primitive de filtre](/fr/docs/Web/SVG/Attribute#attributs_de_primitives_de_filtre)
 - {{SVGAttr("class")}}
 - {{SVGAttr("style")}}
 
@@ -63,14 +58,11 @@ Cet élément implémente l'interface {{domxref("SVGFESpecularLightingElement")}
 
 ## Spécifications
 
-| Spécification                                                                                                                | Statut                           | Commentaire                                                     |
-| ---------------------------------------------------------------------------------------------------------------------------- | -------------------------------- | --------------------------------------------------------------- |
-| {{SpecName('Filters 1.0', '#feSpecularLightingElement', '&lt;feSpecularLighting&gt;')}}         | {{Spec2('Filters 1.0')}} | Suppression de la limitation sur l'attribut `specularExponent`. |
-| {{SpecName('SVG1.1', 'filters.html#feSpecularLightingElement', '&lt;feSpecularLighting&gt;')}} | {{Spec2('SVG1.1')}}         | Définition initiale                                             |
+{{Specifications}}
 
 ## Compatibilité des navigateurs
 
-{{Compat("svg.elements.feSpecularLighting")}}
+{{Compat}}
 
 ## Voir aussi
 
@@ -93,4 +85,4 @@ Cet élément implémente l'interface {{domxref("SVGFESpecularLightingElement")}
 - {{SVGElement("feSpotLight")}}
 - {{SVGElement("feTile")}}
 - {{SVGElement("feTurbulence")}}
-- [Tutoriel SVG: Filtres](/fr/docs/Web/SVG/Tutoriel/filtres)
+- [Tutoriel SVG: Filtres](/fr/docs/Web/SVG/Tutorial/Filter_effects)

@@ -1,15 +1,8 @@
 ---
 title: 要素型セレクター
 slug: Web/CSS/Type_selectors
-tags:
-  - CSS
-  - HTML
-  - Node
-  - リファレンス
-  - セレクター
-browser-compat: css.selectors.type
-translation_of: Web/CSS/Type_selectors
 ---
+
 {{CSSRef}}
 
 CSS の**要素型セレクター** (type selector) は、ノード名で要素を一致させます。つまり、文書内にある指定された型の要素をすべて選択します。
@@ -61,7 +54,9 @@ span {
 
 ```css
 @namespace example url(http://www.example.com);
-example|h1 { color: blue }
+example|h1 {
+  color: blue;
+}
 ```
 
 ## 仕様書
@@ -74,5 +69,5 @@ example|h1 { color: blue }
 
 ## 関連情報
 
-- [CSS セレクター](/ja/docs/Web/CSS/CSS_Selectors)
+- [CSS セレクター](/ja/docs/Web/CSS/CSS_selectors)
 - [CSS の学習: セレクター](/ja/docs/Learn/CSS/Building_blocks/Selectors)

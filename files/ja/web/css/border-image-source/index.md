@@ -1,15 +1,10 @@
 ---
 title: border-image-source
 slug: Web/CSS/border-image-source
-tags:
-  - CSS
-  - CSS 背景と境界
-  - CSS プロパティ
-  - リファレンス
-  - recipe:css-property
-browser-compat: css.properties.border-image-source
-translation_of: Web/CSS/border-image-source
+l10n:
+  sourceCommit: 5178e1e7c9edf0c9c652275ae62f090042ce2422
 ---
+
 {{CSSRef}}
 
 **`border-image-source`** は [CSS](/ja/docs/Web/CSS) のプロパティで、要素の[境界画像](/ja/docs/Web/CSS/border-image)に使われる元の画像を設定します。
@@ -24,7 +19,7 @@ translation_of: Web/CSS/border-image-source
 /* キーワード値 */
 border-image-source: none;
 
-/* &lt;image&gt; 値 */
+/* <image> 値 */
 border-image-source: url(image.jpg);
 border-image-source: linear-gradient(to top, red, yellow);
 
@@ -32,6 +27,7 @@ border-image-source: linear-gradient(to top, red, yellow);
 border-image-source: inherit;
 border-image-source: initial;
 border-image-source: revert;
+border-image-source: revert-layer;
 border-image-source: unset;
 ```
 
@@ -56,7 +52,7 @@ border-image-source: unset;
 
 ```css
 .box {
-  border-image-source: url('image.png');
+  border-image-source: url("image.png");
 }
 ```
 
@@ -74,4 +70,5 @@ border-image-source: unset;
 - {{cssxref("outline")}}
 - {{cssxref("box-shadow")}}
 - {{cssxref("background-image")}}
-- {{cssxref("url()", "url()")}} 関数
+- {{cssxref("url_value", "&lt;url&gt;")}} データ型
+- [Border images in CSS: A key focus area for Interop 2023](/en-US/blog/border-images-interop-2023/) (MDN blog, 2023)

@@ -1,16 +1,9 @@
 ---
 title: proxy.ProxyInfo
 slug: Mozilla/Add-ons/WebExtensions/API/proxy/ProxyInfo
-tags:
-  - Add-ons
-  - Extensions
-  - Proxy
-  - ProxyInfo
-  - Type
-  - WebExtensions
-translation_of: Mozilla/Add-ons/WebExtensions/API/proxy/ProxyInfo
 ---
-{{AddonSidebar()}}
+
+{{AddonSidebar}}
 
 Contient des informations sur un proxy. Cet objet, ou un tableau de ces objets, est renvoyé par le programme d'écoute à {{WebExtAPIRef("proxy.onRequest")}}. Il indique au navigateur si la requête doit être mandatée et, dans l'affirmative, quel proxy utiliser.
 
@@ -31,15 +24,15 @@ Les valeurs de ce type sont des objets. Ils contiennent les propriétés suivant
 - `host`
   - : `string`. Le nom d'hôte du serveur proxy. Obligatoire sauf si le `type` est `"direct"`.
 - `port`
-  - : `string`. e numéro de port du serveur proxy. Obligatoire sauf si le `type` est  `"direct"`.
+  - : `string`. e numéro de port du serveur proxy. Obligatoire sauf si le `type` est `"direct"`.
 - `username`
-  - : `string`. Nom d'utilisateur pour le service proxy. Ceci est utilisable avec "socks".  Pour les autorisations de proxy HTTP, utilisez [`webRequest.onAuthRequired`](/fr/Add-ons/WebExtensions/API/webRequest/onAuthRequired).
+  - : `string`. Nom d'utilisateur pour le service proxy. Ceci est utilisable avec "socks". Pour les autorisations de proxy HTTP, utilisez [`webRequest.onAuthRequired`](/fr/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onAuthRequired).
 - `password`
-  - : `string`. Mot de passe pour le service proxy. Ceci est utilisable avec "socks". FPour les autorisations de proxy HTTP, utilisez [`webRequest.onAuthRequired`](/fr/Add-ons/WebExtensions/API/webRequest/onAuthRequired).
+  - : `string`. Mot de passe pour le service proxy. Ceci est utilisable avec "socks". FPour les autorisations de proxy HTTP, utilisez [`webRequest.onAuthRequired`](/fr/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onAuthRequired).
 - `proxyDNS`
-  - : `boolean`. Si vrai, le serveur proxy est utilisé pour résoudre certaines requêtes DNS (uniquement utilisable avec `"socks4"` et `"socks"`).  Par défaut à `false`.
+  - : `boolean`. Si vrai, le serveur proxy est utilisé pour résoudre certaines requêtes DNS (uniquement utilisable avec `"socks4"` et `"socks"`). Par défaut à `false`.
 - `failoverTimeout`
-  - : `number`:  Délais de basculement en secondes. Si la connexion ne parvient pas à connecter le serveur proxy après ce nombre de secondes, le serveur proxy suivant dans le tableau renvoyé par l'écouteur `proxy.onRequest` sera utilisé.
+  - : `number`: Délais de basculement en secondes. Si la connexion ne parvient pas à connecter le serveur proxy après ce nombre de secondes, le serveur proxy suivant dans le tableau renvoyé par l'écouteur `proxy.onRequest` sera utilisé.
 
 <!---->
 
@@ -52,8 +45,8 @@ Les valeurs de ce type sont des objets. Ils contiennent les propriétés suivant
 - `connectionIsolationKey` {{optional_inline}}
   - : `string.` Une clé optionnelle utilisée pour l'isolation supplémentaire de cette connexion proxy.
 
-## Compatibilité du navigateur
+## Compatibilité des navigateurs
 
-{{Compat("webextensions.api.proxy.ProxyInfo")}}
+{{Compat}}
 
 {{WebExtExamples}}

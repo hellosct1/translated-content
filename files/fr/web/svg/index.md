@@ -1,8 +1,8 @@
 ---
 title: SVG (Scalable Vector Graphics)
 slug: Web/SVG
-translation_of: Web/SVG
 ---
+
 {{SVGRef}}
 
 ## Démarrer avec SVG
@@ -13,7 +13,7 @@ Il s'agit d'un format texte, standardisé de façon ouverte pour le Web, pour d�
 
 Les images SVG et leur comportement sont définies dans des fichiers texte [XML](/fr/docs/Web/XML). Cela signifie qu'on peut rechercher dans ces textes, les indexer, réaliser des opérations scriptées, les compresser. De plus, cela signifie aussi qu'on peut en créer ou en éditer avec n'importe quel éditeur de texte ou avec des logiciels de dessin.
 
-Contrairement aux images matricielles classiques aux formats [JPEG](/fr/docs/Glossary/jpeg) ou [PNG](/fr/docs/Glossary/PNG), les images SVG peuvent être affichées à n'importe quelle taille sans perte de qualité. De plus, on peut les localiser en adaptant le texte qu'elles contiennent, sans avoir nécessairement besoin d'un éditeur graphique. Avec des bibliothèques logicielles adaptées, les fichiers SVG peuvent être traduits à la volée.
+Contrairement aux images matricielles classiques aux formats [JPEG](/fr/docs/Glossary/JPEG) ou [PNG](/fr/docs/Glossary/PNG), les images SVG peuvent être affichées à n'importe quelle taille sans perte de qualité. De plus, on peut les localiser en adaptant le texte qu'elles contiennent, sans avoir nécessairement besoin d'un éditeur graphique. Avec des bibliothèques logicielles adaptées, les fichiers SVG peuvent être traduits à la volée.
 
 SVG a été développé par le [W3C (World Wide Web Consortium)](https://www.w3.org/) depuis 1999.
 

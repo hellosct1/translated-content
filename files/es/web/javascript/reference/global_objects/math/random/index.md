@@ -1,7 +1,6 @@
 ---
 title: Math.random()
 slug: Web/JavaScript/Reference/Global_Objects/Math/random
-browser-compat: javascript.builtins.Math.random
 ---
 
 {{JSRef}}
@@ -48,7 +47,7 @@ function getRandomArbitrary(min, max) {
 
 ### Obtener un número entero entre dos valores determinados
 
-Este ejemplo devuelve un número aleatorio situado entre los valores especificados. El valor devuelto no será más bajo que `min` (o el siguiente entero más alto, en caso de que _min_ no sea un número entero), y será menor (pero no igual) que `max` . 
+Este ejemplo devuelve un número aleatorio situado entre los valores especificados. El valor devuelto no será más bajo que `min` (o el siguiente entero más alto, en caso de que _min_ no sea un número entero), y será menor (pero no igual) que `max` .
 
 ```js
 // Notesé que también en este caso `min` será incluido y `max` excluido
@@ -59,7 +58,8 @@ function getRandomInt(min, max) {
 }
 ```
 
-> **Nota:** Puede ser tentador utilizar `Math.round()` para conseguir lo mismo, pero al hacerlo, los números aleatorios devueltos no seguirán una distribución uniforme. Esto podría no ser aceptable para sus necesidades.
+> [!NOTE]
+> Puede ser tentador utilizar `Math.round()` para conseguir lo mismo, pero al hacerlo, los números aleatorios devueltos no seguirán una distribución uniforme. Esto podría no ser aceptable para sus necesidades.
 
 ### Obtener un número entero aleatorio entre dos valores (incluyendo ambos)
 

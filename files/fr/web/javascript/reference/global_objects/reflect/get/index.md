@@ -1,15 +1,8 @@
 ---
 title: Reflect.get()
 slug: Web/JavaScript/Reference/Global_Objects/Reflect/get
-tags:
-  - ECMAScript 2015
-  - JavaScript
-  - Méthode
-  - Reference
-  - Reflect
-translation_of: Web/JavaScript/Reference/Global_Objects/Reflect/get
-original_slug: Web/JavaScript/Reference/Objets_globaux/Reflect/get
 ---
+
 {{JSRef}}
 
 La méthode statique **`Reflect.get()`** est une fonction qui permet d'obtenir une propriété d'un objet cible. Elle fonctionne comme (`cible[cléPropriété]`) mais sous la forme d'une fonction.
@@ -41,7 +34,7 @@ Une erreur {{jsxref("TypeError")}} si `cible` n'est pas un {{jsxref("Object")}}.
 
 ## Description
 
-La méthode `Reflect.get` permet d'obtenir une propriété d'un objet. Elle est équivalent à [un accesseur de propriété](/fr/docs/Web/JavaScript/Reference/Opérateurs/Opérateurs_de_membres) mais sous la forme d'une fonction.
+La méthode `Reflect.get` permet d'obtenir une propriété d'un objet. Elle est équivalent à [un accesseur de propriété](/fr/docs/Web/JavaScript/Reference/Operators/Property_accessors) mais sous la forme d'une fonction.
 
 ## Exemples
 
@@ -54,25 +47,24 @@ Reflect.get(obj, "x"); // 1
 Reflect.get(["zero", "un"], 1); // "un"
 
 // Proxy qui intercepte get
-var x = {p: 1};
+var x = { p: 1 };
 var obj = new Proxy(x, {
-  get(t, k, r) { return k + "truc"; }
+  get(t, k, r) {
+    return k + "truc";
+  },
 });
 Reflect.get(obj, "toto"); // "tototruc"
 ```
 
 ## Spécifications
 
-| Spécification                                                                | État                         | Commentaires        |
-| ---------------------------------------------------------------------------- | ---------------------------- | ------------------- |
-| {{SpecName('ES2015', '#sec-reflect.get', 'Reflect.get')}} | {{Spec2('ES2015')}}     | Définition initiale |
-| {{SpecName('ESDraft', '#sec-reflect.get', 'Reflect.get')}} | {{Spec2('ESDraft')}} |                     |
+{{Specifications}}
 
 ## Compatibilité des navigateurs
 
-{{Compat("javascript.builtins.Reflect.get")}}
+{{Compat}}
 
 ## Voir aussi
 
 - {{jsxref("Reflect")}}
-- [Accesseurs de propriété](/fr/docs/Web/JavaScript/Reference/Opérateurs/Opérateurs_de_membres)
+- [Accesseurs de propriété](/fr/docs/Web/JavaScript/Reference/Operators/Property_accessors)

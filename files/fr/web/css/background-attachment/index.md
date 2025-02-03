@@ -1,9 +1,8 @@
 ---
 title: background-attachment
 slug: Web/CSS/background-attachment
-browser-compat: css.properties.background-attachment
-translation_of: Web/CSS/background-attachment
 ---
+
 {{CSSRef}}
 
 La propriété **`background-attachment`** définit si la position de l'image d'arrière-plan est fixée dans la zone d'affichage (<i lang="en">viewport</i>) ou si celle-ci défile avec le bloc englobant.
@@ -52,7 +51,7 @@ La propriété `background-attachment` est définie avec un des mots-clés de la
 
 ```css
 p {
-  background-image: url("starsolid.gif");
+  background-image: url("star-solid.gif");
   background-attachment: fixed;
 }
 ```
@@ -61,16 +60,15 @@ p {
 
 ```html
 <p>
-  There were doors all round the hall, but they were all locked; and when
-  Alice had been all the way down one side and up the other, trying every
-  door, she walked sadly down the middle, wondering how she was ever to
-  get out again.
+  There were doors all round the hall, but they were all locked; and when Alice
+  had been all the way down one side and up the other, trying every door, she
+  walked sadly down the middle, wondering how she was ever to get out again.
 </p>
 ```
 
 #### Résultat
 
-{{EmbedLiveSample("")}}
+{{EmbedLiveSample("Exemple_simple")}}
 
 ### Gestion de plusieurs arrière-plans
 
@@ -80,7 +78,7 @@ On peut utiliser cette propriété lorsqu'on travaille avec plusieurs images en 
 
 ```css
 p {
-  background-image: url("starsolid.gif"), url("startransparent.gif");
+  background-image: url("star-solid.gif"), url("star-transparent.gif");
   background-attachment: fixed, scroll;
   background-repeat: no-repeat, repeat-y;
 }
@@ -90,19 +88,17 @@ p {
 
 ```html
 <p>
-  There were doors all round the hall, but they were all locked; and when
-  Alice had been all the way down one side and up the other, trying every
-  door, she walked sadly down the middle, wondering how she was ever to
-  get out again.
-
-  Suddenly she came upon a little three-legged table, all made of solid
-  glass; there was nothing on it except a tiny golden key, and Alice's
-  first thought was that it might belong to one of the doors of the hall;
-  but, alas! either the locks were too large, or the key was too small,
-  but at any rate it would not open any of them. However, on the second
-  time round, she came upon a low curtain she had not noticed before, and
-  behind it was a little door about fifteen inches high: she tried the
-  little golden key in the lock, and to her great delight it fitted!
+  There were doors all round the hall, but they were all locked; and when Alice
+  had been all the way down one side and up the other, trying every door, she
+  walked sadly down the middle, wondering how she was ever to get out again.
+  Suddenly she came upon a little three-legged table, all made of solid glass;
+  there was nothing on it except a tiny golden key, and Alice's first thought
+  was that it might belong to one of the doors of the hall; but, alas! either
+  the locks were too large, or the key was too small, but at any rate it would
+  not open any of them. However, on the second time round, she came upon a low
+  curtain she had not noticed before, and behind it was a little door about
+  fifteen inches high: she tried the little golden key in the lock, and to her
+  great delight it fitted!
 </p>
 ```
 
@@ -120,4 +116,4 @@ p {
 
 ## Voir aussi
 
-- [Gérer plusieurs arrière-plans](/fr/docs/Web/CSS/CSS_Backgrounds_and_Borders/Using_multiple_backgrounds)
+- [Gérer plusieurs arrière-plans](/fr/docs/Web/CSS/CSS_backgrounds_and_borders/Using_multiple_backgrounds)

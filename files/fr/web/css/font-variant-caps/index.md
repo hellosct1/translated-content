@@ -1,13 +1,8 @@
 ---
 title: font-variant-caps
 slug: Web/CSS/font-variant-caps
-tags:
-  - CSS
-  - CSS Fonts
-  - Propriété
-  - Reference
-translation_of: Web/CSS/font-variant-caps
 ---
+
 {{CSSRef}}
 
 La propriété **`font-variant-caps`** permet de contrôler les glyphes utilisés pour représenter les lettres en capitales. Les scripts peuvent avoir différents glyphes de différentes tailles pour les différentes représentations des capitales et cette propriété permet de choisir une de ces formes.
@@ -63,9 +58,13 @@ La valeur de cette propriété peut être l'un des mots-clés définis ci-après
 - `titling-caps`
   - : Ce mot-clé active l'utilisation de capitales spéciales pour les titres (à la fois pour les minuscules et majuscules). Généralement, les glyphes majuscules sont conçus pour utiliser les glyphes minuscules et ils apparaissent trop gras quand il y a un long fragment de texte utilisant de tels glyphes. L'objectif de ces glyphes spéciaux est d'éviter un tel effet. Ce mot-clé correspond à la valeur OpenType `titl` ; si la fonte ne supporte pas ce cas, le mot-clé n'aura pas d'action visible.
 
-### Syntaxe formelle
+## Définition formelle
 
-{{csssyntax}}
+{{CSSInfo}}
+
+## Syntaxe formelle
+
+{{CSSSyntax}}
 
 ## Exemples
 
@@ -81,11 +80,9 @@ La valeur de cette propriété peut être l'un des mots-clés définis ci-après
 
 ```html
 <p>
-  La Reine devint pourpre de colère et
-  après l’avoir considérée un moment avec
-  des yeux flamboyants comme ceux d’une
-  bête fauve, elle se mit à crier :
-  « <span class="exemple">Qu’on lui coupe la tête !</span> »
+  La Reine devint pourpre de colère et après l’avoir considérée un moment avec
+  des yeux flamboyants comme ceux d’une bête fauve, elle se mit à crier : «
+  <span class="exemple">Qu’on lui coupe la tête !</span> »
 </p>
 ```
 
@@ -97,17 +94,13 @@ La valeur de cette propriété peut être l'un des mots-clés définis ci-après
 
 L'utilisation de grandes portions de textes avec `font-style: all-small-caps` ou `font-style: all-petite-caps` peut rendre la lecture difficile pour les personnes dyslexiques ou ayant des troubles cognitifs.
 
-- [Comprendre les règles WCAG 1.4](/fr/docs/Web/Accessibility/Understanding_WCAG/Perceivable#Guideline_1.4_Make_it_easier_for_users_to_see_and_hear_content_including_separating_foreground_from_background)
+- [Comprendre les règles WCAG 1.4](/fr/docs/Web/Accessibility/Understanding_WCAG/Perceivable#guideline_1.4_make_it_easier_for_users_to_see_and_hear_content_including_separating_foreground_from_background)
 - [_W3C Understanding WCAG 2.1_ (en anglais)](https://www.w3.org/TR/WCAG21/#visual-presentation)
 
 ## Spécifications
 
-| Spécification                                                                                            | État                             | Commentaires         |
-| -------------------------------------------------------------------------------------------------------- | -------------------------------- | -------------------- |
-| {{SpecName('CSS3 Fonts', '#propdef-font-variant-caps', 'font-variant-caps')}} | {{Spec2('CSS3 Fonts')}} | Définition initiale. |
-
-{{cssinfo}}
+{{Specifications}}
 
 ## Compatibilité des navigateurs
 
-{{Compat("css.properties.font-variant-caps")}}
+{{Compat}}

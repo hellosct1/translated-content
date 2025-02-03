@@ -1,16 +1,8 @@
 ---
 title: scroll-padding-inline-end
 slug: Web/CSS/scroll-padding-inline-end
-tags:
-  - CSS
-  - CSS プロパティ
-  - Web
-  - recipe:css-property
-  - scroll-padding-inline
-  - scroll-padding-inline-end
-browser-compat: css.properties.scroll-padding-inline-end
-translation_of: Web/CSS/scroll-padding-inline-end
 ---
+
 {{CSSRef}}
 
 `scroll-padding-inline-end` プロパティは、スクロールポートの*最適表示領域*のインライン方向における末尾側のオフセットを定義します。ユーザーのビュー内でものを配置するためのターゲット領域として使用される領域です。これにより、他のコンテンツ (固定位置のツールバーやサイドバーなど) によって隠されているスクロールポートの領域を除外したり、単にターゲット要素とスクロールポートの端との間により多くの余裕を持たせたりすることができます。
@@ -60,5 +52,5 @@ scroll-padding-inline-end: unset;
 
 ## 関連情報
 
-- [CSS スクロールスナップ](/ja/docs/Web/CSS/CSS_Scroll_Snap)
+- [CSS スクロールスナップ](/ja/docs/Web/CSS/CSS_scroll_snap)
 - [Well-Controlled Scrolling with CSS Scroll Snap](https://web.dev/css-scroll-snap/)

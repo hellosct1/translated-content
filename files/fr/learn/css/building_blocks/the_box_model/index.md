@@ -1,9 +1,8 @@
 ---
 title: Le modèle de boîte
 slug: Learn/CSS/Building_blocks/The_box_model
-translation_of: Learn/CSS/Building_blocks/The_box_model
-original_slug: Apprendre/CSS/Building_blocks/Le_modele_de_boite
 ---
+
 {{LearnSidebar}}{{PreviousMenuNext("Learn/CSS/Building_blocks/Selectors/Combinators", "Learn/CSS/Building_blocks/Backgrounds_and_borders", "Learn/CSS/Building_blocks")}}
 
 En CSS, tout élément est inclus dans une boîte ("_box_" en anglais). Comprendre le fonctionnement de ces boîtes est essentiel pour maîtriser la mise en page CSS ainsi que le positionement des éléments d'une page HTML. Dans cette leçon, nous verrons en détails le _Modèle de Boîtes CSS_ - son fonctionnement ainsi que sa terminologie - pour vous permettre de réaliser des mises en pages plus complexes.
@@ -52,7 +51,7 @@ Si une boîte est définie en bloc, elle suivra alors les règles suivantes :
 
   , à la marge et à la bordure de la boîte — auront pour effet de repousser les autres éléments.
 
-À moins que l'on ne décide de changer le type de positionnement de la boîte en "en ligne", certains éléments tels que les titres (`<h1>`,`<h2>`, etc.) et les paragraphes (`<p>`) utilisent le mode "bloc" comme propriété de positionnement extérieur par défaut.
+À moins que l'on ne décide de changer le type de positionnement de la boîte en "en ligne", certains éléments tels que les titres (`<h1>`, `<h2>`, etc.) et les paragraphes (`<p>`) utilisent le mode "bloc" comme propriété de positionnement extérieur par défaut.
 
 Si une boîte est positionnée en ligne, alors :
 
@@ -76,13 +75,14 @@ Le type de boîte appliqué à un élément est défini par la valeur de la prop
 
 ## Aparté : les positionnements intérieurs et extérieurs
 
-Au point où nous en sommes, il faut aborder la différence entre les propriétés de positionnement **intérieurs** ("_inner dipslay_") et **extérieurs** ("_outer display_"). Comme nous l'avons évoqué, les boîtes en CSS possèdent un type de positionnement _extérieur_ qui détermine si la boîte est "en ligne" ou bien "en bloc".
+Au point où nous en sommes, il faut aborder la différence entre les propriétés de positionnement **intérieurs** ("_inner display_") et **extérieurs** ("_outer display_"). Comme nous l'avons évoqué, les boîtes en CSS possèdent un type de positionnement _extérieur_ qui détermine si la boîte est "en ligne" ou bien "en bloc".
 
 Cependant, les boîtes ont aussi un type de positionnement intérieur, qui décrit le comportement de mise en page des éléments contenus dans la boîte. Par défaut, les éléments contenus dans la boîte sont affichés dans la **[disposition normale](/fr/docs/Learn/CSS/CSS_layout/Normal_Flow)**, ce qui signifie qu'ils se comportent exactement comme n'importe quel autre élément "en bloc" ou "en ligne" (comme décrit auparavant).
 
 Ce type de positionnement intérieur peut naturellement être modifié, en utilisant la valeur `flex` de la propriété `display`. Ainsi, si on donne la propriété `display: flex;` à un élément, son type de positionnement extérieur est "en bloc" (`block`), mais son type de positionnement intérieur est modifié en `flex`. Tout élément directement enfant de cette boîte se voit alors changé en élément flex, et sera mis en page selon les règles précisées dans les spécifications de [Flexbox](/fr/docs/Learn/CSS/CSS_layout/Flexbox), dont on reparlera plus tard.
 
-> **Note :** Pour en apprendre d'avantage sur les valeurs prises par la propriété display, et le comportement des boîtes dans une mise en page en bloc ou en ligne, jettez un coup d'oeil au guide MDN sur la [Disposition en ligne et en bloc](/fr/docs/Web/CSS/CSS_Flow_Layout/Block_and_Inline_Layout_in_Normal_Flow).
+> [!NOTE]
+> Pour en apprendre d'avantage sur les valeurs prises par la propriété display, et le comportement des boîtes dans une mise en page en bloc ou en ligne, jettez un coup d'oeil au guide MDN sur la [Disposition en ligne et en bloc](/fr/docs/Web/CSS/CSS_flow_layout/Block_and_inline_layout_in_normal_flow).
 
 Lorsque vous en apprendrez plus sur la mise en page en CSS, vous découvrirez une variété d'autres valeurs de positionnement intérieur pour une boîte, tel que `flex`, ou encore [`grid`](/fr/docs/Learn/CSS/CSS_layout/Grids).
 
@@ -90,7 +90,7 @@ Les dispositions "en ligne" et "en bloc" demeurent néanmoins le comportement pa
 
 ## Exemples de quelques types de positionnement
 
-Lançons nous à présent dans la pratique et étudions quelques exemples. Vous trouverez ci-dessous trois éléments HTML différents, mais qui sont tous en postionnement extérieur "en bloc" (`block`). Le premier est un paragraphe, possèdant une bordure ajoutée en CSS. Le navigateur va alors disposer l'élément comme une boîte "en bloc" lors de sa phase de rendu : le paragraphe occupe alors sa propre nouvelle ligne et s'étend en largeur pour occuper tout l'espace disponible.
+Lançons nous à présent dans la pratique et étudions quelques exemples. Vous trouverez ci-dessous trois éléments HTML différents, mais qui sont tous en positionnement extérieur "en bloc" (`block`). Le premier est un paragraphe, possèdant une bordure ajoutée en CSS. Le navigateur va alors disposer l'élément comme une boîte "en bloc" lors de sa phase de rendu : le paragraphe occupe alors sa propre nouvelle ligne et s'étend en largeur pour occuper tout l'espace disponible.
 
 Le deuxième élément est une liste, qui est disposée selon la règle `display: flex;`. Ceci définit une mise en page "flex" pour tous les éléments contenus dans la liste, bien que la liste en elle-même est en disposition "en bloc" — c'est pourquoi elle s'étend en largeur sur une nouvelle ligne, exactement comme le premier paragraphe.
 
@@ -100,7 +100,7 @@ Juste en dessous, se trouve un autre paragraphe, diposé en bloc comme le préc�
 
 Nous avons dans cet exemple le comportement typique d'un élément en ligne (`inline`), observant chacune des règles énoncées plus haut : l'élément `<span>` du premier paragraphe ne force pas de retour à la ligne et se place à la suite - _en ligne_ donc - des autres éléments.
 
-Nous avons en suite un élément `<ul>` dont la propriété de positionnement est `display: inline-flex;`, ce qui fait du `<ul>` une boîte en ligne, contenant des éléments de liste (`<li>`) dipsosés en "flex".
+Nous avons ensuite un élément `<ul>` dont la propriété de positionnement est `display: inline-flex;`, ce qui fait du `<ul>` une boîte en ligne, contenant des éléments de liste (`<li>`) disposés en "flex".
 
 Pour finir, nous avons deux paragraphes, tous deux définis en `display: inline;`. Le texte dans ces paragraphes, tout comme les éléments de listes, sont disposés sur la même ligne sans retour à la ligne pour chaque élément, contrairement à une disposition en bloc.
 
@@ -167,7 +167,8 @@ L'espace occupé par notre boîte dans le modèle standard vaut alors 410px (350
 
 ![Illustration de la taille de la boîte lorsqu'on utilise le modèle de boîte standard.](standard-box-model.png)
 
-> **Note :** La marge n'est pas comptabilisée dans la taille totale de la boîte — car bien qu'elle affecte l'espace que la boîte va prendre en définitive dans la page, il ne s'agit que de l'espace extérieur à la boîte. La zone couverte par la boîte s'arrête donc à la bordure et ne s'étend pas à la marge.
+> [!NOTE]
+> La marge n'est pas comptabilisée dans la taille totale de la boîte — car bien qu'elle affecte l'espace que la boîte va prendre en définitive dans la page, il ne s'agit que de l'espace extérieur à la boîte. La zone couverte par la boîte s'arrête donc à la bordure et ne s'étend pas à la marge.
 
 ### Le modèle de boîte CSS alternatif
 
@@ -189,12 +190,15 @@ Si vous désirez utiliser le modèle alternatif sur tous vos éléments — ce q
 html {
   box-sizing: border-box;
 }
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: inherit;
 }
 ```
 
-> **Note :** Pour l'anecdote, le navigateur Internet Explorer utilisait historiquement le modèle alternatif par defaut — sans pour autant fournir un moyen de passer à l'autre modèle !
+> [!NOTE]
+> Pour l'anecdote, le navigateur Internet Explorer utilisait historiquement le modèle alternatif par defaut — sans pour autant fournir un moyen de passer à l'autre modèle !
 
 ## Manipuler les modèles de boîte
 
@@ -204,11 +208,12 @@ Dans l'exemple ci-dessous, se trouvent deux boîtes. Ces deux boîtes possèdent
 
 {{EmbedGHLiveSample("css-examples/learn/box-model/box-models.html", '100%', 1000)}}
 
-> **Note :** vous pouvez trouver une solution [ici](https://github.com/mdn/css-examples/blob/master/learn/solutions.md#the-box-model).
+> [!NOTE]
+> Vous pouvez trouver une solution [ici](https://github.com/mdn/css-examples/blob/master/learn/solutions.md#the-box-model).
 
 ### Utiliser les outils de développement pour voir le modèle de boîte
 
-Les [outils de développement](/fr/docs/Learn/Common_questions/What_are_browser_developer_tools) de votre navigateur peuvent vous permettre d'apréhender les concepts de boîte bien plus facilement. Si vous inspectez un élément dans les DevTools de Firefox (clic droit > Examiner l'élément), vous pouvez avoir accès à toutes les propriétés des différentes couches de la boîte (contenu, <i lang="en">padding</i>, bordure et marge) dans l'interface graphique interactive montrée ci-dessous. Inspecter un élément ainsi, c'est s'assurer qu'il possède bien la taille que l'on désire !
+Les [outils de développement](/fr/docs/Learn/Common_questions/Tools_and_setup/What_are_browser_developer_tools) de votre navigateur peuvent vous permettre d'appréhender les concepts de boîte bien plus facilement. Si vous inspectez un élément dans les DevTools de Firefox (clic droit > Examiner l'élément), vous pouvez avoir accès à toutes les propriétés des différentes couches de la boîte (contenu, <i lang="en">padding</i>, bordure et marge) dans l'interface graphique interactive montrée ci-dessous. Inspecter un élément ainsi, c'est s'assurer qu'il possède bien la taille que l'on désire !
 
 ![Inspecter le modèle de boîte d'un élément grâce aux outils de développement de Firefox](box-model-devtools.png)
 
@@ -243,7 +248,7 @@ Dans l'exemple ci-dessous, nous avons deux paragraphes. Le paragraphe du haut a 
 
 {{EmbedGHLiveSample("css-examples/learn/box-model/margin-collapse.html", '100%', 700)}}
 
-Il existe quelques règles qui contrôlent la fusion ou non des marges. Pour plus d'informations, référez vous à la page détaillée [Maîtriser la fusion des marges](/fr/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing). Si vous ne devez retenir qu'une chose, c'est que les marges peuvent fusionner, et que si vos marges ne correspondent pas à vos attentes, c'est certainement ce phénomène qui est derrière.
+Il existe quelques règles qui contrôlent la fusion ou non des marges. Pour plus d'informations, référez vous à la page détaillée [Maîtriser la fusion des marges](/fr/docs/Web/CSS/CSS_box_model/Mastering_margin_collapsing). Si vous ne devez retenir qu'une chose, c'est que les marges peuvent fusionner, et que si vos marges ne correspondent pas à vos attentes, c'est certainement ce phénomène qui est derrière.
 
 ### Les bordures
 
@@ -340,24 +345,3 @@ Vous pouvez rencontrer cette astuce sur bon nombre de menus de navigation dans l
 Dans la leçon suivante, ce sont les arrières-plans et les bordures qui capteront notre attention, afin de rendre votre mise en page plus attrayante.
 
 {{PreviousMenuNext("Learn/CSS/Building_blocks/Selectors/Combinators", "Learn/CSS/Building_blocks/Backgrounds_and_borders", "Learn/CSS/Building_blocks")}}
-
-## Dans ce module
-
-1. [Cascade et héritage](/fr/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance)
-2. [Sélecteurs CSS](/fr/docs/Learn/CSS/Building_blocks/Selectors)
-
-    - [Sélecteurs de classe, de type et d'identifiant](/fr/docs/Learn/CSS/Building_blocks/Selectors/Type_Class_and_ID_Selectors)
-    - [Sélecteurs d'attribut](/fr/docs/Learn/CSS/Building_blocks/Selectors/Attribute_selectors)
-    - [Pseudo-classes et pseudo-éléments](/fr/docs/Learn/CSS/Building_blocks/Selectors/Pseudo-classes_and_pseudo-elements)
-    - [Combinateurs](/fr/docs/Learn/CSS/Building_blocks/Selectors/Combinators)
-
-3. Le modèle de boîte
-4. [Arrières-plans et bordures](/fr/docs/Learn/CSS/Building_blocks/Backgrounds_and_borders)
-5. [Gérer la directionnalité du texte](/fr/docs/Learn/CSS/Building_blocks/Handling_different_text_directions)
-6. [Le dépassement du contenu](/fr/docs/Learn/CSS/Building_blocks/Overflowing_content)
-7. [Valeurs et unités](/fr/docs/Learn/CSS/Building_blocks/Values_and_units)
-8. [Dimensionnement des objets en CSS](/fr/docs/Learn/CSS/Building_blocks/Sizing_items_in_CSS)
-9. [Images, médias, et formulaires](/fr/docs/Learn/CSS/Building_blocks/Images_media_form_elements)
-10. [Mettre en forme les tableaux](/fr/docs/Learn/CSS/Building_blocks/Styling_tables)
-11. [Déboguer CSS](/fr/docs/Learn/CSS/Building_blocks/Debugging_CSS)
-12. [Organiser son code CSS](/fr/docs/Learn/CSS/Building_blocks/Organizing)

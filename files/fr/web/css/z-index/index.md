@@ -1,9 +1,8 @@
 ---
 title: z-index
 slug: Web/CSS/z-index
-translation_of: Web/CSS/z-index
-browser-compat: css.properties.z-index
 ---
+
 {{CSSRef}}
 
 La propriété **`z-index`** définit le «&nbsp;_z-order_&nbsp;» (NdT&nbsp;: «&nbsp;ordre z&nbsp;» n'est pas usité) d'un élément [positionné](/fr/docs/Web/CSS/position) et de ses éléments enfants ou de ses éléments flexibles. Lorsque des éléments se chevauchent, le _z-order_ détermine l'ordre des différentes couches que formeront les éléments. Généralement, un élément couvrira un autre élément si sa valeur de `z-index` est supérieure à celle du deuxième élément.
@@ -12,7 +11,7 @@ La propriété **`z-index`** définit le «&nbsp;_z-order_&nbsp;» (NdT&nbsp;: �
 
 Pour les boîtes positionnées (celles pour lesquelles `position` est différent de `static`), la propriété `z-index` définit&nbsp;:
 
-1. Le niveau de la boîte dans la pile par rapport [au contexte d'empilement](/fr/docs/Web/Guide/CSS/Understanding_z_index/The_stacking_context) courant
+1. Le niveau de la boîte dans la pile par rapport [au contexte d'empilement](/fr/docs/Web/CSS/CSS_positioned_layout/Understanding_z-index/Stacking_context) courant
 2. Si la boîte crée un contexte d'empilement local.
 
 ## Syntaxe
@@ -42,7 +41,7 @@ La propriété `z-index` se définit grâce au mot-clé [`auto`](#auto) ou grâc
 - `auto`
   - : La boîte ne crée pas de nouveau contexte d'empilement. Le niveau d'empilement de la boîte dans le contexte d'empilement courant est le même que celui de la boîte parente.
 - `<integer>`
-  - : L'entier fourni (type [`&lt;integer&gt;`](/fr/docs/Web/CSS/integer)) sera le niveau de la boîte dans la pile d'empilement pour le contexte d'empilement courant. La boîte crée un nouveau contexte d'empilement pour lequel son niveau est `0`. Cela signifie que les index z des descendants ne sont pas comparés à ceux des éléments en dehors de l'élément.
+  - : L'entier fourni (type [`<integer>`](/fr/docs/Web/CSS/integer)) sera le niveau de la boîte dans la pile d'empilement pour le contexte d'empilement courant. La boîte crée un nouveau contexte d'empilement pour lequel son niveau est `0`. Cela signifie que les index z des descendants ne sont pas comparés à ceux des éléments en dehors de l'élément.
 
 ## Définition formelle
 
@@ -116,4 +115,4 @@ La propriété `z-index` se définit grâce au mot-clé [`auto`](#auto) ou grâc
 ## Voir aussi
 
 - La propriété CSS [`position`](/fr/docs/Web/CSS/position)
-- [Comprendre le fonctionnement de `z-index`](/fr/docs/Web/CSS/CSS_Positioning/Understanding_z_index)
+- [Comprendre le fonctionnement de `z-index`](/fr/docs/Web/CSS/CSS_positioned_layout/Understanding_z-index)

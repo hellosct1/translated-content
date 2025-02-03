@@ -1,167 +1,167 @@
 ---
 title: <easing-function>
 slug: Web/CSS/easing-function
-translation_of: Web/CSS/easing-function
+l10n:
+  sourceCommit: 803a7a460338dab4900fd44cf7ab569e3bf5799a
 ---
+
 {{CSSRef}}
 
-Le [type de données](/fr/docs/Web/CSS/CSS_Types) CSS **`<easing-function>`** indique une fonction mathématique qui décrit la façon dont une valeur numérique évolue.
+Le [type de données](/fr/docs/Web/CSS/CSS_Types) [CSS](/fr/docs/Web/CSS) **`<easing-function>`** représente une fonction mathématique décrivant la vitesse à laquelle la valeur change.
 
-Cette transition entre deux valeurs peut être appliquées dans différentes situations. Elle peut être utilisée pour décrire la rapidité selon laquelle les valeurs évoluent durant les animations. Elle permet ainsi de faire varier la vitesse de l'animation au fur et à mesure de sa progression. Elle peut aussi être utilisée pour interpoler deux couleurs au sein d'un dégradé.
-
-Les fonctions d'évolution qui appartiennent au sous ensemble des courbes de Bézier cubiques sont souvent appelées des fonctions « douces » car elles permettent d'avoir des évolutions légères en début et en fin d'interpolation. Les fonctions d'évolution relient un ratio d'entrée à un ratio de sortie, tous les deux exprimés comme des nombres ([`<number>`](/fr/docs/Web/CSS/number)). Pour ces valeurs, `0.0` représente l'état initial et `1.0` représente l'état final.
-
-Selon la fonction utilisée, la sortie calculée peut parfois être supérieure à `1.0` ou être inférieure à `0.0` pendant le cours de l'animation. Cela placera la valeur plus loin que son état final puis la fera revenir. Pour les animations de certaines propriétés (comme [`left`](/fr/docs/Web/CSS/left) ou [`right`](/fr/docs/Web/CSS/right)), cela crée un effet de rebond.
-
-![](tf_with_output_gt_than_1.png)
-
-Toutefois, certaines propriétés restreindront la valeur de sortie au sein d'un intervalle acceptable. Ainsi, pour une valeur représentant la composante d'une couleur, celle-ci sera écrétée pour rester dans l'intervalle autorisé 0-255. Certaines courbes `cubic-bezier()` illustrent cette propriété.
-
-![](tf_with_output_gt_than_1_clipped.png)
+Cette transition entre deux valeurs peut être appliquée dans différentes situations. Elle peut être utilisée pour décrire la rapidité selon laquelle les valeurs évoluent durant les animations. Elle permet ainsi de faire varier la vitesse de l'animation au fur et à mesure de sa progression. On peut utiliser une fonction d'évolution pour les [transitions](/fr/docs/Web/CSS/transition-timing-function) et [animations](/fr/docs/Web/CSS/animation-timing-function) CSS.
 
 ## Syntaxe
 
-Il existe trois types de [fonctions de transition](#easing_functions) : linéaires, [courbes de Bézier cubiques](https://en.wikipedia.org/wiki/B%C3%A9zier_curve#Cubic_B.C3.A9zier_curves) et les fonctions en escalier. Une valeur du type `<easing-function>` décrit la fonction de transition en utilisant l'un de ces trois types.
-
-### Fonctions de transition
-
-CSS prend en charge trois sortes de fonction de transition : les fonctions linéaires, le sous ensemble des courbes cubiques de Bézier qui sont des fonctions et les fonctions en escalier. Les fonctions les plus utiles peuvent être facilement utilisées grâce à des mots-clés.
-
-#### Les fonctions de transition linéaires
-
-##### linear
-
-![Un graphe où les axes X et Y vont de 0 à 1 et où l'axe X est intitulé « Time ratio » et où l'axe Y est intitulé « Output ratio ». Une ligne diagonale droite par de l'origine 0 0 jusqu'à arriver à la position 1 1.](cubic-bezier-linear.png)
-
-L'interpolation se fait à évolution constante, du début jusqu'à la fin. Ce mot-clé représente la fonction de transition décrite par `cubic-bezier(0.0, 0.0, 1.0, 1.0)`.
-
-#### La classe des fonctions de transition cubic-bezier()
-
-![Un graphe où les axes X et Y vont de 0 à 1 et où l'axe X est intitulé « Time ratio » et où l'axe Y est intitulé « Output ratio ». Une ligne courbe par de l'origine jusqu'à atteindre la position 1 1. Le point à l'origine est appelé 'P₀ = (0, 0)'. En partant de l'origine, on a une poignée de Bézier intitulée 'P₁ = (0.075, 0.75)'. Le point aux coordonnées 1 1 est intitulé 'P₃ = (1, 1)'. En partant du point 1 1, on a une poignée de Bézier intitulée 'P₂ = (0.0875, 0.36)'.](cubic-bezier-example.png)
-
-La notation fonctionnelle `cubic-bezier()` définit [une courbe de Bézier cubique](https://fr.wikipedia.org/wiki/Courbe_de_B%C3%A9zier#Courbes_de_B%C3%A9zier_cubiques). Ces courbes étant continues, elles sont souvent utilisées afin de démarrer et de finir progressivement une interpolation. Elles sont parfois appelées _fonctions de transition_.
-
-Une courbe de Bézier cubique est définie par quatre points P<sub>0</sub>, P<sub>1</sub>, P<sub>2</sub> et P<sub>3</sub>. P<sub>0</sub> et P<sub>3</sub> représentent les points de début et de fin de la courbe. Pour les fonctions de transition CSS, ces points sont fixes, car les coordonnées représentent des ratios (sur les abscisses, le ratio en temps et sur les ordonnées, le ratio en sortie). P<sub>0</sub> est donc situé en `(0, 0)` et représente l'état initial. P<sub>3</sub> est en `(1, 1)` et réprésente l'état final.
-
-Toutes les courbes de Bézier cubiques ne sont pas des fonctions de transition, car toutes ne sont pas [des fonctions mathématiques](<https://fr.wikipedia.org/wiki/Fonction_(math%C3%A9matiques)>) (c'est-à-dire des courbes qui, pour une abscisse donnée, ont une seule ou zéro valeur). Avec les contraintes imposées sur P<sub>0</sub> et P<sub>3</sub> en CSS, une courbe de Bézier cubique sera une fonction mathématique et pourra être utilisée comme fonction de transition, si et seulement si les abscisses de P<sub>1</sub> et P<sub>2</sub> appartiennent, tous les deux, à l'intervalle `[0, 1]`.
-
-Les courbes de Bézier cubiques pour lesquelles les ordonnées des points P<sub>1</sub> ou P<sub>2</sub> sont en dehors de l'intervalle `[0, 1]` pourront générer un effet de rebond.
-
-Si on utilise une déclaration `cubic-bezier` avec une fonction invalide, CSS ignorera l'ensemble de la propriété.
-
-##### Syntaxe
-
 ```css
-cubic-bezier(x1, y1, x2, y2)
+/* fonction et mot-clé pour une évolution linéaire */
+/* linear(<liste-points>) */
+linear(1, -0.5, 0)
+linear
+
+/* fonction et mots-clés pour les courbes de Bézier cubiques */
+/* cubic-bezier(<x1>, <y1>, <x2>, <y2>) */
+cubic-bezier(0.25, 0.1, 0.25, 1)
+ease
+ease-in
+ease-out
+ease-in-out
+
+/* fonctions et mots-clés pour les évolutions en escalier */
+/* steps(<nombre-de-marches>, <direction>) */
+steps(4, end)
+steps(10, jump-both)
+step-start
+step-end
 ```
 
-avec :
+### Valeurs
 
-- **_x<sub>1</sub>_, _y<sub>1</sub>_, _x<sub>2</sub>_, _y<sub>2</sub>_**
+- `linear`
 
-  - : Des valeurs numériques ([`<number>`](/fr/docs/Web/CSS/number)) qui représentent les abscisses et ordonnées des points P
+  - : Indique que l'évolution a lieu à vitesse constante pendant toute la durée. Ce mot-clé est à la fois équivalent à [`cubic-bezier(0, 0, 1, 1)`](#fonctions_dévolution_en_courbe_de_bézier_cubique) et à [`linear(0, 1)`](#fonctions_dévolution_linéaire).
 
-    <sub>1</sub>
+![Un graphique avec en abscisses la progression de l'entrée et en ordonnées la progression de la sortie, on voit une ligne droite entre l'origine et le point (1, 1).](linear.svg)
 
-    et P
+- `<linear-easing-function>`
 
-    <sub>2</sub>
+  - : Définit une fonction `linear()` avec un ou plusieurs _arrêts linéaires_, chacun pouvant contenir jusqu'à deux _longueurs d'arrêt_ optionnelles afin de contrôler la progression de l'animation ou de la transition.
 
-    qui définissent la courbe de Bézier cubique. x
+    La fonction `linear()` prend comme argument une liste d'arrêts linéaires séparés par des virgules qui indiquent les points par lesquels progressent l'animation ou la transition. Chaque point de la liste est indiqué par [un nombre (une valeur de type `<number>`)](/fr/docs/Web/CSS/number) comprise entre `0` et `1` (inclus). Par défaut, chaque arrêt est équidistant des autres, mais on peut aussi préciser un à deux [pourcentages](/fr/docs/Web/CSS/percentage) qui précisent la longueur.
 
-    <sub>1</sub>
+    - `<number>`&nbsp;: représente un point dans le temps sur la durée de l'animation ou de la transition. La valeur `0` représente le début de l'itération et `1` la fin. Il est possible d'utiliser des valeurs en dehors de l'intervalle [0,1].
 
-    et x
+    - `<percentage>`&nbsp;: indique la position de l'arrêt linéaire dans la durée. On peut avoir deux coefficients en pourcentages. Si une seule valeur est fournie, elle indique le départ de l'arrêt linéaire correspondant. Si deux valeurs sont fournies, elles définissent la longueur de l'arrêt&nbsp;: la première indiquant le point de départ et le second le point d'arrivée pour ce segment. Si aucun pourcentage n'est fourni (le comportement par défaut), les arrêts sont répartis à équidistance sur la ligne chronologique.
 
-    <sub>2</sub>
+- `<cubic-bezier-easing-function>`
 
-    doivent appartenir à l'intervalle \[0, 1] afin que la valeur soit valide.
+  - : Définit [une courbe de Bézier](/fr/docs/Glossary/Bezier_curve) cubique donnant la progression de l'animation ou de la transition dans le temps. En CSS, les courbes de Bézier sont définies par 4 points de contrôle qui décrivent mathématiquement la courbe&nbsp;: un point de départ, un point final, et deux points de contrôles. On peut définir une telle fonction de deux façons&nbsp;: en créant une courbe paramétrée sur mesure avec ces quatre points grâce à la fonction `cubic-bezier()` ou en utilisant un des mots-clés prédéfinis qui correspondent aux paramètres usuels utilisés pour les courbes de Bézier. Les valeurs des mots-clés prédéfinis sont&nbsp;:
 
-#### Mots-clés pour les fonctions de transition communes
+    `ease`&nbsp;: Ce mot-clé correspond à `cubic-bezier(0.25, 0.1, 0.25, 1)`. Il indique que l'interpolation démarre doucement, accélère vivement, puis ralentit progressivement. Le comportement est semblable à celui obtenu avec le mot-clé `ease-in-out`, mais accélère plus fortement au début.
 
-##### ease
+    `ease-in`&nbsp;: Ce mot-clé correspond à `cubic-bezier(0.42, 0, 1, 1)`. Il indique que l'interpolation démarre doucement, puis accélère progressivement jusqu'à la fin, avant de s'arrêter brutalement.
 
-![Un graphe où les axes X et Y vont de 0 à 1 et où l'axe X est intitulé « Time ratio » et où l'axe Y est intitulé « Output ratio ». Une ligne courbe part de l'origine jusqu'au point 1 1 en démarrant rapidement et finissant par un arc plat.](cubic-bezier-ease.png)
+    `ease-out`&nbsp;: Ce mot-clé correspond à `cubic-bezier(0, 0, 0.58, 1)`. Il indique que l'interpolation démarre brutalement, puis ralentit progressivement jusqu'à la fin.
 
-L'interpolation démarre doucement puis accélère vivement avant de ralentir vers la fin. Ce mot-clé représente la fonction de transition `cubic-bezier(0.25, 0.1, 0.25, 1.0)`. Cette valeur est semblable à [`ease-in-out`](#ease-in-out), bien qu'elle accélère plus rapidement au début.
+    `ease-in-out`&nbsp;: Ce mot-clé correspond à `cubic-bezier(0.42, 0, 0.58, 1)`. Il indique que l'interpolation démarre doucement, accélère, puis ralentit à nouveau vers la fin. Au début, le comportement est proche de celui de `ease-in`, et à la fin, semblable à celui de `ease-out`.
 
-##### ease-in
+    ![4 graphes avec le temps en abscisses (de 0 à 1) et la progression en ordonnées, qui illustrent les 4 courbes obtenues respectivement avec ease, ease-in, ease-out, ease-in-out.](ease.svg)
 
-![Un graphe où les axes X et Y vont de 0 à 1 et où l'axe X est intitulé « Time ratio » et où l'axe Y est intitulé « Output ratio ». Une courbe part l'origine jusqu'au point 1 1 avec une bonne partie de la courbe proche de l'origine et qui s'élève en quasi-ligne droite afin d'atteindre le point d'arrivée 1 1.](cubic-bezier-ease-in.png)
+    `cubic-bezier()`&nbsp;: Cette fonction prend quatre coefficients numériques (type [`<number>`](/fr/docs/Web/CSS/number)) pour construire la courbe.
 
-L'interpolation démarre lentement puis s'accélère progressivement jusqu'à la fin où elle s'arrête de façon abrutpe. Ce mot-clé représente la fonction de transition `cubic-bezier(0.42, 0.0, 1.0, 1.0)`.
+    - [`<number>`](/fr/docs/Web/CSS/number)&nbsp;: Quatre valeurs définissent les coordonnées [des points P1 et P2](#fonction_dévolution_en_courbe_de_bézier_cubique) de la courbe. `<x1>` et `<y1>` sont les coordonnées du point P1, et `<x2>` et `<y2>` celles du point P2. `<x1>` et `<x2>` doivent être comprises entre `0` et `1`.
 
-##### `ease-in-out`
+- `<step-easing-function>`
 
-![Un graphe où les axes X et Y vont de 0 à 1 et où l'axe X est intitulé « Time ratio » et où l'axe Y est intitulé « Output ratio ». Une ligne courbe qui part de l'origine jusqu'à atteindre le point 1 1. La courbe est symétrique et ressemble à un S étiré](cubic-bezier-ease-in-out.png)
+  - : Définit une fonction en escalier qui divise l'animation en plusieurs paliers de même longueur. L'animation passe d'un palier à l'autre plutôt que de transitionner progressivement. Cette valeur sera l'un des deux mots-clés prédéfinis suivants ou une fonction `steps()` paramétrée sur mesure&nbsp;:
 
-L'interpolation démarre lentement puis accélère avant de ralentir vers la fin. Ce mot-clé représente la fonction de transition `cubic-bezier(0.42, 0.0, 0.58, 1.0)`. Au début, elle se comporte comme [`ease-in`](#ease-in) et à la fin, elle se comporte comme [`ease-out`](#ease-out).
+    `step-start`&nbsp;: Ce mot-clé est équivalent à `steps(1, jump-start)` ou `steps(1, start)`. Il indique que l'interpolation passe immédiatement à l'état final et reste ainsi jusqu'à la fin.
 
-##### ease-out
+    `step-end`&nbsp;: Ce mot-clé est équivalent à `steps(1, jump-end)` ou `steps(1, end)`. Il indique que l'interpolation reste dans l'état initial jusqu'au dernier moment où elle passe directement à l'état final.
 
-![Un graphe où les axes X et Y vont de 0 à 1 et où l'axe X est intitulé « Time ratio » et où l'axe Y est intitulé « Output ratio ». Une ligne courbe part de l'origine jusqu'à atteindre le point 1 1. Cette courbe démarre comme une ligne droite en diagonale puis se courbe progressivement à l'approche de 1 1.](cubic-bezer-ease-out.png)
+    ![Deux graphes, avec le temps en abscisses et la progression de l'animation en ordonnées, illustrant step-start et step-end.](step.svg)
 
-L'interpolation démarre abruptement puis ralentit progressivement vers la fin. Ce mot-clé correspond à la fonction de transition `cubic-bezier(0.0, 0.0, 0.58, 1.0)`.
+    `steps()`&nbsp;: Cette fonction prend en paramètre un [entier](/fr/docs/Web/CSS/integer) et un autre paramètre optionnel qui indique la position du saut.
 
-#### Les fonctions de transition en escalier
+    - `<integer>`&nbsp;: Ce coefficient indique le nombre d'intervalles (ou marches) équidistants. Ce doit être un entier positif, supérieur à `0`, sauf si le deuxième paramètre vaut `jump-none`, auquel cas, le coefficient doit être un entier supérieur à `1`.
+    - `<step-position>`&nbsp;: Cet argument optionnel définit [le moment du saut](#fonctions_dévolution_en_escalier) et précise s'il a lieu au début, à la fin, au début et à la fin ou ni à l'un ou l'autre. Les mots-clés qui peuvent être utilisés pour ce paramètre sont&nbsp;:
 
-La notation fonctionnelle `steps()` définit une fonction en escalier qui divise le domaine des valeurs de sorties en marches équidistantes.
+      - `jump-start`&nbsp;: Indique que le premier saut se produit tout au début, au point `0`. Aucun moment de l'animation ne se passe au point `0%`.
+      - `jump-end`&nbsp;: Indique que le dernier saut se produit tout à la fin, au point `1`. Aucun moment de l'animation ne se passe au point `100%`. Il s'agit de la valeur par défaut quand aucune valeur `<step-position>` n'est précisée.
+      - `jump-none`&nbsp;: Indique qu'aucun saut n'a lieu au début ou à la fin, retirant ainsi un palier sur toute l'évolution. Dans ce cas, la durée de chaque palier est déterminée en divisant la durée totale par le nombre de paliers (1/n).
+      - `jump-both`&nbsp;:Indique que le saut a lieu à la fois au début et à la fin. En pratique, cela ajoute un palier à chaque extrémité. Aucun moment n'est passé aux points de progression `0%` et `100%`.
+      - `start`&nbsp;: Équivalent à `jump-start`.
+      - `end`&nbsp;: Équivalent à `jump-end`.
 
-##### Syntaxe
+## Description
+
+Il existe trois types de fonction d'évolution&nbsp;:
+
+- [Les fonctions linéaires](#fonctions_dévolution_linéaire)
+- [Les courbes de Bézier cubiques](#fonctions_dévolution_en_courbe_de_bézier_cubique)
+- [Les fonctions en escalier](#fonctions_dévolution_en_escalier)
+
+### Fonctions d'évolution linéaire
+
+La fonction `linear()` permet d'obtenir une progression linéaire par segments. L'interpolation a lieu à vitesse constante du début jusqu'à la fin. Généralement, on utilise la fonction `linear()` en lui fournissant de nombreux points afin de construire l'approximation d'une courbe.
+
+Par exemple, avec la fonction `linear(0, 0.25, 1)`, l'animation ou la transition démarre au point 0 et progresse linéairement jusqu'au quart de l'animation, puis progresse linéairement jusqu'au point `1`. Aucun pourcentage `<linear-stop-length>` n'étant indiqué, la même durée s'applique (50%) pour le passage de `0` à `0.25` et celui de `0.25` à `1`.
+
+![Deux graphes avec le temps en abscisses et la progression en ordonnées. Le graphe à gauche illustre linear(0, 0.25, 1) sur lequel on voit une ligne cassée partir de l'origine jusqu'au point (0.5, 0.25), puis repartir jusqu'à (1, 1). Le graphe à droite illustre linear(0, 0.25 75%, 1) et on y voit une ligne cassée partant de l'origine jusqu'au point de coordonnées (0.75, 0.25), puis repartir jusqu'au point (1, 1).](linear_function.svg)
+
+Par défaut, les arrêts sont équidistants. Ainsi, s'il y a 5 arrêts, ils se situeront respectivement à 0%, 25%, 50%, 75%, et 100% de la durée. On peut utiliser des pourcentages pour spécifier des valeurs `<linear-stop-length>` afin de contrôler plus précisément le début et/ou la fin de chaque segment.
+
+Prenons une animation qui dure 100 secondes et progresse sur 100 pixels. Si on spécifie l'évolution de l'animation avec `linear(0, 0.25 75%, 1)`, elle progressera de 25 pixels pendant les 75 premières secondes (75% de la durée) et les 75 derniers pixels seront parcourus pendant les 25 secondes restantes. Si on avait utilisé `linear(0, 0.5 25% 75%, 1)`, l'animation aurait atteint 50 en 25 secondes, serait restée ainsi pendant 50 secondes (75%-25% de 100s) et les 50 derniers pixels auraient été parcourus pendant les 25 secondes restantes. `linear(0, 0.5 25% 75%, 1)` est équivalent à `linear(0, 0.5 25%, 0.5 75%, 1)`.
+
+> [!NOTE]
+> Le mot-clé [`linear`](#linear) est équivalent à `linear(0, 1)`. Bien que le mot-clé `linear` soit toujours interprété tel quel, la fonction `linear(0, 1)` est interprétée comme `linear(0 0%, 1 100%)`.
+
+### Fonctions d'évolution en courbe de Bézier cubique
+
+La notation fonctionnelle `cubic-bezier()` permet de définir [une courbe de Bézier](/fr/docs/Glossary/Bezier_curve) cubique. Ces fonctions permettent d'avoir des progressions initiales et finales plus douces.
+
+![Un graphe avec le temps en abscisses et la progression en ordonnées, affichant une courbe en forme de S allant de l'origine jusqu'au point (1, 1) en utilisant les points de contrôle P1(0.1, 0.6) et P2(0.7, 0.2).](cubic-bezier.svg)
+
+Une courbe de Bézier cubique est définie par quatre points&nbsp;: P0, P1, P2, et P3. Les points P0 et P3 représentent le début et la fin de la courbe. Ces derniers sont fixés ici en CSS&nbsp;: P0 est en `(0, 0)` et représente l'instant et la progression initiaux, tandis que P3 est situé en `(1, 1)` et correspond à l'état final.
+
+Toutes les courbes de Bézier cubiques ne peuvent pas être utilisées comme fonctions d'évolution, car toutes ne sont pas [des fonctions mathématiques](<https://fr.wikipedia.org/wiki/Fonction_(math%C3%A9matiques)>) (c'est-à-dire des courbes pour lesquelles une abscisse donnée possède au plus une valeur en ordonnée). En CSS, P0 et P3 sont fixes et dans ces conditions, pour qu'une courbe de Bézier cubique soit une fonction, il faut (et il suffit) que les abscisses de P1 et P2 appartiennent à l'intervalle `[0, 1]`.
+
+Dans le cas de courbes de Bézier cubiques où les ordonnées de P1 ou P2 sont en dehors de l'intervalle `[0, 1]`, la valeur pourra aller plus loin que l'état final puis revenir. Pour les animations CSS et certaines propriétés comme [`left`](/fr/docs/Web/CSS/left) ou [`right`](/fr/docs/Web/CSS/right), cela pourra créer un effet de rebond.
+
+![Deux graphes pour la fonction d'évolution cubic-bezier(0.3, 0.2, 0.2, 1.4). Le graphe de gauche montre la progression allant plus haut que 1 à droite à partir d'une certaine progression. Celui de droite montre que la progression atteint 1 puis plafonne ainsi jusqu'à la fin.](cubic-bezier_out_of_range.svg)
+
+Toutefois, certaines propriétés écrêteront la valeur produit si elle dépasse un intervalle autorisé. Ainsi, si la composante d'une couleur devient supérieure à 255 ou inférieure à 0 pour [`rgb()`](/fr/docs/Web/CSS/color_value/rgb), ce sera la valeur la plus proche et dans l'intervalle autorisé qui sera utilisée. Selon les coefficients passés à `cubic-bezier()`, on pourra observer ce comportement.
+
+Quand une courbe de Bézier invalide est fournie, le moteur CSS ignore la propriété dans son ensemble.
+
+Les mots-clés `ease`, `ease-in`, `ease-out`, et `ease-in-out` sont équivalents à des valeurs spécifiques de `cubic-bezier()` (voir plus haut).
+
+### Fonctions d'évolution en escalier
+
+La notation fonctionnelle `steps()` définit une fonction en escalier qui divise le segment des valeurs produites en paliers de même longueur.
+
+Voici quelques exemples d'illustration avec `steps()`&nbsp;:
 
 ```css
-steps(nombre_de_marches, direction)
+steps(2, jump-start) /* équivalent à steps(2, start) */
+steps(4, jump-end)   /* équivalent à steps(4, end) */
+steps(5, jump-none)
+steps(3, jump-both)
 ```
 
-avec :
+![4 graphiques illustrant l'évolution de la sortie (en ordonnées) par rapport à l'entrée (en abscisses). Le graphe en haut à gauche, steps(2, jump-start), montre une évolution sur deux marches, la première au niveau y=0.5 et commençant en x=0 jusqu'en x=0.5 et la deuxième au niveau y=1 jusqu'à x=1. Le graphe en haut à droite, steps(4, jump-end), montre une évolution sur 4 marches dont la première commence en (0,0) jusqu'à (0.25,0) et ainsi de suite jusqu'à la dernière marche (0.75,0.75) à (1,0.75). Le graphe en bas à gauche, steps(5, jump-none), montre une évolution sur 5 marches, la première d'ordonnée 0 de x=0 jusqu'à x=0.20, jusqu'à la cinquième marche de (0.80,1) à (1,1). Le graphe en bas à droite, steps(3, jump-both), montre 3 marche, la première démarrant à (0,0.25) et allant jusqu'à (0.33,0.25), la seconde de (0.33,0.5) à (0.66,0.5), puis la troisième de (0.66,0.75) à (1,0.75).](jump.svg)
 
-- _nombre_de_marches_
-  - : Un entier ([`<integer>`](/fr/docs/Web/CSS/integer)) strictement positif qui représente le nombre de segments équidistants qui composent la fonction en escalier.
-- _direction_
+Les mots-clés `step-start` et `step-end` sont équivalents à une valeur spécifique de `steps()`.
 
-  - : Un mot-clé qui indique si la fonction est continue à gauche ou continue à droite :
+## Syntaxe formelle
 
-    - `jump-start` indique une fonction continue à gauche : le premier saut a lieu au début de l'interpolation ;
-    - `jump-end` indique une fonction continue à droite : le dernier saut a lieu à la fin de l'interpolation ;
-    - `jump-both` indique une fonction continue à droite et à gauche avec des pauses au début et à la fin, ce qui se traduit par l'ajout d'une étape lors de l'itération de l'interpolation ;
-    - `jump-none` indique qu'il n'y a pas de saut au début ou à la fin mais une temporisation de 1/n de la durée totale à chaque extrêmité.
-    - `start` est équivalent à `jump-start`
-    - `end` est équivalent à `jump-end`
-
-    `end` est la valeur par défaut.
-
-##### steps( n, \<direction> )
-
-- `steps(2, jump-start)`
-  `steps(2, start)`
-
-  ![Un graphe où les axes X et Y vont de 0 à 1 et où l'axe X est intitulé « Time ratio » et où l'axe Y est intitulé « Output ratio ». Trois points sont affichés : le premier aux coordonnées 0 0, le deuxième aux coordonnées 0,5 0,5 et le troisième aux coordonnées 1 1. Les deuxième et troisième points sont le début de lignes horizontales qui partent vers la gauche sur 0,5 unités.](steps-2-start.png)
-
-- `steps(4, jump-end) steps(4, end)`
-
-  ![Quatre marches avec un saut de la quatrième à la valeur située à la fin.](steps-4-end.png)
-
-- `steps(5, jump-none)`
-
-  ![Cinq marches, sans saut : 20% de temps s'écoule à l'étape initiale et 20% de temps s'écoule à l'étape finale.](step5none.png)
-
-- `steps(3, jump-both)`
-
-  ![Un graphe où les axes X et Y vont de 0 à 1 et où l'axe X est intitulé « Time ratio » et où l'axe Y est intitulé « Output ratio ». Cinq points sont affichés, respectivement aux coordonnées 0 0, 0 0,25, 0,5 0,5, 0,75 0,75, 1 1. Les deuxième, troisième et quatrième points ont des lignes qui partent vers la droite sur 0,25 unités.](step3both.png)
-
-##### step-start
-
-![Un graphe où les axes X et Y vont de 0 à 1 et où l'axe X est intitulé « Time ratio » et où l'axe Y est intitulé « Output ratio ». Deux points sont présents, le premier situé aux coordonnées 0 0 et le second aux coordonnées 1 1. Une ligne horizontale part du deuxième point vers l'axe Y.](steps-1-start.png) L'interpolation saute directement à l'état final et reste ainsi jusqu'à la fin. Ce mot-clé correspond à la fonction de transition `steps(1, jump-start)` ou `steps(1, start)`.
-
-##### step-end
-
-![Un graphe où les axes X et Y vont de 0 à 1 et où l'axe X est intitulé « Time ratio » et où l'axe Y est intitulé « Output ratio ». Deux points sont présents, le premier situé aux coordonnées 0 0 et le second aux coordonnées 1 1. Une ligne horizontale part du premier point et reste sur l'axe des abscisses.](steps-1-end.png) L'interpolation reste dans son état initial jusqu'à la fin où elle saute directement à l'état final. Ce mot-clé représente la fonction de transition `steps(1, jump-end)` ou `steps(1, end)`.
+{{csssyntax}}
 
 ## Exemples
 
-### Comparaison des fonctions de transition
+### Comparer les fonctions d'évolution
 
-Dans cet exemple, on crée une animation qui peut être démarrée ou stoppée à l'aide du bouton fourni et un menu est affiché pour choisir la fonction de transition à utiliser : différents mots-clés sont disponibles ainsi que des exemples utilisant `cubic-bezier()` et `steps()`. L'idée est de fournir un outil de comparaison simple entre ces fonctions.
+Cet exemple fournit un outil de comparaison entre les différentes fonctions d'évolution avec une animation. Vous pouvez sélectionner une des fonctions d'évolution depuis le menu déroulant parmi quelques mots-clés, certains exemples `cubic-bezier()` ou `steps()`. Après avoir sélectionné une option, vous pouvez lancer ou interrompre l'animation grâce au bouton correspondant.
 
 #### HTML
 
@@ -174,9 +174,10 @@ Dans cet exemple, on crée une animation qui peut être démarrée ou stoppée �
     <button class="animation-button">Démarrer l'animation</button>
   </li>
   <li>
-    <label for="easing-select">Choisir une fonction de transition :</label>
+    <label for="easing-select">Choisir une fonction d'évolution :</label>
     <select id="easing-select">
       <option selected>linear</option>
+      <option>linear(0, 0.5 50%, 1)</option>
       <option>ease</option>
       <option>ease-in</option>
       <option>ease-in-out</option>
@@ -204,7 +205,11 @@ div > div {
   width: 50px;
   height: 50px;
   background-color: blue;
-  background-image: radial-gradient(circle at 10px 10px, rgba(25,255,255,0.8),rgba(25,255,255,0.4));
+  background-image: radial-gradient(
+    circle at 10px 10px,
+    rgb(25 255 255 / 80%),
+    rgb(25 255 255 / 40%)
+  );
   border-radius: 50%;
   top: 25px;
   animation: 1.5s infinite alternate;
@@ -236,7 +241,7 @@ const startBtn = document.querySelector("button");
 const divElem = document.querySelector("div > div");
 
 startBtn.addEventListener("click", () => {
-  if(startBtn.textContent === "Démarrer l'animation") {
+  if (startBtn.textContent === "Démarrer l'animation") {
     divElem.style.animationName = "move-right";
     startBtn.textContent = "Arrêter l'animation";
     divElem.style.animationTimingFunction = selectElem.value;
@@ -253,91 +258,95 @@ selectElem.addEventListener("change", () => {
 
 #### Résultat
 
-{{EmbedLiveSample('Comparaison_des_fonctions_de_transition', '100%', 300)}}
+{{EmbedLiveSample("", "100%", 200)}}
 
-### Exemples avec cubic-bezier()
+### Utiliser la fonction `cubic-bezier()`
 
-Ces courbes de Bézier cubiques sont valides pour être utilisées en CSS :
+Ces courbes de Bézier cubiques sont valides en CSS&nbsp;:
 
-```css
-/* La courbe de Bézier canonique avec quatre nombres dans l'intervalle [0,1]. */
+```css example-good
+/* Une courbe de Bézier cubique canonique avec 4 nombres,
+   tous dans l'intervalle [0,1]. */
 cubic-bezier(0.1, 0.7, 1.0, 0.1)
 
-/* On peut aussi utiliser des valeurs entières (<integer>) car ce sont des nombres. */
+/* On peut utiliser des valeurs de type <integer>, car
+   toute valeur <integer> est aussi de type <number>. */
 cubic-bezier(0, 0, 1, 1)
 
-/* Les valeurs négatives pour les ordonnées sont valides et créent un effet de rebond.*/
+/* Les ordonnées peuvent être négatives, ce qui donnera
+   un effet de rebond. */
 cubic-bezier(0.1, -0.6, 0.2, 0)
 
-/* Les valeurs supérieures à 1.0 pour les ordonnées sont aussi valides. */
+/* Les ordonnées peuvent aussi être supérieures à 1.0. */
 cubic-bezier(0, 1.1, 0.8, 4)
 ```
 
-Ces courbes de Bézier cubiques sont invalides en CSS :
+Les définitions de ces courbes de Bézier cubiques sont invalides&nbsp;:
 
 ```css example-bad
-/* Bien que les valeurs animées puissent être des couleurs,
-   les courbes de Bézier ne fonctionnent qu'avec des ratios numériques.*/
+/* Bien que la sortie de l'animation puisse être une couleur,
+   les courbes de Bézier ne manipulent que des ratios numériques. */
 cubic-bezier(0.1, red, 1.0, green)
 
-/* Les abscisses doivent être dans l'intervalle [0, 1] car sinon l'intervalle
-   couvert par la courbe n'est pas valide. */
+/* Les abscisses doivent appartenir à l'intervalle [0, 1] et la
+   courbe doit être une fonction temporelle. */
 cubic-bezier(2.45, 0.6, 4, 0.1)
 
-/* Les deux points doivent être explicitement définis, il n'y a pas de valeur
-   par défaut. */
+/* Les deux points doivent être définis, il n'y a pas
+   de valeur par défaut. */
 cubic-bezier(0.3, 2.1)
 
-/* Les abscisses doivent être dans l'intervalle [0, 1], sinon la courbe
-   ne représente pas une fonction du temps. */
+/* Les abscisses doivent appartenir à l'intervalle [0, 1] et la
+   courbe doit être une fonction temporelle. */
 cubic-bezier(-1.9, 0.3, -0.2, 2.1)
 ```
 
-### Exemples avec steps()
+### Utiliser la fonction `steps()`
 
-Ces fonctions de transition sont valides :
+Ces fonctions d'évolution sont valides&nbsp;:
 
-```css
-/* Il y a 5 étapes, la dernière se produit juste avant
-   la fin de l'animation. */
+```css example-good
+/* Il y a ici 5 paliers et le dernier prend
+   place avant la fin de l'animation. */
 steps(5, end)
 
-/* Un escalier à deux marches, la première se produisant
-   au début de l'animation. */
+/* Un escalier sur deux marches, dont la première
+   se produit au début de l'animation. */
 steps(2, start)
 
-/* Le deuxième paramètre est optionnel. */
+/* Le second paramètre est optionnel. */
 steps(2)
 ```
 
-> **Note :** Si l'animation contient plusieurs arrêts, les marches décrites dans la fonction `steps()` s'appliqueront à chaque section. Ainsi, pour une animation avec trois segments et `steps(2)`, on aura au total 6 étapes, 2 pour chaque segment.
+> [!NOTE]
+> Si l'animation contient plusieurs arrêts, les marches définies dans la fonction `steps()` s'appliqueront à chaque section de l'animation. Ainsi, si une animation contient trois segments et qu'on utilise `steps(2)`, il y aura 6 paliers au total, 2 pour chaque segment.
 
-Les fonctions de transitions qui suivent sont invalides :
+Les fonctions d'évolution qui suivent sont invalides&nbsp;:
 
 ```css example-bad
-/* Le premier paramètre doit être un entier et ne peut pas être
-   une valeur décimale (même si celle-ci est égale à une valeur entière). */
+/* Le premier paramètre doit être de type <integer>. Ce ne
+   peut pas être une valeur réelle, même si elle est égale
+  à une valeur entière. */
 steps(2.0, jump-end)
 
-/* La quantité de marches ne doit pas être négative. */
+/* Le nombre de marches doit être positif. */
 steps(-3, start)
 
-/* Il doit y avoir au moins une marche.*/
+/* Il doit y avoir au moins un palier. */
 steps(0, jump-none)
 ```
 
 ## Spécifications
 
-| Spécification                                                                                                    | État                             | Commentaires         |
-| ---------------------------------------------------------------------------------------------------------------- | -------------------------------- | -------------------- |
-| {{SpecName('CSS Easing 1', '#typedef-easing-function', '&lt;easing-function&gt;')}} | {{Spec2('CSS Easing 1')}} | Définition initiale. |
+{{Specifications}}
 
 ## Compatibilité des navigateurs
 
-{{Compat("css.types.easing-function", 2)}}
+{{Compat}}
 
 ## Voir aussi
 
-- [CSS Animations](/fr/docs/Web/CSS/CSS_Animations)
-- [CSS Transitions](/fr/docs/Web/CSS/CSS_Transitions)
-- [cubic-bezier](https://cubic-bezier.com/)
+- [Les animations CSS](/fr/docs/Web/CSS/CSS_animations)
+- [Les transitions CSS](/fr/docs/Web/CSS/CSS_transitions)
+- [Un site pour construire des courbes de Bézier cubiques](https://cubic-bezier.com/)
+- [Un site pour générer des fonctions d'évolution `linear()`](https://linear-easing-generator.netlify.app/)

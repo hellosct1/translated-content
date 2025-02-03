@@ -1,17 +1,8 @@
 ---
 title: CSS シェイプ
-slug: Web/CSS/CSS_Shapes
-tags:
-  - 境界
-  - CSS
-  - CSS シェイプ
-  - ガイド
-  - 概要
-  - Reference
-  - シェイプ
-  - wrapping
-translation_of: Web/CSS/CSS_Shapes
+slug: Web/CSS/CSS_shapes
 ---
+
 {{CSSRef}}
 
 **CSS シェイプ**は、 CSS で使用する幾何学的な図形を記述します。[レベル 1 の仕様書](https://drafts.csswg.org/css-shapes/)では、 CSS シェイプは浮動状態の要素に適用されます。仕様書では浮動状態の要素においてシェイプを定義する様々な方法を定義しており、コンテンツの折り返し線が要素ボックスの矩形に従うのではなく、図形に回り込むようになります。
@@ -36,11 +27,11 @@ translation_of: Web/CSS/CSS_Shapes
 
 ## ガイド
 
-- [CSS シェイプの概要](/ja/docs/Web/CSS/CSS_Shapes/Overview_of_CSS_Shapes)
-- [ボックス値からのシェイプ](/ja/docs/Web/CSS/CSS_Shapes/From_box_values)
-- [基本シェイプ](/ja/docs/Web/CSS/CSS_Shapes/Basic_Shapes)
-- [画像からのシェイプ](/ja/docs/Web/CSS/CSS_Shapes/Shapes_From_Images)
-- [CSS でのシェイプのパスの編集 — Firefox 開発ツール](/ja/docs/Tools/Page_Inspector/How_to/Edit_CSS_shapes)
+- [CSS シェイプの概要](/ja/docs/Web/CSS/CSS_shapes/Overview_of_shapes)
+- [ボックス値からのシェイプ](/ja/docs/Web/CSS/CSS_shapes/From_box_values)
+- [基本シェイプ](/ja/docs/Web/CSS/CSS_shapes/Basic_shapes)
+- [画像からのシェイプ](/ja/docs/Web/CSS/CSS_shapes/Shapes_from_images)
+- [CSS でのシェイプのパスの編集 — Firefox 開発ツール](https://firefox-source-docs.mozilla.org/devtools-user/page_inspector/how_to/edit_css_shapes/index.html)
 
 ## 外部リソース
 
@@ -54,6 +45,4 @@ translation_of: Web/CSS/CSS_Shapes
 
 ## 仕様書
 
-| 仕様書                     | 状態                    | 備考     |
-| -------------------------- | ----------------------- | -------- |
-| {{SpecName("CSS Shapes")}} | {{Spec2("CSS Shapes")}} | 初回定義 |
+{{Specifications}}

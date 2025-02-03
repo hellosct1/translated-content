@@ -1,17 +1,8 @@
 ---
 title: scroll-padding-bottom
 slug: Web/CSS/scroll-padding-bottom
-tags:
-  - CSS
-  - CSS プロパティ
-  - Reference
-  - Web
-  - recipe:css-property
-  - scroll-padding
-  - scroll-padding-bottom
-browser-compat: css.properties.scroll-padding-bottom
-translation_of: Web/CSS/scroll-padding-bottom
 ---
+
 {{CSSRef}}
 
 `scroll-padding-bottom` プロパティは、スクロールポートの*最適表示領域*の下のオフセットを定義します。ユーザーのビュー内でものを配置するためのターゲット領域として使用される領域です。これにより、他のコンテンツ (固定位置のツールバーやサイドバーなど) によって隠されているスクロールポートの領域を除外したり、単にターゲット要素とスクロールポートの端との間により多くの余裕を持たせたりすることができます。
@@ -61,5 +52,5 @@ scroll-padding-bottom: unset;
 
 ## 関連情報
 
-- [CSS スクロールスナップ](/ja/docs/Web/CSS/CSS_Scroll_Snap)
+- [CSS スクロールスナップ](/ja/docs/Web/CSS/CSS_scroll_snap)
 - [Well-Controlled Scrolling with CSS Scroll Snap](https://web.dev/css-scroll-snap/)

@@ -1,11 +1,8 @@
 ---
 title: <feImage>
 slug: Web/SVG/Element/feImage
-tags:
-  - SVG
-  - SVG Filter
-translation_of: Web/SVG/Element/feImage
 ---
+
 {{SVGRef}}
 
 La primitive de filtre [SVG](/fr/docs/Web/SVG) **`<feImage>`** extrait les données d'une image d'une source externe et retourne les pixels récupérés en sortie (autrement dit, si l'image récupérée est une image SVG, elle sortira comme raster)
@@ -18,10 +15,10 @@ La primitive de filtre [SVG](/fr/docs/Web/SVG) **`<feImage>`** extrait les donn�
 
 ### Attributs globaux
 
-- [Attributs de base](/fr/docs/Web/SVG/Attribute#Attributs_de_base)
-- [Attributs de présentation](/fr/docs/Web/SVG/Attribute#Attributs_de_base)
-- [Attributs de primitives de filtre](/fr/docs/Web/SVG/Attribute#Attributs_de_primitives_de_filtre)
-- [Attributs XLink](/fr/docs/Web/SVG/Attribute#Attributs_de_primitives_de_filtre)
+- [Attributs de base](/fr/docs/Web/SVG/Attribute#attributs_de_base)
+- [Attributs de présentation](/fr/docs/Web/SVG/Attribute#attributs_de_base)
+- [Attributs de primitives de filtre](/fr/docs/Web/SVG/Attribute#attributs_de_primitives_de_filtre)
+- [Attributs XLink](/fr/docs/Web/SVG/Attribute#attributs_de_primitives_de_filtre)
 - {{SVGAttr("class")}}
 - {{SVGAttr("style")}}
 - {{SVGAttr("externalResourcesRequired")}}
@@ -38,16 +35,17 @@ Cet élément implémente l'interface {{domxref("SVGFEImageElement")}}.
 ## Exemple
 
 ```html
-<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"
-    xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg
+  viewBox="0 0 200 200"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
   <defs>
     <filter id="image">
-      <feImage xlink:href="/files/6457/mdn_logo_only_color.png"/>
+      <feImage xlink:href="/files/6457/mdn_logo_only_color.png" />
     </filter>
   </defs>
 
-  <rect x="10%" y="10%" width="80%" height="80%"
-      style="filter:url(#image);"/>
+  <rect x="10%" y="10%" width="80%" height="80%" style="filter:url(#image);" />
 </svg>
 ```
 
@@ -55,14 +53,11 @@ Cet élément implémente l'interface {{domxref("SVGFEImageElement")}}.
 
 ## Spécifications
 
-| Spécification                                                                                    | Statut                           | Commentaire                                                                                                                                      |
-| ------------------------------------------------------------------------------------------------ | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| {{SpecName("Filters 1.0", "#feImageElement", "&lt;feImage&gt;")}}         | {{Spec2("Filters 1.0")}} | Ajoute l'attribut {{SVGAttr("href")}} et déprécie {{SVGAttr("xlink:href")}}. Ajoute l'attribut {{SVGAttr("crossorigin")}}. |
-| {{SpecName("SVG1.1", "filters.html#feImageElement", "&lt;feImage&gt;")}} | {{Spec2("SVG1.1")}}         | Définition initiale                                                                                                                              |
+{{Specifications}}
 
 ## Compatibilité des navigateurs
 
-{{Compat("svg.elements.feImage")}}
+{{Compat}}
 
 ## Voir aussi
 
@@ -85,4 +80,4 @@ Cet élément implémente l'interface {{domxref("SVGFEImageElement")}}.
 - {{SVGElement("feSpecularLighting")}}
 - {{SVGElement("feTile")}}
 - {{SVGElement("feTurbulence")}}
-- [Tutoriel SVG: Les filtres](/fr/docs/Web/SVG/Tutoriel/filtres)
+- [Tutoriel SVG: Les filtres](/fr/docs/Web/SVG/Tutorial/Filter_effects)

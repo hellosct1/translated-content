@@ -1,15 +1,11 @@
 ---
 title: height
 slug: Web/CSS/height
-tags:
-  - CSS
-  - Propriété
-  - Reference
-translation_of: Web/CSS/height
 ---
+
 {{CSSRef}}
 
-La propriété **`height`** définit la hauteur de la boîte de contenu d'un élément. [La boîte de contenu](/fr/docs/CSS/box_model#content) est à l'intérieur de la boîte de remplissage (_padding_) qui est à l'intérieur de la boîte de bordure qui est elle-même à l'intérieur de la boîte de marge de l'élément. Si la propriété {{cssxref("box-sizing")}} vaut `border-box`, cette propriété détermine la hauteur de [la boîte de marge](/fr/Apprendre/CSS/Introduction_à_CSS/Le_modèle_de_boîte#Les_propriétés_des_boîtes).
+La propriété **`height`** définit la hauteur de la boîte de contenu d'un élément. [La boîte de contenu](/fr/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model#content) est à l'intérieur de la boîte de remplissage (_padding_) qui est à l'intérieur de la boîte de bordure qui est elle-même à l'intérieur de la boîte de marge de l'élément. Si la propriété {{cssxref("box-sizing")}} vaut `border-box`, cette propriété détermine la hauteur de [la boîte de marge](/fr/docs/Learn/CSS/Building_blocks/The_box_model#les_propriétés_des_boîtes).
 
 {{EmbedInteractiveExample("pages/css/height.html")}}
 
@@ -63,9 +59,13 @@ height: unset;
     - La hauteur minimale intrinsèque.
     - Le minimum entre la hauteur intrinsèque préférrée et la hauteur disponible
 
-### Syntaxe formelle
+## Définition formelle
 
-{{csssyntax}}
+{{CSSInfo}}
+
+## Syntaxe formelle
+
+{{CSSSyntax}}
 
 ## Exemple
 
@@ -120,27 +120,20 @@ div {
 
 Veiller à s'assurer que les éléments ciblés avec une règle utilisant `height` ne sont pas tronqués ou ne masquent pas d'autre contenu sur la page lorsqu'on zoome pour augmenter la taille du texte.
 
-- [Comprendre les règles WCAG 1.4](/fr/docs/Web/Accessibility/Understanding_WCAG/Perceivable#Guideline_1.4_Make_it_easier_for_users_to_see_and_hear_content_including_separating_foreground_from_background)
+- [Comprendre les règles WCAG 1.4](/fr/docs/Web/Accessibility/Understanding_WCAG/Perceivable#guideline_1.4_make_it_easier_for_users_to_see_and_hear_content_including_separating_foreground_from_background)
 - [_Understanding Success Criterion 1.4.4, W3C Understanding WCAG 2.0_ (en anglais)](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-scale.html)
 
 ## Spécifications
 
-| Spécification                                                                                | État                                     | Commentaires                                                                                                                                             |
-| -------------------------------------------------------------------------------------------- | ---------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| {{SpecName('CSS3 Sizing', '#width-height-keywords', 'width')}}         | {{Spec2('CSS3 Sizing')}}         | Ajout des mots-clés `max-content`, `min-content`, `available`, `fit-content`.                                                                            |
-| {{SpecName('CSS3 Transitions', '#animatable-css', 'height')}}             | {{Spec2('CSS3 Transitions')}} | `height` peut désormais être animée.                                                                                                                     |
-| {{SpecName('CSS2.1', 'visudet.html#the-height-property', 'height')}} | {{Spec2('CSS2.1')}}                 | Ajout de la prise en charge des valeurs de type {{cssxref("&lt;length&gt;")}} et précision sur les éléments auxquels la propriété s'applique. |
-| {{SpecName('CSS1', '#height', 'height')}}                                     | {{Spec2('CSS1')}}                 | Définition initiale.                                                                                                                                     |
-
-{{cssinfo}}
+{{Specifications}}
 
 ## Compatibilité des navigateurs
 
-{{Compat("css.properties.height")}}
+{{Compat}}
 
 ## Voir aussi
 
-- [Le modèle de boîtes](/fr/Apprendre/CSS/Les_bases/Le_modèle_de_boîte)
+- [Le modèle de boîtes](/fr/docs/Learn/CSS/Building_blocks/The_box_model)
 - {{cssxref("width")}}
 - {{cssxref("box-sizing")}}
 - {{cssxref("min-height")}}

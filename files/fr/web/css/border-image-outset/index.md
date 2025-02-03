@@ -1,9 +1,8 @@
 ---
 title: border-image-outset
 slug: Web/CSS/border-image-outset
-browser-compat: css.properties.border-image-outset
-translation_of: Web/CSS/border-image-outset
 ---
+
 {{CSSRef}}
 
 La propriété **`border-image-outset`** définit la distance avec laquelle la bordure est déplacée par rapport à la boîte de bordure.
@@ -79,7 +78,7 @@ La propriété `border-image-outset` peut être définie à l'aide d'une, deux, 
   background: #cef;
   border: 1.4rem solid;
   border-image: radial-gradient(#ff2, #55f) 40;
-  border-image-outset: 1.5;  /* 1.5 × 1.4rem = 2.1rem */
+  border-image-outset: 1.5; /* 1.5 × 1.4rem = 2.1rem */
   margin: 2.1rem;
 }
 ```
@@ -98,5 +97,5 @@ La propriété `border-image-outset` peut être définie à l'aide d'une, deux, 
 
 ## Voir aussi
 
-- [Les arrière-plans et bordures](/fr/docs/Web/CSS/CSS_Backgrounds_and_Borders)
+- [Les arrière-plans et bordures](/fr/docs/Web/CSS/CSS_backgrounds_and_borders)
 - [Apprendre le CSS&nbsp;: les arrière-plans et les bordures](/fr/docs/Learn/CSS/Building_blocks/Backgrounds_and_borders)

@@ -1,15 +1,15 @@
 ---
 title: set:trailing()
 slug: Web/EXSLT/set/trailing
-translation_of: Web/EXSLT/set/trailing
 ---
+
 {{XSLTRef}}{{QuickLinksWithSubpages("/fr/docs/Web/EXSLT")}}
 
 `set:trailing()` renvoie les nœuds d'un premier ensemble de nœuds qui viennent après le premier nœud d'un deuxième ensemble.
 
 ## Syntaxe
 
-```js
+```plain
 set:trailing(nodeSet1, nodeSet2)
 ```
 
@@ -24,7 +24,8 @@ set:trailing(nodeSet1, nodeSet2)
 
 Un ensemble de nœuds qui contient les nœuds de `nodeSet1` dont les valeurs suivent le premier nœud de `nodeSet2`.
 
-> **Note :** Si le premier nœud de `nodeSet2` n'est pas contenu dans `nodeSet1`, un ensemble vide sera renvoyé. Si `nodeSet2` est vide, le résultat sera `nodeSet1`.
+> [!NOTE]
+> Si le premier nœud de `nodeSet2` n'est pas contenu dans `nodeSet1`, un ensemble vide sera renvoyé. Si `nodeSet2` est vide, le résultat sera `nodeSet1`.
 
 ## Spécifications
 

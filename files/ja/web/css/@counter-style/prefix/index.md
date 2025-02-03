@@ -1,16 +1,8 @@
 ---
 title: prefix
 slug: Web/CSS/@counter-style/prefix
-tags:
-  - '@counter-style'
-  - At-rule descriptor
-  - CSS
-  - CSS Counter Styles
-  - CSS Descriptor
-  - Reference
-browser-compat: css.at-rules.counter-style.prefix
-translation_of: Web/CSS/@counter-style/prefix
 ---
+
 {{CSSRef}}
 
 **`prefix`** は {{cssxref('@counter-style')}} ルールの記述子で、マーカーに先立って表示される内容を指定します。指定されていない場合、既定値は `""` (空文字列) になります。
@@ -66,7 +58,7 @@ prefix: url(bullet.png);
 @counter-style chapters {
   system: numeric;
   symbols: "0" "1" "2" "3" "4" "5" "6" "7" "8" "9";
-  prefix: 'Chapter ';
+  prefix: "Chapter ";
 }
 
 .index {

@@ -1,12 +1,8 @@
 ---
 title: grid-row
 slug: Web/CSS/grid-row
-tags:
-  - CSS
-  - Propriété
-  - Reference
-translation_of: Web/CSS/grid-row
 ---
+
 {{CSSRef}}
 
 La propriété **`grid-row`** est une propriété raccourcie pour {{cssxref("grid-row-start")}} et {{cssxref("grid-row-end")}}. Elle permet de définir la taille et l'emplacement d'un élément sur la grille en indiquant l'emplacement du début, de la fin et/ou sa taille.
@@ -52,7 +48,8 @@ grid-row: unset;
 
   - : S'il existe une ligne nommée avec '\<custom-ident>-start'/'\<custom-ident>-end', la première ligne correspondante contribue au placement de l'élément sur la grille.
 
-    > **Note :** Les noms des zones de grille sont générés implicitement. Ainsi, en utilisant `grid-row-start: foo;` cela sélectionnera le début de la grille nommée correspondante (sauf si une autre ligne `foo-start`/`foo-end` a été explicitement déclarée).
+    > [!NOTE]
+    > Les noms des zones de grille sont générés implicitement. Ainsi, en utilisant `grid-row-start: foo;` cela sélectionnera le début de la grille nommée correspondante (sauf si une autre ligne `foo-start`/`foo-end` a été explicitement déclarée).
 
     Sinon, la valeur est traitée comme si on avait utilisé `<custom-ident>` et la valeur `1`.
 
@@ -72,9 +69,13 @@ grid-row: unset;
 
     Si l'entier n'est pas défini, la valeur par défaut qui sera utilisée sera `1`. Les entiers négatifs ou nuls sont invalides.
 
-### Syntaxe formelle
+## Définition formelle
 
-{{csssyntax}}
+{{CSSInfo}}
+
+## Syntaxe formelle
+
+{{CSSSyntax}}
 
 ## Exemples
 
@@ -119,15 +120,11 @@ grid-row: unset;
 
 ## Spécifications
 
-| Spécification                                                                | État                         | Commentaires         |
-| ---------------------------------------------------------------------------- | ---------------------------- | -------------------- |
-| {{SpecName("CSS3 Grid", "#propdef-grid-row", "grid-row")}} | {{Spec2("CSS3 Grid")}} | Définition initiale. |
-
-{{cssinfo}}
+{{Specifications}}
 
 ## Compatibilité des navigateurs
 
-{{Compat("css.properties.grid-row")}}
+{{Compat}}
 
 ## Voir aussi
 
@@ -136,5 +133,5 @@ grid-row: unset;
 - {{cssxref("grid-column")}}
 - {{cssxref("grid-column-start")}}
 - {{cssxref("grid-column-end")}}
-- [Guide : Placer les éléments d'une grille sur les lignes](/fr/docs/Web/CSS/CSS_Grid_Layout/Line-based_Placement_with_CSS_Grid)
+- [Guide : Placer les éléments d'une grille sur les lignes](/fr/docs/Web/CSS/CSS_grid_layout/Grid_layout_using_line-based_placement)
 - Tutoriel vidéo : [le placement des éléments d'une grille sur les lignes (en anglais)](https://gridbyexample.com/video/series-line-based-placement/)

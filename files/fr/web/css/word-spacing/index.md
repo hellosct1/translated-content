@@ -1,12 +1,8 @@
 ---
 title: word-spacing
 slug: Web/CSS/word-spacing
-tags:
-  - CSS
-  - Propriété
-  - Reference
-translation_of: Web/CSS/word-spacing
 ---
+
 {{CSSRef}}
 
 La propriété **`word-spacing`** définit la règle d'espacement utilisée entre les balises et entre les mots.
@@ -44,17 +40,21 @@ word-spacing: unset;
 - `<percentage>`
   - : Une valeur en pourcentages définit la taille de l'inter-mot à utiliser par rapport à la position du prochain caractère (si on utilise `-100%`, l'espace sera nul et si on utilise `100%`, il sera doublé). Voir {{cssxref("&lt;percentage&gt;")}} pour les différentes valeurs et unités possibles.
 
-### Syntaxe formelle
+## Définition formelle
 
-{{csssyntax}}
+{{CSSInfo}}
+
+## Syntaxe formelle
+
+{{CSSSyntax}}
 
 ## Exemple
 
 ### HTML
 
 ```html
-<p id="ligne1">Voici le texte de la ligne 1 </p>
-<p id="ligne2" >Et voilà celui de la ligne 2 </p>
+<p id="ligne1">Voici le texte de la ligne 1</p>
+<p id="ligne2">Et voilà celui de la ligne 2</p>
 ```
 
 ### CSS
@@ -79,20 +79,13 @@ Utiliser des valeurs trop importantes (positives ou négatives) pour `word-spaci
 
 La bonne valeur à utiliser pour `word-spacing` doit être déterminée au cas par cas, en fonction du type de police utilisé et de la largeur de celle-ci.
 
-- [Comprendre les règles WCAG 1.4](/fr/docs/Web/Accessibility/Understanding_WCAG/Perceivable#Guideline_1.4_Make_it_easier_for_users_to_see_and_hear_content_including_separating_foreground_from_background)
+- [Comprendre les règles WCAG 1.4](/fr/docs/Web/Accessibility/Understanding_WCAG/Perceivable#guideline_1.4_make_it_easier_for_users_to_see_and_hear_content_including_separating_foreground_from_background)
 - [Understanding Success Criterion 1.4.8 - W3C Understanding WCAG 2.0](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-visual-presentation.html)
 
 ## Spécifications
 
-| Spécification                                                                                    | État                                     | Commentaires                                                                                                                                                                                                  |
-| ------------------------------------------------------------------------------------------------ | ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| {{SpecName('CSS3 Text', '#propdef-word-spacing', 'word-spacing')}}         | {{Spec2('CSS3 Text')}}             | Remplace les valeurs précédentes avec une valeur `<spacing-limit>` qui définit la même valeur et la valeur `<percentage>` et permet d'avoir trois valeurs pour décrire un optimum, un minimum, et un maximum. |
-| {{SpecName('CSS3 Transitions', '#animatable-css', 'word-spacing')}}         | {{Spec2('CSS3 Transitions')}} | `word-spacing` peut désormais être animé.                                                                                                                                                                     |
-| {{SpecName('CSS2.1', 'text.html#propdef-word-spacing', 'word-spacing')}} | {{Spec2('CSS2.1')}}                 | Aucun changement.                                                                                                                                                                                             |
-| {{SpecName('CSS1', '#word-spacing', 'word-spacing')}}                         | {{Spec2('CSS1')}}                 | Définition initiale.                                                                                                                                                                                          |
-
-{{cssinfo}}
+{{Specifications}}
 
 ## Compatibilité des navigateurs
 
-{{Compat("css.properties.word-spacing")}}
+{{Compat}}

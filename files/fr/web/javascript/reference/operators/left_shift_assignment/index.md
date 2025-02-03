@@ -1,14 +1,8 @@
 ---
 title: Affectation après décalage à gauche (<<=)
 slug: Web/JavaScript/Reference/Operators/Left_shift_assignment
-tags:
-  - Assignment operator
-  - JavaScript
-  - Language feature
-  - Operator
-  - Reference
-browser-compat: javascript.operators.left_shift_assignment
 ---
+
 {{jsSidebar("Operators")}}
 
 L'opérateur de décalage à gauche et d'affectation (`<<=`) décale la séquence de bits représentée par l'opérande gauche d'autant de bits qu'indiqué par l'opérande droit puis affecte le résultat obtenu à la variable représentée par l'opérande gauche.
@@ -18,8 +12,8 @@ L'opérateur de décalage à gauche et d'affectation (`<<=`) décale la séquenc
 ## Syntaxe
 
 ```js
-Opérateur : x <<= y
-Signification :  x   = x << y
+Opérateur: x <<= y;
+Signification: x = x << y;
 ```
 
 ## Exemples
@@ -44,5 +38,5 @@ a <<= 2; // 20
 
 ## Voir aussi
 
-- [Les opérateurs d'affectation dans le guide JavaScript](/fr/docs/Web/JavaScript/Guide/Expressions_and_Operators#assignment)
+- [Les opérateurs d'affectation dans le guide JavaScript](/fr/docs/Web/JavaScript/Guide/Expressions_and_operators#assignment)
 - [L'opérateur de décalage à gauche binaire](/fr/docs/Web/JavaScript/Reference/Operators/Left_shift)

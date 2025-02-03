@@ -2,15 +2,17 @@
 title: exsl:object-type()
 slug: Web/EXSLT/exsl/object-type
 ---
+
 {{XSLTRef}}{{QuickLinksWithSubpages("/fr/docs/Web/EXSLT")}}
 
 `exsl:object-type()` renvoie une chaîne de caractères indiquant le type de l'objet indiqué en paramètre.
 
-> **Note :** La plupart des types d'objet [XSLT](/fr/docs/Web/XSLT) peuvent être convertis implicitement vers les autres. Toutefois, certaines conversions implicites sont sources d'erreur, par exemple traiter quelque chose qui n'est pas un `node-set` comme tel. Cette fonction permet de fournir une certaine flexibilité dans les valeurs de paramètres.
+> [!NOTE]
+> La plupart des types d'objet [XSLT](/fr/docs/Web/XSLT) peuvent être convertis implicitement vers les autres. Toutefois, certaines conversions implicites sont sources d'erreur, par exemple traiter quelque chose qui n'est pas un `node-set` comme tel. Cette fonction permet de fournir une certaine flexibilité dans les valeurs de paramètres.
 
 ## Syntaxe
 
-```js
+```plain
 exsl:object-type(object)
 ```
 

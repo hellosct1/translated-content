@@ -1,20 +1,10 @@
 ---
 title: column-rule-color
 slug: Web/CSS/column-rule-color
-tags:
-  - CSS
-  - CSS 段組みレイアウト
-  - CSS プロパティ
-  - HTML 色
-  - リファレンス
-  - スタイル
-  - HTML のスタイル付け
-  - column-rule-color
-  - columns
-  - recipe:css-property
-browser-compat: css.properties.column-rule-color
-translation_of: Web/CSS/column-rule-color
+l10n:
+  sourceCommit: 5f13cbe7517ce96deeb521d4c8e6923266a22913
 ---
+
 {{CSSRef}}
 
 **`column-rule-color`** は [CSS](/ja/docs/Web/CSS) のプロパティで、段組みレイアウトで段間に引かれる線（段間罫）の色を設定します。
@@ -26,14 +16,15 @@ translation_of: Web/CSS/column-rule-color
 ```css
 /* <color> 値 */
 column-rule-color: red;
-column-rule-color: rgb(192, 56, 78);
+column-rule-color: rgb(192 56 78);
 column-rule-color: transparent;
-column-rule-color: hsla(0, 100%, 50%, 0.6);
+column-rule-color: hsl(0 100% 50% / 60%);
 
 /* グローバル値 */
 column-rule-color: inherit;
 column-rule-color: initial;
 column-rule-color: revert;
+column-rule-color: revert-layer;
 column-rule-color: unset;
 ```
 
@@ -58,16 +49,17 @@ column-rule-color: unset;
 
 #### HTML
 
-```html
-<p>This is a bunch of text split into three columns.
-   The `column-rule-color` property is used to change
-   the color of the line that is drawn between columns.
-   Don't you think that's wonderful?</p>
+```html live-sample___setting_a_blue_column_rule
+<p>
+  This is a bunch of text split into three columns. The `column-rule-color`
+  property is used to change the color of the line that is drawn between
+  columns. Don't you think that's wonderful?
+</p>
 ```
 
 #### CSS
 
-```css
+```css live-sample___setting_a_blue_column_rule
 p {
   column-count: 3;
   column-rule-style: solid;
@@ -91,4 +83,3 @@ p {
 
 - {{cssxref("&lt;color&gt;")}} データ型
 - 色に関する他のプロパティ: {{cssxref("color")}}, {{cssxref("background-color")}}, {{cssxref("border-color")}}, {{cssxref("outline-color")}}, {{cssxref("text-decoration-color")}}, {{cssxref("text-emphasis-color")}}, {{cssxref("text-shadow")}}, {{cssxref("caret-color")}}
-- [CSS を使った HTML の要素への色の適用](/ja/docs/Web/HTML/Applying_color)

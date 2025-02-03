@@ -1,15 +1,8 @@
 ---
 title: scroll-margin-inline-end
 slug: Web/CSS/scroll-margin-inline-end
-tags:
-  - 上級者
-  - CSS
-  - NeedsExample
-  - Reference
-  - recipe:css-property
-browser-compat: css.properties.scroll-margin-inline-end
-translation_of: Web/CSS/scroll-margin-inline-end
 ---
+
 {{CSSRef}}
 
 `scroll-margin-inline-end` プロパティは、スクロールスナップ領域のインライン方向における末尾側のマージンを定義し、このボックスをスナップポートにスナップするために使用されます。スクロールスナップ領域は変換された境界ボックスによって定義され、四角形の囲みボックスを探して (スクロールコンテナーの座標空間における軸に合わせられ)、それから指定された外部距離が追加されます。
@@ -136,5 +129,5 @@ scroll-margin-inline-end: unset;
 
 ## 関連情報
 
-- [CSS スクロールスナップ](/ja/docs/Web/CSS/CSS_Scroll_Snap)
+- [CSS スクロールスナップ](/ja/docs/Web/CSS/CSS_scroll_snap)
 - [Well-Controlled Scrolling with CSS Scroll Snap](https://web.dev/css-scroll-snap/)

@@ -1,13 +1,8 @@
 ---
 title: Syntaxe de définition des valeurs
 slug: Web/CSS/Value_definition_syntax
-tags:
-  - CSS
-  - Débutant
-  - Reference
-translation_of: Web/CSS/Value_definition_syntax
-original_slug: Web/CSS/Syntaxe_de_définition_des_valeurs
 ---
+
 {{CSSRef}}
 
 **La syntaxe de définition des valeurs CSS** est une grammaire formelle qui définit les règles pour créer des règles CSS valides. En plus de ces règles, il peut y avoir des contraintes sémantiques (ex. un nombre doit être positif pour une propriété donnée).
@@ -108,7 +103,8 @@ Mais il ne correspondra pas à :
 - `bold` car les deux composants doivent apparaître.
 - `bold 1em bold` car les deux composants doivent apparaître exactement une fois.
 
-> **Note :** La juxtaposition est prioritaire par rapport à la double esperluette. `bold thin && <length>` est donc équivalent à `[ bold thin ] && <length>`. Il décrit `bold thin <length>` ou `<length> bold thin` mais pas `bold <length> thin`.
+> [!NOTE]
+> La juxtaposition est prioritaire par rapport à la double esperluette. `bold thin && <length>` est donc équivalent à `[ bold thin ] && <length>`. Il décrit `bold thin <length>` ou `<length> bold thin` mais pas `bold <length> thin`.
 
 ### Double barre
 
@@ -129,7 +125,8 @@ Mais il ne correspondra pas à :
 - `blue yellow` car le composant doit apparaître au plus une fois.
 - `bold` car le mot-clé n'est pas permis pour aucune valeur de l'entité.
 
-> **Note :** La double esperluette est prioritaire par rapport à la double barre. `bold || thin && <length>` est équivalent à `bold || [ thin && <length> ]` qui décrit `bold`, `thin <length>`, `bold thin <length>`, ou `thin <length> bold` mais pas `<length> bold thin` car bold, s'il est présent doit apparaître avant `thin && <length>`.
+> [!NOTE]
+> La double esperluette est prioritaire par rapport à la double barre. `bold || thin && <length>` est équivalent à `bold || [ thin && <length> ]` qui décrit `bold`, `thin <length>`, `bold thin <length>`, ou `thin <length> bold` mais pas `<length> bold thin` car bold, s'il est présent doit apparaître avant `thin && <length>`.
 
 ### La barre verticale
 
@@ -155,13 +152,14 @@ Mais il ne correspondra pas à :
 - `center 3%` car seul un seul des composants doit être présent.
 - `3em 4.5em` car un composant doit être présent au plus une seule fois.
 
-> **Note :** La double barre verticale est prioritaire par rapport à la simple barre verticale. Ainsi `bold | thin || <length>` est équivalent à `bold | [ thin || <length> ]` qui décrit `bold`, `thin`, `<length>`, `<length> thin` ou `thin <length>` mais pas `bold <length>` car seule entité peut être présente.
+> [!NOTE]
+> La double barre verticale est prioritaire par rapport à la simple barre verticale. Ainsi `bold | thin || <length>` est équivalent à `bold | [ thin || <length> ]` qui décrit `bold`, `thin`, `<length>`, `<length> thin` ou `thin <length>` mais pas `bold <length>` car seule entité peut être présente.
 
 ## Les multiplicateurs
 
 Un multiplicateur est un signe qui indique nombre de fois qu'une entité peut être répétée. Sans aucun multiplicateur, une entité doit apparaître exactement une fois.
 
-### L'astérisque (`*`)
+### L'astérisque (\*)
 
 L'astérisque indique qu'une entité peut apparaître **zéro, une ou plusieurs fois**.
 
@@ -382,8 +380,4 @@ Mais pas à :
 
 ## Spécifications
 
-| Spécification                                                                                                | État                             | Comment                                |
-| ------------------------------------------------------------------------------------------------------------ | -------------------------------- | -------------------------------------- |
-| {{SpecName("CSS3 Values", "#value-defs", "Value definition syntax")}}                 | {{Spec2('CSS3 Values')}} | Ajout du multiplicateur avec le dièse. |
-| {{SpecName("CSS2.1", "about.html#value-defs", "Value definition syntax")}}         | {{Spec2('CSS2.1')}}         | Ajout de la double esperluette.        |
-| {{SpecName("CSS1", "#notation-for-property-values", "Value definition syntax")}} | {{Spec2('CSS1')}}         | Définition initiale.                   |
+{{Specifications}}

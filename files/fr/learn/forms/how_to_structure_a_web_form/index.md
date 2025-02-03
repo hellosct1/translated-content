@@ -1,18 +1,8 @@
 ---
 title: Comment structurer un formulaire HTML
 slug: Learn/Forms/How_to_structure_a_web_form
-tags:
-  - Apprentissage
-  - Débutant
-  - Exemple
-  - Formulaires
-  - Guide
-  - HTML
-  - Structure
-  - Web
-translation_of: Learn/Forms/How_to_structure_a_web_form
-original_slug: Web/Guide/HTML/Formulaires/Comment_structurer_un_formulaire_HTML
 ---
+
 {{LearnSidebar}}{{PreviousMenuNext("Learn/Forms/Your_first_form", "Learn/Forms/Basic_native_form_controls", "Learn/Forms")}}
 
 Les bases vues, nous examinons maintenant plus en détail les éléments utilisés pour structurer et donner un sens aux différentes parties d'un formulaire.
@@ -38,7 +28,7 @@ Les bases vues, nous examinons maintenant plus en détail les éléments utilis�
   </tbody>
 </table>
 
-La souplesse des formulaires HTML fait d'eux une des structures les plus complexes en [HTML](/fr/docs/HTML "/en-US/docs/HTML"). vous pouvez construire n'importe quel type de formulaire basique en utilisant les éléments et attributs qui leur sont dédiés. En utilisant une architecture correcte lors de la construction d'un formulaire, vous serez sûrs que le formulaire est à la fois utilisable et [accessible](/fr/docs/MDN/Doc_status/Accessibility).
+La souplesse des formulaires HTML fait d'eux une des structures les plus complexes en [HTML](/fr/docs/Web/HTML). vous pouvez construire n'importe quel type de formulaire basique en utilisant les éléments et attributs qui leur sont dédiés. En utilisant une architecture correcte lors de la construction d'un formulaire, vous serez sûrs que le formulaire est à la fois utilisable et [accessible](/fr/docs/MDN/Doc_status/Accessibility).
 
 ## L'élément \<form>
 
@@ -46,11 +36,13 @@ L'élément {{HTMLElement("form")}} définit conventionnellement un formulaire e
 
 Nous l'avons déjà rencontré dans l'article précédent.
 
-> **Note :** Il est strictement interdit d'imbriquer un formulaire dans un autre formulaire. L'imbrication peut conduire à des comportements imprévisibles selon le navigateur utilisé.
+> [!NOTE]
+> Il est strictement interdit d'imbriquer un formulaire dans un autre formulaire. L'imbrication peut conduire à des comportements imprévisibles selon le navigateur utilisé.
 
 Notez qu'il est toujours possible d'utiliser un widget de formulaire en dehors d'un élément {{HTMLElement("form")}} mais si vous le faites, ce widget de formulaire n'a rien à voir avec un formulaire. De tels widgets peuvent être utilisés en dehors d'un formulaire, mais alors vous devriez avoir un plan spécial pour de tels widgets, puisqu'ils ne feront rien tout seuls. Vous devrez personnaliser leur comportement avec JavaScript.
 
-> **Note :** HTML5 introduit l'attribut `form` dans les éléments form du HTML. Il devrait vous permettre de lier explicitement un élément avec un formulaire même s'il n'est pas inclus dans un {{ HTMLElement("form") }}. Malheureusement, pour l'instant, l'implémentation de cette fonctionnalité dans les navigateurs n'est pas encore assez fiable.
+> [!NOTE]
+> HTML5 introduit l'attribut `form` dans les éléments form du HTML. Il devrait vous permettre de lier explicitement un élément avec un formulaire même s'il n'est pas inclus dans un {{ HTMLElement("form") }}. Malheureusement, pour l'instant, l'implémentation de cette fonctionnalité dans les navigateurs n'est pas encore assez fiable.
 
 ## Les éléments \<fieldset> et \<legend>
 
@@ -65,22 +57,23 @@ Voici un petit exemple :
   <fieldset>
     <legend>Taille du jus de fruits</legend>
     <p>
-      <input type="radio" name="size" id="size_1" value="small">
+      <input type="radio" name="size" id="size_1" value="small" />
       <label for="size_1">Petite</label>
     </p>
     <p>
-      <input type="radio" name="size" id="size_2" value="medium">
+      <input type="radio" name="size" id="size_2" value="medium" />
       <label for="size_2">Moyenne</label>
     </p>
     <p>
-      <input type="radio" name="size" id="size_3" value="large">
+      <input type="radio" name="size" id="size_3" value="large" />
       <label for="size_3">Grande</label>
     </p>
   </fieldset>
 </form>
 ```
 
-> **Note :** Vous trouverez cet exemple dans [fieldset-legend.html](https://github.com/mdn/learning-area/blob/main/html/forms/html-form-structure/fieldset-legend.html) (voir [directement aussi](https://mdn.github.io/learning-area/html/forms/html-form-structure/fieldset-legend.html)).
+> [!NOTE]
+> Vous trouverez cet exemple dans [fieldset-legend.html](https://github.com/mdn/learning-area/blob/main/html/forms/html-form-structure/fieldset-legend.html) (voir [directement aussi](https://mdn.github.io/learning-area/html/forms/html-form-structure/fieldset-legend.html)).
 
 En lisant le formulaire ci-dessus, un lecteur d'écran dira «&nbsp;Taille du jus de fruit&nbsp;: petit&nbsp;» pour le premier widget, «&nbsp;Taille du jus de fruit&nbsp;: moyenne&nbsp;» pour le second, et «&nbsp;Taille du jus de fruit&nbsp;: grande&nbsp;» pour le troisième.
 
@@ -93,7 +86,8 @@ En raison de son influence sur les techniques d'assistance, l'élément {{HTMLEl
 Comme nous l'avons vu dans l'article précédent, l'élément {{HTMLElement("label")}} est le moyen naturel de définir une étiquette pour un widget de formulaire HTML. C'est l'élément le plus important si vous voulez créer des formulaires accessibles — lorsqu'ils sont correctement implémentés, les lecteurs d'écran énonceront l'étiquette d'un élément de formulaire selon toutes les instructions associées. Prenons cet exemple, que nous avons vu dans l'article précédent&nbsp;:
 
 ```html
-<label for="name">Nom&nbsp;:</label> <input type="text" id="name" name="user_name">
+<label for="name">Nom&nbsp;:</label>
+<input type="text" id="name" name="user_name" />
 ```
 
 Avec un élément `<label>` correctement associé à `<input>` par l'intermédiaire respectivement des attributs `for` et `id` (l'attribut `for` de \<label> référence l'attibut `id` du widget correspondant), un lecteur d'écran lira et dira quelque chose comme «&nbsp;Nom, texte indiqué&nbsp;».
@@ -104,7 +98,7 @@ Notez qu'un widget peut être incorporé dans son élément {{HTMLElement("label
 
 ```html
 <label for="name">
-  Nom&nbsp;: <input type="text" id="name" name="user_name">
+  Nom&nbsp;: <input type="text" id="name" name="user_name" />
 </label>
 ```
 
@@ -120,16 +114,17 @@ Par exemple&nbsp;:
 <form>
   <p>
     <label for="taste_1">J'aime les cerises</label>
-    <input type="checkbox" id="taste_1" name="taste_cherry" value="1">
+    <input type="checkbox" id="taste_1" name="taste_cherry" value="1" />
   </p>
   <p>
     <label for="taste_2">J'aime les bananes</label>
-    <input type="checkbox" id="taste_2" name="taste_banana" value="2">
+    <input type="checkbox" id="taste_2" name="taste_banana" value="2" />
   </p>
 </form>
 ```
 
-> **Note :** Vous trouverez cet exemple dans [checkbox-label.html](https://github.com/mdn/learning-area/blob/main/html/forms/html-form-structure/checkbox-label.html) (à voir [directement aussi](https://mdn.github.io/learning-area/html/forms/html-form-structure/checkbox-label.html)).
+> [!NOTE]
+> Vous trouverez cet exemple dans [checkbox-label.html](https://github.com/mdn/learning-area/blob/main/html/forms/html-form-structure/checkbox-label.html) (à voir [directement aussi](https://mdn.github.io/learning-area/html/forms/html-form-structure/checkbox-label.html)).
 
 ### Étiquettes multiples
 
@@ -138,30 +133,34 @@ En fait, il est possible d'associer plusieurs étiquettes à un seul widget, mai
 Considérons cet exemple&nbsp;:
 
 ```html
-<p>Les champs obligatoires sont suivis de <abbr title="required">*</abbr>.</p>
+<p>
+  Les champs obligatoires sont suivis de <span aria-label="required">*</span>.
+</p>
 
 <!-- Donc ceci&nbsp;: -->
-<div>
+<!--div>
   <label for="username">Nom&nbsp;:</label>
-  <input type="text" name="username">
-  <label for="username"><abbr title="required">*</abbr></label>
-</div>
+  <input type="text" name="username" />
+  <label for="username"><span aria-label="required">*</span></label>
+</div-->
 
 <!-- sera mieux programmé ainsi&nbsp;: -->
-<div>
+<!--div>
   <label for="username">
     <span>Nom&nbsp;:</span>
-    <input id="username" type="text" name="username">
-    <abbr title="required">*</abbr>
+    <input id="username" type="text" name="username" />
+    <span aria-label="required">*</span>
   </label>
-</div>
+</div-->
 
 <!-- mais ceci est probablement encore meilleur&nbsp;: -->
 <div>
-  <label for="username">Nom&nbsp;:<abbr title="required">*</abbr></label>
-  <input id="username" type="text" name="username">
+  <label for="username">Nom&nbsp;:<span aria-label="required">*</span></label>
+  <input id="username" type="text" name="username" required />
 </div>
 ```
+
+{{EmbedLiveSample("", 120, 120)}}
 
 Le paragraphe du haut définit la règle pour les éléments obligatoires. Ce doit être au début pour s'assurer que les techniques d'assistance telles que les lecteurs d'écran l'afficheront ou le vocaliseront à l'utilisateur avant qu'il ne trouve un élément obligatoire. Ainsi, ils sauront ce que signifie l'astérisque. Un lecteur d'écran mentionnera l'astérisque en disant «&nbsp;astérisque&nbsp;» ou «&nbsp;obligatoire&nbsp;», selon les réglages du lecteur d'écran — dans tous les cas, ce qui sera dit est clairement précisé dans le premier paragraphe.
 
@@ -169,9 +168,11 @@ Le paragraphe du haut définit la règle pour les éléments obligatoires. Ce do
 - Dans le deuxième exemple, les choses sont un peu plus claires — l'étiquette lue en même temps que l'entrée est «&nbsp;nom astérisque nom éditer texte&nbsp;», et les étiquettes sont toujours lues séparément. Les choses sont encore un peu confuses, mais c'est un peu mieux cette fois parce que l'entrée a une étiquette associée.
 - Le troisième exemple est meilleur — les véritables étiquettes sont toutes lues ensemble, et l'étiquette énoncée avec l'entrée est «&nbsp;nom astériquer éditer texte&nbsp;».
 
-> **Note :** Vous pouvez obtenir des résultats légérement différents, selon votre lecteur d'écran. Ce qui précéde a été testé avec VoiceOver (et NVDA se comporte de la même façon). Nous aimerions avoir un retour sur vos expériences également.
+> [!NOTE]
+> Vous pouvez obtenir des résultats légérement différents, selon votre lecteur d'écran. Ce qui précéde a été testé avec VoiceOver (et NVDA se comporte de la même façon). Nous aimerions avoir un retour sur vos expériences également.
 
-> **Note :** Vous trouverez cet exemple sur GitHub dans [required-labels.html](https://github.com/mdn/learning-area/blob/main/html/forms/html-form-structure/required-labels.html) (à voir [directement aussi](https://mdn.github.io/learning-area/html/forms/html-form-structure/required-labels.html)). Ne lancez pas l'exemple avec 2 ou 3 version non mises en commentaires — le lecteur d'écran serait totalement embrouillé s'il y a plusieurs étiquettes ET plusieurs entrées avec le même ID&nbsp;!
+> [!NOTE]
+> Vous trouverez cet exemple sur GitHub dans [required-labels.html](https://github.com/mdn/learning-area/blob/main/html/forms/html-form-structure/required-labels.html) (à voir [directement aussi](https://mdn.github.io/learning-area/html/forms/html-form-structure/required-labels.html)). Ne lancez pas l'exemple avec 2 ou 3 version non mises en commentaires — le lecteur d'écran serait totalement embrouillé s'il y a plusieurs étiquettes ET plusieurs entrées avec le même ID&nbsp;!
 
 ## Structures HTML courantes dans les formulaires
 
@@ -187,118 +188,134 @@ Chaque groupe de fonctionnalités séparées doit être contenu dans un élémen
 
 ### Apprentissage actif&nbsp;: construire une structure de formulaire
 
-Mettons ces idées en pratique et construisons une structure de formulaire un peu plus sophistiquée — un formulaire de paiement. Il contiendra un certain nombre de types de widgets que vous ne comprenez pas encore — ne vous inquiétez pas pour l'instant ; vous découvrirez comment ils fonctionnent dans l'article suivant ([Les widgets natifs pour formulaire](/fr/docs/Learn/HTML/Forms/The_native_form_widgets)). Pour l'instant, lisez attentivement les descriptions en suivant les instructions ci-dessous et commencez à vous faire une idée des éléments enveloppes que nous utilisons pour structurer le formulaire, et pourquoi.
+Mettons ces idées en pratique et construisons une structure de formulaire un peu plus sophistiquée — un formulaire de paiement. Il contiendra un certain nombre de types de widgets que vous ne comprenez pas encore — ne vous inquiétez pas pour l'instant ; vous découvrirez comment ils fonctionnent dans l'article suivant ([Les widgets natifs pour formulaire](/fr/docs/Learn/Forms/Basic_native_form_controls)). Pour l'instant, lisez attentivement les descriptions en suivant les instructions ci-dessous et commencez à vous faire une idée des éléments enveloppes que nous utilisons pour structurer le formulaire, et pourquoi.
 
 1. Pour commencer, faites une copie locale de notre [fichier modèle vierge](https://github.com/mdn/learning-area/blob/main/html/introduction-to-html/getting-started/index.html) et des [CSS pour notre formulaire de paiement](https://github.com/mdn/learning-area/blob/main/html/forms/html-form-structure/payment-form.css) dans un nouveau répertoire.
 2. Primo, appliquez les CSS au HTML en ajoutant la ligne suivante dans l'élément {{htmlelement("head")}} du HTML&nbsp;:
 
-    ```html
-    <link href="payment-form.css" rel="stylesheet">
-    ```
+   ```html
+   <link href="payment-form.css" rel="stylesheet" />
+   ```
 
 3. Ensuite, commencez le formulaire en ajoutant un élément {{htmlelement("form")}}&nbsp;:
 
-    ```html
-    <form>
-
-    </form>
-    ```
+   ```html-nolint
+   <form></form>
+   ```
 
 4. Entre les balises `<form>`, ajoutez un en‑tête et un paragraphe pour informer les utilisateurs comment sont marqués les champs obligatoires&nbsp;:
 
-    ```html
-    <h1>Formulaire de paiement</h1>
-    <p>Les champs obligatoires sont suivis par un <strong><abbr title="required">*</abbr></strong>.</p>
-    ```
+   ```html-nolint
+   <h1>Formulaire de paiement</h1>
+   <p>
+     Les champs obligatoires sont suivis par un
+     <strong><span aria-label="required">*</span></strong
+     >.
+   </p>
+   ```
 
 5. Ensuite, nous ajoutons une grande section de code dans le formulaire, sous la précédente. Ici vous verrez que nous enveloppons les champs d'informations de contact dans des éléments {{htmlelement("section")}} distincts. De plus, nous avons un ensemble de deux boutons radio, que nous mettons chacun à l'intérieur de leur propre élément de liste ({{htmlelement("li")}}). Enfin, nous avons deux zones de texte standard {{htmlelement("input")}} et leurs éléments {{htmlelement("label")}} associés, chacun contenu dans un élément {{htmlelement("p")}}, plus une entrée pour le mot de passe. Ajoutez ce code à votre formulaire maintenant :
 
-    ```html
-    <section>
-        <h2>Informations de contact</h2>
-        <fieldset>
-          <legend>Qualité</legend>
-          <ul>
-              <li>
-                <label for="title_1">
-                  <input type="radio" id="title_1" name="title" value="M." >
-                  Monsieur
-                </label>
-              </li>
-              <li>
-                <label for="title_2">
-                  <input type="radio" id="title_2" name="title" value="Mme.">
-                  Madame
-                </label>
-              </li>
-          </ul>
-        </fieldset>
-        <p>
-          <label for="name">
-            <span>Nom&nbsp;: </span>
-            <strong><abbr title="required">*</abbr></strong>
-          </label>
-          <input type="text" id="name" name="username">
-        </p>
-        <p>
-          <label for="mail">
-            <span>e-mail&nbsp;:</span>
-            <strong><abbr title="required">*</abbr></strong>
-          </label>
-          <input type="email" id="mail" name="usermail">
-        </p>
-        <p>
-          <label for="pwd">
-            <span>Mot de passe&nbsp;:</span>
-            <strong><abbr title="required">*</abbr></strong>
-          </label>
-          <input type="password" id="pwd" name="password">
-        </p>
-    </section>
-    ```
+   ```html
+   <section>
+     <h2>Informations de contact</h2>
+     <fieldset>
+       <legend>Qualité</legend>
+       <ul>
+         <li>
+           <label for="title_1">
+             <input type="radio" id="title_1" name="title" value="M." />
+             Monsieur
+           </label>
+         </li>
+         <li>
+           <label for="title_2">
+             <input type="radio" id="title_2" name="title" value="Mme." />
+             Madame
+           </label>
+         </li>
+       </ul>
+     </fieldset>
+     <p>
+       <label for="name">
+         <span>Nom&nbsp;: </span>
+         <strong><span aria-label="required">*</span></strong>
+       </label>
+       <input type="text" id="name" name="username" required />
+     </p>
+     <p>
+       <label for="mail">
+         <span>e-mail&nbsp;:</span>
+         <strong><span aria-label="required">*</span></strong>
+       </label>
+       <input type="email" id="mail" name="usermail" required />
+     </p>
+     <p>
+       <label for="pwd">
+         <span>Mot de passe&nbsp;:</span>
+         <strong><span aria-label="required">*</span></strong>
+       </label>
+       <input type="password" id="pwd" name="password" required />
+     </p>
+   </section>
+   ```
 
 6. Nous arrivons maintenant à la deuxième `<section>` de notre formulaire — l'information de paiement. Ici nous avons trois widgets distincts avec leur étiquette, chacun contenu dans un paragraphe `<p>`. Le premier est un menu déroulant ({{htmlelement("select")}}) pour le choix du type de la carte de crédit. Le deuxième est un élément `<input>` de type nombre pour entrer le numéro de la carte de crédit. Le dernier est un élément `<input>` de type `date` pour entrer la date d'expiration de la carte de crédit (il sera accompagné d'un widget dateur pour les navigateurs prenant en charge cette fonctionnalité, et sera un simple champ textuel pour les navigateurs ne la prenant pas en charge). À nouveau, entrez ce qui suit après la section ci‑dessus&nbsp;:
 
-    ```html
-    <section>
-        <h2>Informations de paiement</h2>
-        <p>
-          <label for="card">
-            <span>Type de carte&nbsp;:</span>
-          </label>
-          <select id="card" name="usercard">
-            <option value="visa">Visa</option>
-            <option value="mc">Mastercard</option>
-            <option value="amex">American Express</option>
-          </select>
-        </p>
-        <p>
-          <label for="number">
-            <span>Numéro de carte&nbsp;:</span>
-            <strong><abbr title="required">*</abbr></strong>
-          </label>
-          <input type="text" id="number" name="cardnumber">
-        </p>
-        <p>
-          <label for="date">
-            <span>Validité&nbsp;:</span>
-            <strong><abbr title="required">*</abbr></strong>
-            <em>format mm/aa</em>
-          </label>
-          <input type="text" id="date" name="expiration">
-        </p>
-    </section>
-    ```
+   ```html
+   <section>
+     <h2>Informations de paiement</h2>
+     <p>
+       <label for="card">
+         <span>Type de carte&nbsp;:</span>
+       </label>
+       <select id="card" name="usercard">
+         <option value="visa">Visa</option>
+         <option value="mc">Mastercard</option>
+         <option value="amex">American Express</option>
+       </select>
+     </p>
+     <p>
+       <label for="number">
+         <span>Numéro de carte&nbsp;:</span>
+         <strong><span aria-label="required">*</span></strong>
+       </label>
+       <input type="tel" id="number" name="cardnumber" required />
+     </p>
+     <p>
+       <label for="expiration">
+         <span>Date d'expiration&nbsp;:</span>
+         <strong><span aria-label="required">*</span></strong>
+       </label>
+       <input
+         type="text"
+         id="expiration"
+         required="true"
+         placeholder="MM/YY"
+         pattern="^(0[1-9]|1[0-2])\/([0-9]{2})$" />
+     </p>
+   </section>
+   ```
 
 7. La dernière section est plus simple&nbsp;; elle ne contient qu'un bouton {{htmlelement("button")}} de type `submit`, pour adresser les données du formulaire. Ajoutez ceci au bas du formulaire&nbsp;:
 
-    ```html
-    <p> <button type="submit">Valider le paiement</button> </p>
-    ```
+   ```html
+   <section>
+     <p>
+       <button type="submit">Valider le paiement</button>
+     </p>
+   </section>
+   ```
+
+8. Enfin, finalisez votre formulaire en ajoutant la balise fermante pour [`<form>`](/fr/docs/Web/HTML/Element/form)&nbsp;:
+
+   ```html
+   </form>
+   ```
 
 Vous pouvez voir le formulaire terminé en action ci‑dessous (vous le trouverez aussi sur GitHub — voir la [source](https://github.com/mdn/learning-area/blob/main/html/forms/html-form-structure/payment-form.html) payment-form.html et une exécution [directe](https://mdn.github.io/learning-area/html/forms/html-form-structure/payment-form.html)):
 
-{{EmbedLiveSample("Un_formulaire_de_paiement","100%","620", "", "Web/Guide/HTML/Formulaires/Comment_structurer_un_formulaire_HTML/Exemple")}}
+{{EmbedLiveSample("Exemple_en_direct", "100%", "620")}}
 
 ## Résumé
 
@@ -306,20 +323,6 @@ Nous savons maintenant ce qu'il faut faire pour structurer de manière appropri�
 
 ## Voir aussi
 
-- [A List Apart: _Sensible Forms: A Form Usability Checklist_](http://www.alistapart.com/articles/sensibleforms/)
+- [A List Apart: _Sensible Forms: A Form Usability Checklist_](https://www.alistapart.com/articles/sensibleforms/)
 
 {{PreviousMenuNext("Learn/Forms/Your_first_form", "Learn/Forms/Basic_native_form_controls", "Learn/Forms")}}
-
-## Dans ce module
-
-- [Mon premier formulaire HTML](/fr/docs/Learn/Forms/Mon_premier_formulaire_HTML)
-- Comment structurer un formulaire HTML
-- [Les widgets natifs pour formulaire](/fr/docs/Learn/Forms/Les_blocs_de_formulaires_natifs)
-- [Envoi des données de formulaire](/fr/docs/Learn/Forms/Envoyer_et_extraire_les_données_des_formulaires)
-- [Validation des données de formulaire](/fr/docs/Learn/Forms/Validation_donnees_formulaire)
-- [Comment construire des widgets personnalisés pour formulaire](/fr/docs/Learn/Forms/Comment_construire_des_widgets_de_formulaires_personnalisés)
-- [Envoi de formulaires à l'aide du JavaScript](/fr/docs/Learn/Forms/Sending_forms_through_JavaScript)
-- [Formulaires HTML dans les navigateurs anciens](/fr/docs/Learn/Forms/HTML_forms_in_legacy_browsers)
-- [Mise en forme des formulaires HTML](/fr/docs/Learn/Forms/Apparence_des_formulaires_HTML)
-- [Mise en forme avancée des formulaires HTML](/fr/docs/Learn/Forms/Advanced_styling_for_HTML_forms)
-- [Table de compatibilité des propriétés pour les widgets de formulaire](/fr/docs/Learn/Forms/Property_compatibility_table_for_form_widgets)

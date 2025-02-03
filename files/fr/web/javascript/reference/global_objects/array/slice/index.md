@@ -1,15 +1,8 @@
 ---
 title: Array.prototype.slice()
 slug: Web/JavaScript/Reference/Global_Objects/Array/slice
-tags:
-  - Array
-  - JavaScript
-  - Méthode
-  - Prototype
-  - Reference
-translation_of: Web/JavaScript/Reference/Global_Objects/Array/slice
-original_slug: Web/JavaScript/Reference/Objets_globaux/Array/slice
 ---
+
 {{JSRef}}
 
 La méthode **`slice()`** renvoie un objet tableau, contenant une copie superficielle (_shallow copy_) d'une portion du tableau d'origine, la portion est définie par un indice de début et un indice de fin (exclus). Le tableau original ne sera pas modifié.
@@ -19,9 +12,9 @@ La méthode **`slice()`** renvoie un objet tableau, contenant une copie superfic
 ## Syntaxe
 
 ```js
-arr.slice()
-arr.slice(début)
-arr.slice(début, fin)
+arr.slice();
+arr.slice(début);
+arr.slice(début, fin);
 ```
 
 ### Paramètres
@@ -44,7 +37,7 @@ Un nouveau tableau contenant les éléments extraits.
 `slice()` ne modifie pas le tableau original, mais renvoie une nouvelle copie du tableau (_shallow copy_ — copie superficielle) dont les éléments sont des copies des éléments extraits du tableau original. Les éléments du tableau original sont copiés dans le nouveau tableau de la manière suivante&nbsp;:
 
 - Pour les références à des objets (et non les objets eux-mêmes), `slice()` copie ces références dans le nouveau tableau. Tant l'original que le nouveau tableau font référence au même objet. Si un objet référencé est modifié, ces changements sont visibles tant pour le nouveau que pour l'ancien tableau.
-- Pour les chaines de caractères, les nombres et les booléens, `slice()` copie ces chaines de caractères, ces nombres et ces valeurs booléennes dans le nouveau tableau. Les modifications sur ces chaînes, nombres ou booléens dans l'un des tableaux n'affectent pas l'autre tableau (NB : lorsque l'on parle de chaine de caractères, de nombre ou de booléen ici, on parle exclusivement de leur _type primitif_, pas des _objets_ {{jsxref("String")}}, {{jsxref("Number")}} ou {{jsxref("Boolean")}} — voir par exemple [différences entre objet String et type primitif pour les chaines de caractères](/fr/docs/Web/JavaScript/Reference/Objets_globaux/String#Les_différences_entre_les_objets_String_et_le_type_primitif_pour_les_chaînes_de_caractères)).
+- Pour les chaines de caractères, les nombres et les booléens, `slice()` copie ces chaines de caractères, ces nombres et ces valeurs booléennes dans le nouveau tableau. Les modifications sur ces chaînes, nombres ou booléens dans l'un des tableaux n'affectent pas l'autre tableau (NB : lorsque l'on parle de chaine de caractères, de nombre ou de booléen ici, on parle exclusivement de leur _type primitif_, pas des _objets_ {{jsxref("String")}}, {{jsxref("Number")}} ou {{jsxref("Boolean")}} — voir par exemple [différences entre objet String et type primitif pour les chaines de caractères](/fr/docs/Web/JavaScript/Reference/Global_Objects/String#les_différences_entre_les_objets_string_et_le_type_primitif_pour_les_chaînes_de_caractères)).
 
 Si un nouvel élément est ajouté à l'un ou l'autre tableau, le second n'est pas affecté.
 
@@ -111,7 +104,7 @@ function list() {
 var list1 = list(1, 2, 3); // [1, 2, 3]
 ```
 
-Il est possible de lier avec la fonction .`call` de {{jsxref("Function.prototype")}} et on peut effectuer la réduction avec `[].slice.call(arguments)` plutôt qu'avec `Array.prototype.slice.call`. Voici comment on peut simplifier avec {{jsxref("Function.prototype.bind", "bind")}} :
+Il est possible de lier avec la fonction `call` de {{jsxref("Function.prototype")}} et on peut effectuer la réduction avec `[].slice.call(arguments)` plutôt qu'avec `Array.prototype.slice.call`. Voici comment on peut simplifier avec {{jsxref("Function.prototype.bind", "bind")}} :
 
 ```js
 var unboundSlice = Array.prototype.slice;
@@ -126,16 +119,11 @@ var list1 = list(1, 2, 3); // [1, 2, 3]
 
 ## Spécifications
 
-| Spécification                                                                                            | État                         | Commentaires                                          |
-| -------------------------------------------------------------------------------------------------------- | ---------------------------- | ----------------------------------------------------- |
-| {{SpecName('ES3')}}                                                                                 | {{Spec2('ES3')}}         | Définition initiale. Implémentée avec JavaScript 1.2. |
-| {{SpecName('ES5.1', '#sec-15.4.4.10', 'Array.prototype.slice')}}                     | {{Spec2('ES5.1')}}     |                                                       |
-| {{SpecName('ES6', '#sec-array.prototype.slice', 'Array.prototype.slice')}}     | {{Spec2('ES6')}}         |                                                       |
-| {{SpecName('ESDraft', '#sec-array.prototype.slice', 'Array.prototype.slice')}} | {{Spec2('ESDraft')}} |                                                       |
+{{Specifications}}
 
 ## Compatibilité des navigateurs
 
-{{Compat("javascript.builtins.Array.slice")}}
+{{Compat}}
 
 ## Voir aussi
 

@@ -1,12 +1,8 @@
 ---
 title: grid-area
 slug: Web/CSS/grid-area
-tags:
-  - CSS
-  - Propriété
-  - Reference
-translation_of: Web/CSS/grid-area
 ---
+
 {{CSSRef}}
 
 La propriété **`grid-area`** est une propriété raccourcie pour {{cssxref("grid-row-start")}}, {{cssxref("grid-column-start")}}, {{cssxref("grid-row-end")}} et {{cssxref("grid-column-end")}} qui permet de définir la taille d'un objet de la grille et son emplacement via les bords de sa zone de grille.
@@ -59,7 +55,8 @@ grid-area: unset;
 
   - : S'il existe une ligne nommée avec '\<custom-ident>-start', la première ligne correspondante contribue au placement de l'élément sur la grille.
 
-    > **Note :** Les noms des zones de grille sont générés implicitement. Ainsi, en utilisant `grid-area: foo;` cela sélectionnera le début de la grille nommée correspondante (sauf si une autre ligne `foo-start` a été explicitement déclarée).
+    > [!NOTE]
+    > Les noms des zones de grille sont générés implicitement. Ainsi, en utilisant `grid-area: foo;` cela sélectionnera le début de la grille nommée correspondante (sauf si une autre ligne `foo-start` a été explicitement déclarée).
 
     Sinon, la valeur est traitée comme si on avait utilisé `<custom-ident>` et la valeur `1`.
 
@@ -79,9 +76,13 @@ grid-area: unset;
 
     Si l'entier n'est pas défini, la valeur par défaut qui sera utilisée sera `1`. Les entiers négatifs ou nuls sont invalides.
 
-### Syntaxe formelle
+## Définition formelle
 
-{{csssyntax}}
+{{CSSInfo}}
+
+## Syntaxe formelle
+
+{{CSSSyntax}}
 
 ## Exemples
 
@@ -124,15 +125,11 @@ grid-area: unset;
 
 ## Spécifications
 
-| Spécification                                                                    | État                         | Commentaires         |
-| -------------------------------------------------------------------------------- | ---------------------------- | -------------------- |
-| {{SpecName("CSS3 Grid", "#propdef-grid-area", "grid-area")}} | {{Spec2("CSS3 Grid")}} | Définition initiale. |
-
-{{cssinfo}}
+{{Specifications}}
 
 ## Compatibilité des navigateurs
 
-{{Compat("css.properties.grid-area")}}
+{{Compat}}
 
 ## Voir aussi
 
@@ -142,5 +139,5 @@ grid-area: unset;
 - {{cssxref("grid-column")}}
 - {{cssxref("grid-column-start")}}
 - {{cssxref("grid-column-end")}}
-- [Guide : les zones des grilles CSS](/fr/docs/Web/CSS/CSS_Grid_Layout/Grid_Template_Areas)
+- [Guide : les zones des grilles CSS](/fr/docs/Web/CSS/CSS_grid_layout/Grid_template_areas)
 - Tutoriel vidéo : [les zones des grilles CSS (en anglais)](https://gridbyexample.com/video/grid-template-areas/)

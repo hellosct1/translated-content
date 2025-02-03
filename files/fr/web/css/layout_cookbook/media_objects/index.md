@@ -1,12 +1,8 @@
 ---
 title: Objets avec média
 slug: Web/CSS/Layout_cookbook/Media_objects
-tags:
-  - CSS
-  - Guide
-  - Recette
-translation_of: Web/CSS/Layout_cookbook/Media_objects
 ---
+
 {{CSSRef}}
 
 Le motif _Media Object_ (qu'on peut traduire en « objet avec média ») est un motif qu'on rencontre fréquemment sur le Web. [Intitulé ainsi par Nicole Sullivan](http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/), cela fait référence à une boîte organisée en deux colonnes dont l'une contient une image d'un côté et un texte descriptif de l'autre (par exemple l'image de profil de quelqu'un à gauche et un billet à droite).
@@ -31,7 +27,7 @@ Voici ce qu'on souhaite obtenir :
 
 ## Choix effectués
 
-On a ici choisi d'utiliser [une grille](/fr/docs/Web/CSS/CSS_Grid_Layout) pour réaliser cet objet. cela permet de contrôler les deux dimensions lorsqu'on en a besoin. Ainsi, si on a besoin d'un pied de page avec un contenu au dessus, le pied de page peut être poussé sous l'objet.
+On a ici choisi d'utiliser [une grille](/fr/docs/Web/CSS/CSS_grid_layout) pour réaliser cet objet. cela permet de contrôler les deux dimensions lorsqu'on en a besoin. Ainsi, si on a besoin d'un pied de page avec un contenu au dessus, le pied de page peut être poussé sous l'objet.
 
 La grille permet également d'utiliser {{cssxref("fit-content")}} pour la piste contenant l'image. En utilisant `fit-content` avec une taille maximale de 200 pixels, lorsqu'on a une petite image (une icône), la piste est réduite à la taille de cette image. Si l'image est plus grande, la piste ne sera pas plus large que 200 pixels, de plus, l'image ayant {{cssxref("max-width ")}} avec 100%, elle sera redimensionnée afin de pouvoir tenir dans la colonne.
 
@@ -55,20 +51,12 @@ En revanche, il faudra retirer les marges appliquées aux objets et les largeurs
 
 ## Compatibilité des navigateurs
 
-Les différentes méthodes évoquées plus haut peuvent disposer d'une prise en charge différente selon les navigateurs, se référer à chacun des tableaux suivant pour plus de détails sur la prise en charge de chaque propriété.
-
-### grid-template-areas
-
-{{Compat("css.properties.grid-template-areas")}}
-
-### float
-
-{{Compat("css.properties.float")}}
+{{Compat}}
 
 ## Voir aussi
 
-- [Les grilles CSS](/fr/docs/Web/CSS/CSS_Grid_Layout)
-- [L'amélioration progressive et les grilles CSS](/fr/docs/Web/CSS/CSS_Grid_Layout/CSS_Grid_and_Progressive_Enhancement)
-- [Utiliser les zones nommées des grilles](/fr/docs/Web/CSS/CSS_Grid_Layout/Grid_Template_Areas)
+- [Les grilles CSS](/fr/docs/Web/CSS/CSS_grid_layout)
+- [L'amélioration progressive et les grilles CSS](/fr/docs/Web/CSS/CSS_grid_layout/Grid_layout_and_progressive_enhancement)
+- [Utiliser les zones nommées des grilles](/fr/docs/Web/CSS/CSS_grid_layout/Grid_template_areas)
 - [`fit-content`](/fr/docs/Web/CSS/fit-content)
 - [`grid-template-areas`](/fr/docs/Web/CSS/grid-template-areas)

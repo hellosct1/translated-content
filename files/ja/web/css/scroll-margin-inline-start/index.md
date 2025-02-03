@@ -1,17 +1,8 @@
 ---
 title: scroll-margin-inline-start
 slug: Web/CSS/scroll-margin-inline-start
-tags:
-  - CSS
-  - CSS プロパティ
-  - Reference
-  - Web
-  - recipe:css-property
-  - scroll-margin-inline
-  - scroll-margin-inline-start
-browser-compat: css.properties.scroll-margin-inline-start
-translation_of: Web/CSS/scroll-margin-inline-start
 ---
+
 {{CSSRef}}
 
 `scroll-margin-inline-start` プロパティは、スクロールスナップ領域のインライン方向における先頭側のマージンを定義し、このボックスをスナップポートにスナップするために使用されます。スクロールスナップ領域は変換された境界ボックスによって定義され、四角形の囲みボックスを探して (スクロールコンテナーの座標空間における軸に合わせられ)、それから指定された外部距離が追加されます。
@@ -138,5 +129,5 @@ scroll-margin-inline-start: unset;
 
 ## 関連情報
 
-- [CSS スクロールスナップ](/ja/docs/Web/CSS/CSS_Scroll_Snap)
+- [CSS スクロールスナップ](/ja/docs/Web/CSS/CSS_scroll_snap)
 - [Well-Controlled Scrolling with CSS Scroll Snap](https://web.dev/css-scroll-snap/)

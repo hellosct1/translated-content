@@ -1,12 +1,8 @@
 ---
 title: Types et grammaire
 slug: Web/JavaScript/Guide/Grammar_and_types
-tags:
-  - Guide
-  - JavaScript
-translation_of: Web/JavaScript/Guide/Grammar_and_types
-original_slug: Web/JavaScript/Guide/Types_et_grammaire
 ---
+
 {{jsSidebar("JavaScript Guide")}} {{PreviousNext("Web/JavaScript/Guide/Introduction", "Web/JavaScript/Guide/Contrôle_du_flux_Gestion_des_erreurs")}}
 
 Ce chapitre décrit les bases de la grammaire et des types de données JavaScript.
@@ -24,9 +20,9 @@ typeof Früh; // undefined car JavaScript est sensible à la casse
 
 En JavaScript, les instructions sont appelées ({{Glossary("Statement", "statements")}}) et sont séparées par des points-virgules.
 
-Il n'est pas nécessaire d'inclure un point-virgule si l'on écrit une instruction sur une nouvelle ligne. Mais si vous voulez écrire plus d'une déclaration sur une seule ligne, alors elles doivent être séparées par un point-virgule. Ceci étant dit, la bonne pratique est d'inclure un point-virgule après chaque instruction. Les espaces, les tabulations et les caractères de nouvelles lignes sont considérés comme des blancs. Il existe aussi un ensemble de règles pour ajouter automatiquement des points-virgules à la fin des instructions ([ASI](/fr/docs/Web/JavaScript/Reference/Grammaire_lexicale#Insertion_automatique_de_points-virgules) pour _Automatic Semicolon Insertion_). Cependant, il est conseillé de toujours ajouter des points-virgules à la fin des instructions afin d'éviter des effets de bord néfastes.
+Il n'est pas nécessaire d'inclure un point-virgule si l'on écrit une instruction sur une nouvelle ligne. Mais si vous voulez écrire plus d'une déclaration sur une seule ligne, alors elles doivent être séparées par un point-virgule. Ceci étant dit, la bonne pratique est d'inclure un point-virgule après chaque instruction. Les espaces, les tabulations et les caractères de nouvelles lignes sont considérés comme des blancs. Il existe aussi un ensemble de règles pour ajouter automatiquement des points-virgules à la fin des instructions ([ASI](/fr/docs/Web/JavaScript/Reference/Lexical_grammar#insertion_automatique_de_points-virgules) pour _Automatic Semicolon Insertion_). Cependant, il est conseillé de toujours ajouter des points-virgules à la fin des instructions afin d'éviter des effets de bord néfastes.
 
-Le texte d'un code source JavaScript est analysé de gauche à droite et est converti en une série d'unités lexicales, de caractères de contrôle, de fins de lignes, de commentaires et de blancs. ECMAScript définit également certains mots-clés et littéraux. Pour plus d'informations, voir la page sur [la grammaire lexicale de JavaScript](/fr/docs/Web/JavaScript/Reference/Grammaire_lexicale) dans la référence JavaScript.
+Le texte d'un code source JavaScript est analysé de gauche à droite et est converti en une série d'unités lexicales, de caractères de contrôle, de fins de lignes, de commentaires et de blancs. ECMAScript définit également certains mots-clés et littéraux. Pour plus d'informations, voir la page sur [la grammaire lexicale de JavaScript](/fr/docs/Web/JavaScript/Reference/Lexical_grammar) dans la référence JavaScript.
 
 ## Commentaires
 
@@ -42,7 +38,8 @@ La syntaxe utilisée pour **les commentaires** est la même que celle utilisée 
 /* Par contre on ne peut pas /* imbriquer des commentaires */ SyntaxError */
 ```
 
-> **Note :** Vous pourrez également rencontrer une troisième forme de commentaires au début de certains fichiers JavaScript comme `#!/usr/bin/env node`. Ce type de commentaire indique le chemin d'un interpréteur JavaScript spécifique pour exécuter le script. Pour plus de détails, voir la page sur [les commentaires d'environnement](</fr/docs/Web/JavaScript/Reference/Grammaire_lexicale#Commentaire_d'environnement_(hashbang)>).
+> [!NOTE]
+> Vous pourrez également rencontrer une troisième forme de commentaires au début de certains fichiers JavaScript comme `#!/usr/bin/env node`. Ce type de commentaire indique le chemin d'un interpréteur JavaScript spécifique pour exécuter le script. Pour plus de détails, voir la page sur [les commentaires d'environnement](</fr/docs/Web/JavaScript/Reference/Grammaire_lexicale#Commentaire_d'environnement_(hashbang)>).
 
 ## Déclarations
 
@@ -70,8 +67,8 @@ Voici des exemples d'identifiants valides : `Nombre_touches`, `temp99`, `$credit
 
 Il est possible de déclarer des variables de plusieurs façons :
 
-- En utilisant le mot-clé {{jsxref("Instructions/var","var")}}, par exemple : `var x = 42`. Cette syntaxe peut être utilisée pour déclarer des variables [locales ou globales](#Portées) selon le contexte d'exécution.
-- En utilisant le mot-clé {{jsxref("Instructions/const","const")}} ou le mot-clé {{jsxref("Instructions/let","let")}}, par exemple avec `let y = 13`. Cette syntaxe peut être utilisée pour déclarer une variable dont la portée sera celle du bloc. Voir le paragraphe sur [les portées des variables](#Portées) ci-après.
+- En utilisant le mot-clé {{jsxref("Instructions/var","var")}}, par exemple : `var x = 42`. Cette syntaxe peut être utilisée pour déclarer des variables [locales ou globales](#portées) selon le contexte d'exécution.
+- En utilisant le mot-clé {{jsxref("Instructions/const","const")}} ou le mot-clé {{jsxref("Instructions/let","let")}}, par exemple avec `let y = 13`. Cette syntaxe peut être utilisée pour déclarer une variable dont la portée sera celle du bloc. Voir le paragraphe sur [les portées des variables](#portées) ci-après.
 
 Il est également possible d'affecter une valeur à une variable sans utiliser de mot-clé (ex. `x = 42`). Cela créera une variable globale non-déclarée. Cette forme génèrera également un avertissement avec [le mode strict](/fr/docs/Web/JavaScript/Reference/Strict_mode). Attention, les variables globales non-déclarées peuvent mener à des comportements inattendus et sont considérées comme une mauvaise pratique.
 
@@ -94,11 +91,11 @@ let y;
 console.log("La valeur de y est " + y); // La valeur de y est undefined
 ```
 
-Il est possible d'utiliser `undefined` pour déterminer si une variable possède une valeur. Dans l'exemple qui suit, la condition de l'instruction [`if`](/fr/docs/Web/JavaScript/Reference/Instructions/if...else) sera validée car la variable n'a pas été initialisée (elle a simplement été déclarée) :
+Il est possible d'utiliser `undefined` pour déterminer si une variable possède une valeur. Dans l'exemple qui suit, la condition de l'instruction [`if`](/fr/docs/Web/JavaScript/Reference/Statements/if...else) sera validée car la variable n'a pas été initialisée (elle a simplement été déclarée) :
 
 ```js
 var input;
-if (input === undefined){
+if (input === undefined) {
   faireCeci();
 } else {
   faireCela();
@@ -109,7 +106,7 @@ La valeur `undefined` se comporte comme le booléen `false` lorsqu'elle est util
 
 ```js
 var monTableau = new Array();
-if (!monTableau[0]){
+if (!monTableau[0]) {
   maFunction();
 }
 ```
@@ -132,7 +129,7 @@ console.log(n * 32); // Le log affichera 0
 
 Lorsqu'une variable est déclarée avec `var` en dehors des fonctions, elle est appelée variable *global*e car elle est disponible pour tout le code contenu dans le document. Lorsqu'une variable est déclarée dans une fonction, elle est appelée variable _locale_ car elle n'est disponible qu'au sein de cette fonction.
 
-Avant ECMAScript 2015 (ES6), JavaScript ne définissait pas de portée pour une [instruction de bloc](/fr/docs/Web/JavaScript/Reference/Instructions/bloc) ; les éléments du bloc seront locaux pour le code qui contient le bloc (que ce soit une fonction ou le contexte global). Ainsi, l'exemple qui suit affichera 5 car la portée de `x` est la fonction (ou le contexte global) dans lequel `x` est déclaré, pas le bloc (correspondant à l'instruction `if` dans ce cas) :
+Avant ECMAScript 2015 (ES6), JavaScript ne définissait pas de portée pour une [instruction de bloc](/fr/docs/Web/JavaScript/Reference/Statements/block) ; les éléments du bloc seront locaux pour le code qui contient le bloc (que ce soit une fonction ou le contexte global). Ainsi, l'exemple qui suit affichera 5 car la portée de `x` est la fonction (ou le contexte global) dans lequel `x` est déclaré, pas le bloc (correspondant à l'instruction `if` dans ce cas) :
 
 ```js
 if (true) {
@@ -212,16 +209,16 @@ En ce qui concerne les fonctions, seules les déclarations de fonctions sont rem
 
 ```js
 /* Déclaration de fonction */
-toto();  // "truc"
-function toto(){
+toto(); // "truc"
+function toto() {
   console.log("truc");
 }
 
 /* Expression de fonction */
-machin();      // erreur TypeError : machin n'est pas une fonction
-var machin = function() {
+machin(); // erreur TypeError : machin n'est pas une fonction
+var machin = function () {
   console.log("titi");
-}
+};
 ```
 
 ### Les variables globales
@@ -235,7 +232,7 @@ Ainsi, il est possible d'accéder à des variables déclarées dans une fenêtre
 Il est possible de créer des constantes en lecture seule en utilisant le mot-clé {{jsxref("Instructions/const","const")}}. La syntaxe d'un identifiant pour une constante est la même que pour les variables (elle doit débuter avec une lettre, un tiret du bas, un symbole dollar et peut contenir des caractères numériques, alphabétiques et des tirets bas voire des caractères Unicode).
 
 ```js
-const préfixe = '212';
+const préfixe = "212";
 ```
 
 Une constante ne peut pas changer de valeur grâce à une affectation ou être re-déclarée pendant l'exécution du script.
@@ -246,7 +243,7 @@ Il est impossible de déclarer une constante avec le même nom qu'une autre vari
 
 ```js example-bad
 // Renverra une erreur
-function f() {};
+function f() {}
 const f = 5;
 
 // Renverra également une erreur
@@ -261,7 +258,7 @@ function f() {
 Cependant, les propriétés des objets qui sont affectés comme constantes ne sont pas protégées, on pourra ainsi exécuter sans problème le code suivant :
 
 ```js
-const MON_OBJET = {"clé": "valeur"};
+const MON_OBJET = { clé: "valeur" };
 MON_OBJET.clé = "autreValeur";
 ```
 
@@ -291,7 +288,7 @@ La dernière version du standard ECMAScript définit sept types de données :
 
 - et un type pour les objets (_Object_)
 
-Bien que cette description couvre peu de types de données, ceux-ci vous permettent d'implémenter une grande variété de fonctions au sein de vos applications. [Les objets](/fr/docs/Web/JavaScript/Reference/Objets_globaux/Object) et [les fonctions](/fr/docs/Web/JavaScript/Reference/Objets_globaux/Function) sont parmi les briques fondamentales du langage. On peut considérer, à première vue, les objets comme des conteneurs de valeurs et de fonctions pour une application.
+Bien que cette description couvre peu de types de données, ceux-ci vous permettent d'implémenter une grande variété de fonctions au sein de vos applications. [Les objets](/fr/docs/Web/JavaScript/Reference/Global_Objects/Object) et [les fonctions](/fr/docs/Web/JavaScript/Reference/Global_Objects/Function) sont parmi les briques fondamentales du langage. On peut considérer, à première vue, les objets comme des conteneurs de valeurs et de fonctions pour une application.
 
 ### Conversion de types de données
 
@@ -349,13 +346,13 @@ Une autre méthode pour récupérer un nombre à partir d'une chaîne de caract�
 
 Les littéraux sont utilisés pour représenter des valeurs en JavaScript. Ce sont des valeurs fixes, pas des variables, qui sont fournies _littéralement_ au script. Cette section décrit les différents types de littéraux :
 
-- [Littéraux de tableaux](<#les_littéraux_de_tableaux>)
-- [Littéraux booléens](<#les_littéraux_booléens>)
-- [Littéraux de nombres flottants](<#les_littéraux_de_nombres_décimaux>)
-- [Littéraux numériques](<#les_littéraux_numériques>)
-- [Littéraux d'objets](<#les_littéraux_dobjets>)
+- [Littéraux de tableaux](#les_littéraux_de_tableaux)
+- [Littéraux booléens](#les_littéraux_booléens)
+- [Littéraux de nombres flottants](#les_littéraux_de_nombres_décimaux)
+- [Littéraux numériques](#les_littéraux_numériques)
+- [Littéraux d'objets](#les_littéraux_dobjets)
 - [Littéraux d'expressions rationnelles](#les_littéraux_dexpressions_rationnelles)
-- [Littéraux de chaînes de caractères](<#les_littéraux_de_chaînes_de_caractères>)
+- [Littéraux de chaînes de caractères](#les_littéraux_de_chaînes_de_caractères)
 
 ### Les littéraux de tableaux
 
@@ -367,11 +364,12 @@ L'exemple suivant crée ainsi le tableau `cafés` avec trois éléments et une t
 var cafés = ["Brésilien", "Colombien", "Kona"];
 ```
 
-> **Note :** Un littéral de tableau est du type d'un initialisateur d'objets. Voir [l'utilisation d'initialisateurs d'objets](/fr/docs/Web/JavaScript/Reference/Op%C3%A9rateurs/Initialisateur_objet).
+> [!NOTE]
+> Un littéral de tableau est du type d'un initialisateur d'objets. Voir [l'utilisation d'initialisateurs d'objets](/fr/docs/Web/JavaScript/Reference/Operators/Object_initializer).
 
 Si un tableau est créé en utilisant un littéral dans un script du plus haut niveau, JavaScript interprète le tableau chaque fois qu'il évalue l'expression contenant le littéral. De plus, un littéral utilisé dans une fonction est créé chaque fois que la fonction est appelée.
 
-Les littéraux de tableaux sont également des objets `Array`. Voir la page sur l'objet [`Array`](/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array) pour plus de détails.
+Les littéraux de tableaux sont également des objets `Array`. Voir la page sur l'objet [`Array`](/fr/docs/Web/JavaScript/Reference/Global_Objects/Array) pour plus de détails.
 
 #### Les virgules supplémentaires
 
@@ -385,22 +383,23 @@ Ce tableau possède deux éléments ayant une valeur et un élément vide (`pois
 
 Si une virgule est ajoutée à la fin de la liste des éléments, elle est ignorée. Dans le prochain exemple, la longueur du tableau est égale à 3. Il n'y a pas d'élément `maListe[3]`. Les autres virgules indiquent un nouvel élément.
 
-> **Note :** Avec d'anciennes versions de navigateurs, les virgules de fin peuvent causer des erreurs, il est fortement conseillé de les retirer.
+> [!NOTE]
+> Avec d'anciennes versions de navigateurs, les virgules de fin peuvent causer des erreurs, il est fortement conseillé de les retirer.
 
 ```js
-var maListe = ['maison', , 'école', ];
+var maListe = ["maison", , "école"];
 ```
 
 Dans l'exemple qui suit, la longueur du tableau est égale à 4 et `maListe[0]` et `maListe[2]` sont manquants.
 
 ```js
-var maListe = [ , 'maison', , 'école'];
+var maListe = [, "maison", , "école"];
 ```
 
 Dans l'exemple qui suit, la longueur du tableau est égale à 4 et `maListe[1]` et `maListe[3]` sont manquants.
 
 ```js
-var maListe = ['maison', , 'école', , ];
+var maListe = ["maison", , "école", ,];
 ```
 
 Comprendre le fonctionnement des virgules supplémentaires est important. Cependant, lorsque vous écrivez du code, veillez, dès que c'est possible, à déclarer les éléments manquants avec `undefined` : cela améliorera la lisibilité de votre code et il sera ainsi plus facile à maintenir.
@@ -409,7 +408,7 @@ Comprendre le fonctionnement des virgules supplémentaires est important. Cepend
 
 Le type booléen possède deux valeurs littérales : `true` et `false`.
 
-Il ne faut pas confondre les valeurs `true` et `false` du type primitif booléen et les valeurs true et false de l'objet `Boolean`. L'objet `Boolean` permet de créer un objet autour du type de donnée booléen. Voir la page sur l'objet [`Boolean`](/fr/docs/JavaScript/Reference/Objets_globaux/Boolean) pour plus d'informations.
+Il ne faut pas confondre les valeurs `true` et `false` du type primitif booléen et les valeurs true et false de l'objet `Boolean`. L'objet `Boolean` permet de créer un objet autour du type de donnée booléen. Voir la page sur l'objet [`Boolean`](/fr/docs/Web/JavaScript/Reference/Global_Objects/Boolean) pour plus d'informations.
 
 ### Les littéraux numériques
 
@@ -429,7 +428,7 @@ Voici des exemples pour ces littéraux :
 0b11, 0B0011, -0b11, 0b11101001010101010101n (notation binaire, base 2)
 ```
 
-Pour plus d'informations, voir [les littéraux numériques dans la grammaire lexicale de JavaScript](/fr/docs/Web/JavaScript/Reference/Grammaire_lexicale#Littéraux_numériques).
+Pour plus d'informations, voir [les littéraux numériques dans la grammaire lexicale de JavaScript](/fr/docs/Web/JavaScript/Reference/Lexical_grammar#littéraux_numériques).
 
 ### Les littéraux de nombres décimaux
 
@@ -468,28 +467,30 @@ L'exemple qui suit montre l'utilisation d'un littéral d'objet. Le premier élé
 var soldes = "Toyota";
 
 function carTypes(nom) {
-  return (nom === "Honda") ?
-    nom :
-    "Désolé, nous ne vendons pas de " + nom + "." ;
+  return nom === "Honda" ? nom : "Désolé, nous ne vendons pas de " + nom + ".";
 }
 
-var voiture = { maVoiture: "Saturn", getVoiture: carTypes("Honda"), spécial: soldes };
+var voiture = {
+  maVoiture: "Saturn",
+  getVoiture: carTypes("Honda"),
+  spécial: soldes,
+};
 
-console.log(voiture.maVoiture);   // Saturn
-console.log(voiture.getVoiture);  // Honda
+console.log(voiture.maVoiture); // Saturn
+console.log(voiture.getVoiture); // Honda
 console.log(voiture.spécial); // Toyota
 ```
 
 Il est également possible d'utiliser un littéral numérique ou un littéral de chaîne de caractères pour désigner le nom d'une propriété ou pour imbriquer un objet dans un autre. L'exemple qui suit illustre cette possibilité :
 
 ```js
-var voiture = { plusieursVoitures: {a: "Saab", b: "Jeep"}, 7: "Mazda" };
+var voiture = { plusieursVoitures: { a: "Saab", b: "Jeep" }, 7: "Mazda" };
 
 console.log(voiture.plusieursVoitures.b); // Jeep
 console.log(voiture[7]); // Mazda
 ```
 
-Les noms des propriétés d'objets peuvent être n'importe quelle chaîne de caractères, y compris la chaîne vide. Si le nom de la propriété n'est pas un [identifiant](/fr/docs/Web/JavaScript/Guide/Types_et_grammaire#Variables) valide, il faudra qu'il soit placé entre guillemets. Les noms de propriétés qui ne sont pas des identifiants valides ne peuvent pas être utilisés pour accéder à la valeur en utilisant la notation pointée (objet.propriété). En revanche, il est possible d'y accéder avec la notation utilisant les crochets ("`[]`") comme pour les tableaux.
+Les noms des propriétés d'objets peuvent être n'importe quelle chaîne de caractères, y compris la chaîne vide. Si le nom de la propriété n'est pas un [identifiant](/fr/docs/Web/JavaScript/Guide/Grammar_and_types#variables) valide, il faudra qu'il soit placé entre guillemets. Les noms de propriétés qui ne sont pas des identifiants valides ne peuvent pas être utilisés pour accéder à la valeur en utilisant la notation pointée (objet.propriété). En revanche, il est possible d'y accéder avec la notation utilisant les crochets ("`[]`") comme pour les tableaux.
 
 ```js
 var nomsBizarres = {
@@ -508,26 +509,26 @@ Avec ES2015, les littéraux d'objets permettent de définir le prototype lors de
 
 ```js
 var obj = {
-    // __proto__
-    __proto__: lePrototypeDeLObjet,
-    // Notation raccourcie pour ‘handler: handler’
-    handler,
-    // Méthodes
-    toString() {
-     // Appelle les méthodes de l'objet parent
-     return "d " + super.toString();
-    },
-    // Noms de propriétés calculés dynamiquement
-    [ 'prop_' + (() => 42)() ]: 42
+  // __proto__
+  __proto__: lePrototypeDeLObjet,
+  // Notation raccourcie pour ‘handler: handler’
+  handler,
+  // Méthodes
+  toString() {
+    // Appelle les méthodes de l'objet parent
+    return "d " + super.toString();
+  },
+  // Noms de propriétés calculés dynamiquement
+  ["prop_" + (() => 42)()]: 42,
 };
 ```
 
 Attention :
 
 ```js
-var toto = {a: "alpha", 2: "deux"};
-console.log(toto.a);    // alpha
-console.log(toto[2]);   // deux
+var toto = { a: "alpha", 2: "deux" };
+console.log(toto.a); // alpha
+console.log(toto[2]); // deux
 //console.log(toto.2);  // Erreur: parenthèse ) manquante après la liste d'argument
 //console.log(toto[a]); // Erreur: a n'est pas défini
 console.log(toto["a"]); // alpha
@@ -536,7 +537,7 @@ console.log(toto["2"]); // deux
 
 ### Les littéraux d'expressions rationnelles
 
-Un littéral d'[expression rationnelle](/fr/docs/Web/JavaScript/Guide/Expressions_r%C3%A9guli%C3%A8res) est un motif encadré par deux barres obliques. Par exemple :
+Un littéral d'[expression rationnelle](/fr/docs/Web/JavaScript/Guide/Regular_expressions) est un motif encadré par deux barres obliques. Par exemple :
 
 ```js
 var re = /ab+c/;
@@ -552,30 +553,29 @@ Un littéral de chaîne de caractères consiste en zéro ou plusieurs caractère
 - `"Une ligne \n une autre ligne"`
 - `"Aujourd'hui j'ai mangé une pomme"`
 
-Il est possible d'utiliser les méthodes de [`String`](/fr/docs/Web/JavaScript/Reference/Objets_globaux/String) sur un tel littéral. JavaScript convertira automatiquement le littéral en un objet `String`, appellera la méthode puis détruira l'objet `String`. On peut également utiliser la propriété `String.length` sur un littéral de chaîne de caractère :
+Il est possible d'utiliser les méthodes de [`String`](/fr/docs/Web/JavaScript/Reference/Global_Objects/String) sur un tel littéral. JavaScript convertira automatiquement le littéral en un objet `String`, appellera la méthode puis détruira l'objet `String`. On peut également utiliser la propriété `String.length` sur un littéral de chaîne de caractère :
 
 ```js
-console.log("j'ai mangé une pomme".length)
+console.log("j'ai mangé une pomme".length);
 // Affichera le nombre de caractères (y compris les blancs).
 // Dans ce cas, 20.
 ```
 
-Il est préférable d'utiliser des littéraux de chaînes de caractères s'il n'est pas spécifiquement nécessaire d'utiliser un objet `String`. Voir la page sur l'objet [`String`](/fr/docs/Web/JavaScript/Reference/Objets_globaux/String) pour plus de détails sur les objets `String`.
+Il est préférable d'utiliser des littéraux de chaînes de caractères s'il n'est pas spécifiquement nécessaire d'utiliser un objet `String`. Voir la page sur l'objet [`String`](/fr/docs/Web/JavaScript/Reference/Global_Objects/String) pour plus de détails sur les objets `String`.
 
 Avec ECMAScript 2015, on peut également utiliser des littéraux sous forme de _gabarits_ (_templates_) en utilisant le caractère accent grave (\`) comme séparateur. Les gabarits de chaînes de caractères sont semblables aux fonctionnalités d'interpolation existantes en Python, Perl, etc. Ces gabarits permettent d'utiliser des balises afin d'adapter la construction de chaînes.
 
 ```js
 // Littéral simple pour une chaîne
-`Un saut de ligne '\n' en JavaScript.`
-
-// On peut écrire une chaîne sur plusieurs
+`Un saut de ligne '\n' en JavaScript.` // On peut écrire une chaîne sur plusieurs
 // lignes
 `Dans les gabarits, on peut écrire
-  sur plusieurs lignes. `
+  sur plusieurs lignes. `;
 
 // Interpolation de chaîne
-var nom = "Robert", jour = "aujourd'hui";
-`Bonjour ${nom}, comment allez-vous ${jour} ?`
+var nom = "Robert",
+  jour = "aujourd'hui";
+`Bonjour ${nom}, comment allez-vous ${jour} ?`;
 
 // On peut construire un préfixe HTTP
 // afin de construire plus facilement
@@ -592,29 +592,29 @@ POST`http://toto.org/truc?a=${a}&b=${b}
 En plus des caractères « classiques », il est possible d'insérer des caractères spéciaux dans les chaînes de caractères. Voici un exemple :
 
 ```js
-"une ligne \n une autre ligne"
+"une ligne \n une autre ligne";
 ```
 
 Voici un tableau listant les caractères spéciaux qu'il est possible d'utiliser dans les chaînes de caractères JavaScript :
 
-| Caractère   | Signification                                                                                                                                                                                        |
-| ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `\0`        | Octet null                                                                                                                                                                                           |
-| `\b`        | Retour arrière                                                                                                                                                                                       |
-| `\f`        | Saut de page                                                                                                                                                                                         |
-| `\n`        | Nouvelle ligne                                                                                                                                                                                       |
-| `\r`        | Retour chariot                                                                                                                                                                                       |
-| `\t`        | Tabulation                                                                                                                                                                                           |
-| `\v`        | Tabulation verticale                                                                                                                                                                                 |
-| `\'`        | Apostrophe ou guillemet droit simple                                                                                                                                                                 |
-| `\"`        | Guillemet droit double                                                                                                                                                                               |
-| `\\`        | Barre oblique inversée                                                                                                                                                                               |
-| `\XXX`      | Le caractère dont l'encodage Latin-1 est spécifié grâce à, au plus, 3 chiffres octaux _XXX_ entre 0 et 377. \251, par exemple représente le caractère copyright.                                     |
-|             |                                                                                                                                                                                                      |
-| `\xXX`      | Le caractère dont l'encodage Latin-1 est spécifié par deux chiffres hexadécimaux entre 00 et FF. Ainsi, \xA9 correspond à la séquence hexadécimale pour le caractère copyright.                      |
-|             |                                                                                                                                                                                                      |
+| Caractère   | Signification                                                                                                                                                                                                                                                                    |
+| ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `\0`        | Octet null                                                                                                                                                                                                                                                                       |
+| `\b`        | Retour arrière                                                                                                                                                                                                                                                                   |
+| `\f`        | Saut de page                                                                                                                                                                                                                                                                     |
+| `\n`        | Nouvelle ligne                                                                                                                                                                                                                                                                   |
+| `\r`        | Retour chariot                                                                                                                                                                                                                                                                   |
+| `\t`        | Tabulation                                                                                                                                                                                                                                                                       |
+| `\v`        | Tabulation verticale                                                                                                                                                                                                                                                             |
+| `\'`        | Apostrophe ou guillemet droit simple                                                                                                                                                                                                                                             |
+| `\"`        | Guillemet droit double                                                                                                                                                                                                                                                           |
+| `\\`        | Barre oblique inversée                                                                                                                                                                                                                                                           |
+| `\XXX`      | Le caractère dont l'encodage Latin-1 est spécifié grâce à, au plus, 3 chiffres octaux _XXX_ entre 0 et 377. \251, par exemple représente le caractère copyright.                                                                                                                 |
+|             |                                                                                                                                                                                                                                                                                  |
+| `\xXX`      | Le caractère dont l'encodage Latin-1 est spécifié par deux chiffres hexadécimaux entre 00 et FF. Ainsi, \xA9 correspond à la séquence hexadécimale pour le caractère copyright.                                                                                                  |
+|             |                                                                                                                                                                                                                                                                                  |
 | `\uXXXX`    | Le caractère Unicode spécifié par quatre chiffres hexadécimaux _XXXX_. Ainsi, \u00A9 correspondra à la séquence Unicode du symbole copyright. Voir [Les caractères d'échappement Unicode](/fr/docs/Web/JavaScript/Reference/Lexical_grammar#littéraux_de_chaînes_de_caractères). |
-| `\u{XXXXX}` | Échappement de codes Unicode. Par exemple, \u{2F804} est équivalent à la combinaison d'échappements « simples » \uD87E\uDC04.                                                                        |
+| `\u{XXXXX}` | Échappement de codes Unicode. Par exemple, \u{2F804} est équivalent à la combinaison d'échappements « simples » \uD87E\uDC04.                                                                                                                                                    |
 
 #### Les caractères d'échappement
 
@@ -622,7 +622,7 @@ Pour les caractères qui ne font pas partie du tableau précédent, les barres o
 
 En précédant d'une barre oblique inversée les guillemets droits doubles, on _échappe_ ces caractères. Voici un exemple :
 
-```js
+```js-nolint
 var citation = "Il lit \"Bug Jargal\" de V. Hugo.";
 console.log(citation);
 ```
@@ -642,41 +642,41 @@ var chemin = "c:\\temp";
 Il est également possible d'échapper des sauts de lignes de la même façon. La barre oblique inversée et le saut de ligne seront alors ignorés dans la valeur de la chaîne de caractères.
 
 ```js
-var str = "cette chaîne \
+var str =
+  "cette chaîne \
 est cassée \
 sur plusieurs \
-lignes."
-console.log(str);   // cette chaîne est cassée sur plusieurs lignes.
+lignes.";
+console.log(str); // cette chaîne est cassée sur plusieurs lignes.
 ```
 
 Avant ECMAScript 2015 (ES6), JavaScript ne disposait pas d'une syntaxe permettant de traiter les chaînes de caractères comme des contenus de fichier, il est possible d'ajouter un caractère de saut de ligne échappé et un saut de ligne en fin de ligne en utilisant cette façon :
 
 ```js
 var poème =
-"Les roses sont rouges,\n\
+  "Les roses sont rouges,\n\
 Les violettes sont bleues.\n\
 Le miel est sucré,\n\
-Et moi je suis."
+Et moi je suis.";
 ```
 
 Grâce à ES6, on peut utiliser des [littéraux de gabarits qui offrent de nouvelles fonctionnalités](https://tech.mozfr.org/post/2015/05/27/ES6-en-details-%3A-les-gabarits-de-chaines-de-caracteres) dont une qui permet d'avoir des chaînes de caractères écrites sur plusieurs lignes :
 
 ```js
-var poème =
-`Les roses sont rouges,
+var poème = `Les roses sont rouges,
 Les violettes sont bleues,
 Le miel est sucré,
-Et moi je suis.`
+Et moi je suis.`;
 ```
 
 ## En savoir plus
 
 Ce chapitre est centré sur les bases de la syntaxe, les déclarations et les types utilisés en JavaScript. Pour en savoir plus sur les différents composants du langage, voir les chapitres suivants du guide:
 
-- [Contrôle du flux et gestion des erreurs](/fr/docs/Web/JavaScript/Guide/Contrôle_du_flux_Gestion_des_erreurs)
-- [Boucles et itération](/fr/docs/Web/JavaScript/Guide/Boucles_et_itération)
-- [Fonctions](/fr/docs/Web/JavaScript/Guide/Fonctions)
-- [Expressions et opérateurs](/fr/docs/Web/JavaScript/Guide/Expressions_et_Opérateurs)
+- [Contrôle du flux et gestion des erreurs](/fr/docs/Web/JavaScript/Guide/Control_flow_and_error_handling)
+- [Boucles et itération](/fr/docs/Web/JavaScript/Guide/Loops_and_iteration)
+- [Fonctions](/fr/docs/Web/JavaScript/Guide/Functions)
+- [Expressions et opérateurs](/fr/docs/Web/JavaScript/Guide/Expressions_and_operators)
 
 Dans le chapitre suivant, on abordera les structures conditionnelles, permettant de diriger le flux d'instructions et la gestion des erreurs.
 

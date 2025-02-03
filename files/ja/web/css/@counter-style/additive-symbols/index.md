@@ -1,16 +1,8 @@
 ---
 title: additive-symbols
 slug: Web/CSS/@counter-style/additive-symbols
-tags:
-  - '@counter-style'
-  - At-rule descriptor
-  - CSS
-  - CSS Counter Styles
-  - CSS Descriptor
-  - Reference
-browser-compat: css.at-rules.counter-style.additive-symbols
-translation_of: Web/CSS/@counter-style/additive-symbols
 ---
+
 {{CSSRef}}
 
 **`additive-symbols`** 記述子は、カウンターの {{cssxref('system')}} 記述子が加算的 (`additive`) な場合の記号を指定することができます。 `additive-symbols` 記述子では*加算的なタプル*を、それぞれ記号と非負数の整数による重みの組で定義します。加算的なシステムは、ローマ数字のような [sign-value numbering](http://en.wikipedia.org/wiki/Sign-value_notation) を構築するために使われます。
@@ -19,8 +11,12 @@ translation_of: Web/CSS/@counter-style/additive-symbols
 
 ```css
 additive-symbols: 3 "0";
-additive-symbols: 3 "0", 2 "\2E\20";
-additive-symbols: 3 "0", 2 url(symbol.png);
+additive-symbols:
+  3 "0",
+  2 "\2E\20";
+additive-symbols:
+  3 "0",
+  2 url(symbol.png);
 ```
 
 `system` 記述子が `cyclic`, `numeric`, `alphabetic`, `symbolic`, `fixed` の場合は、 {{cssxref('symbols')}} 記述子を `additive-symbols` の代わりに使用してください。
@@ -58,7 +54,10 @@ additive-symbols: 3 "0", 2 url(symbol.png);
 ```css
 @counter-style additive-symbols-example {
   system: additive;
-  additive-symbols: V 5, IV 4, I 1;
+  additive-symbols:
+    V 5,
+    IV 4,
+    I 1;
 }
 .list {
   list-style: additive-symbols-example;

@@ -1,16 +1,10 @@
 ---
 title: font-optical-sizing
 slug: Web/CSS/font-optical-sizing
-tags:
-  - CSS
-  - CSS フォント
-  - CSS プロパティ
-  - NeedsExample
-  - リファレンス
-  - recipe:css-property
-browser-compat: css.properties.font-optical-sizing
-translation_of: Web/CSS/font-optical-sizing
+l10n:
+  sourceCommit: 14515827c44f3cb814261a1c6bd487ae8bfcde1b
 ---
+
 {{CSSRef}}
 
 **`font-optical-sizing`** は [CSS](/ja/docs/Web/CSS) のプロパティで、テキストの描画をそれぞれの大きさでの表示に最適化して表示するかどうかを設定します。
@@ -28,6 +22,7 @@ font-optical-sizing: auto; /* default */
 font-optical-sizing: inherit;
 font-optical-sizing: initial;
 font-optical-sizing: revert;
+font-optical-sizing: revert-layer;
 font-optical-sizing: unset;
 ```
 
@@ -57,18 +52,21 @@ font-optical-sizing: unset;
 ### オプティカルサイズの変更を無効化
 
 ```html
-<p class="optical-sizing">This paragraph is optically sized.
- This is the default across browsers.</p>
+<p class="optical-sizing">
+  This paragraph is optically sized. This is the default across browsers.
+</p>
 
-<p class="no-optical-sizing">This paragraph is not optically sized.
- You should see a difference in supporting browsers.</p>
+<p class="no-optical-sizing">
+  This paragraph is not optically sized. You should see a difference in
+  supporting browsers.
+</p>
 ```
 
 ```css
 @font-face {
-    src: url('AmstelvarAlpha-VF.ttf');
-    font-family:'Amstelvar';
-    font-style: normal;
+  src: url("AmstelvarAlpha-VF.ttf");
+  font-family: "Amstelvar";
+  font-style: normal;
 }
 
 p {
@@ -81,7 +79,8 @@ p {
 }
 ```
 
-> **Note:** 上記で参照されているフォント — 光学的サイズを含みライセンスフリーであるもの — がテストに適しています。 [GitHub からダウンロード](https://github.com/TypeNetwork/Amstelvar/releases)できます。
+> [!NOTE]
+> 上記で参照されているフォント — 光学的サイズを含みライセンスフリーであるもの — がテストに適しています。 [GitHub からダウンロード](https://github.com/googlefonts/amstelvar/releases)できます。
 
 ## 仕様書
 

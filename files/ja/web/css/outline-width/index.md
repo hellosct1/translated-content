@@ -1,16 +1,10 @@
 ---
 title: outline-width
 slug: Web/CSS/outline-width
-tags:
-  - CSS
-  - CSS 輪郭線
-  - CSS プロパティ
-  - Layout
-  - Reference
-  - recipe:css-property
-browser-compat: css.properties.outline-width
-translation_of: Web/CSS/outline-width
+l10n:
+  sourceCommit: aa714bb37625b21b0f40db1f1ea557e773456fa2
 ---
+
 {{CSSRef}}
 
 [CSS](/ja/docs/Web/CSS) の **`outline-width`** プロパティは、要素の輪郭線の太さを設定します。輪郭線とは要素の周りに描かれる線のことで、 {{cssxref("border")}} よりも外側です。
@@ -35,6 +29,7 @@ outline-width: 0.1em;
 outline-width: inherit;
 outline-width: initial;
 outline-width: revert;
+outline-width: revert-layer;
 outline-width: unset;
 ```
 
@@ -61,11 +56,11 @@ outline-width: unset;
 
 ## 例
 
-<h3 id="Setting_an_elements_outline_width">要素の輪郭線の幅の設定</h3>
+### 要素の輪郭線の幅の設定
 
 #### HTML
 
-```html
+```html live-sample___setting_an_elements_outline_width
 <span id="thin">thin</span>
 <span id="medium">medium</span>
 <span id="thick">thick</span>
@@ -76,7 +71,7 @@ outline-width: unset;
 
 #### CSS
 
-```css
+```css live-sample___setting_an_elements_outline_width
 span {
   outline-style: solid;
   display: inline-block;
@@ -123,5 +118,5 @@ span {
 ## 関連情報
 
 - {{cssxref("outline")}}
-- {{cssxref("outline-color")}}
 - {{cssxref("outline-style")}}
+- {{cssxref("outline-color")}}

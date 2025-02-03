@@ -1,13 +1,8 @@
 ---
 title: Disposition de bloc et en ligne avec le flux normal
-slug: Web/CSS/CSS_Flow_Layout/Block_and_Inline_Layout_in_Normal_Flow
-tags:
-  - CSS
-  - Guide
-  - Intermédiaire
-translation_of: Web/CSS/CSS_Flow_Layout/Block_and_Inline_Layout_in_Normal_Flow
-original_slug: Web/CSS/CSS_Flow_Layout/Disposition_de_bloc_en_ligne_avec_flux_normal
+slug: Web/CSS/CSS_flow_layout/Block_and_inline_layout_in_normal_flow
 ---
+
 {{CSSRef}}
 
 Dans ce guide, nous verrons le comportement des éléments de bloc et des éléments en ligne lorsqu'ils sont placés dans le flux normal.
@@ -58,9 +53,10 @@ Dans l'exemple suivant, les paragraphes ont une marge en haut qui mesure 20 pixe
 
 {{EmbedGHLiveSample("css-examples/flow/block-inline/normal-flow-collapsing.html", '100%', 500)}}
 
-Pour en savoir plus à propos de la fusion des marges, vous pouvez lire [l'article dédié à la fusion des marges](/fr/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing).
+Pour en savoir plus à propos de la fusion des marges, vous pouvez lire [l'article dédié à la fusion des marges](/fr/docs/Web/CSS/CSS_box_model/Mastering_margin_collapsing).
 
-> **Note :** Si vous n'êtes pas certain⋅e que la fusion des marges a lieu, vous pouvez utiliser les outils de développement de votre navigateur afin de voir la valeur réellement utilisée pour les marges.
+> [!NOTE]
+> Si vous n'êtes pas certain⋅e que la fusion des marges a lieu, vous pouvez utiliser les outils de développement de votre navigateur afin de voir la valeur réellement utilisée pour les marges.
 >
 > ![](box-model.png)
 
@@ -72,9 +68,9 @@ Dans l'exemple suivant on a trois boîtes en ligne créées par un paragraphe av
 
 {{EmbedGHLiveSample("css-examples/flow/block-inline/inline.html", '100%', 500)}}
 
-Les boîtes autour des mots, avant et après l'élément {{HTMLElement("&lt;strong&gt;")}} sont qualifiées de boîtes _anonymes_. Ce sont des boîtes qui permettent que tout soit contenu dans une boîte mais on ne peut pas cibler ces boîtes spécifiquement.
+Les boîtes autour des mots, avant et après l'élément {{HTMLElement("strong")}} sont qualifiées de boîtes _anonymes_. Ce sont des boîtes qui permettent que tout soit contenu dans une boîte mais on ne peut pas cibler ces boîtes spécifiquement.
 
-La taille de la boîte de la ligne sur l'axe orthogonal à l'axe de lecture est définie avec la taille de la plus grande boîte qu'elle contient. Dans l'exemple suivant, on a un élément {{HTMLElement("&lt;strong&gt;")}} qui a une taille de 300% et c'est donc son contenu qui détermine la hauteur de la boîte de ligne pour cette ligne.
+La taille de la boîte de la ligne sur l'axe orthogonal à l'axe de lecture est définie avec la taille de la plus grande boîte qu'elle contient. Dans l'exemple suivant, on a un élément {{HTMLElement("strong")}} qui a une taille de 300% et c'est donc son contenu qui détermine la hauteur de la boîte de ligne pour cette ligne.
 
 {{EmbedGHLiveSample("css-examples/flow/block-inline/line-box.html", '100%', 500)}}
 
@@ -113,7 +109,7 @@ Dans ce guide, nous avons vu comment les éléments étaient affichés dans le f
 
 ## Voir aussi
 
-- [Le module de spécification _CSS Basic Box Model_ qui définit les propriétés de base pour le modèle de boîte](/fr/docs/Web/CSS/CSS_Box_Model)
+- [Le module de spécification _CSS Basic Box Model_ qui définit les propriétés de base pour le modèle de boîte](/fr/docs/Web/CSS/CSS_box_model)
 - [Apprendre - le fonctionnement du flux normal](/fr/docs/Learn/CSS/CSS_layout/Normal_Flow)
-- [Les éléments HTML en ligne](/fr/docs/Web/HTML/Inline_elements)
-- [Les éléments HTML de bloc](/fr/docs/Web/HTML/Block-level_elements)
+- [Les éléments HTML en ligne](/fr/docs/Glossary/Inline-level_content)
+- [Les éléments HTML de bloc](/fr/docs/Glossary/Block-level_content)

@@ -1,12 +1,8 @@
 ---
 title: grid-row-start
 slug: Web/CSS/grid-row-start
-tags:
-  - CSS
-  - Propriété
-  - Reference
-translation_of: Web/CSS/grid-row-start
 ---
+
 {{CSSRef}}
 
 La propriété **`grid-row-start`** définit le début de la position, sur une ligne, d'un élément placé sur la grille qui participe à une ligne, à un fragment de ligne ou rien (automatique). Par conséquent, cela définit également le début de la zone de la grille pour cet élément.
@@ -51,7 +47,8 @@ La valeur de cette propriété prend la forme d'une seule valeur `<grid-line>`. 
 
   - : S'il existe une ligne nommée avec '\<custom-ident>-start', la première ligne correspondante contribue au placement de l'élément sur la grille.
 
-    > **Note :** Les noms des zones de grille sont générés implicitement. Ainsi, en utilisant `grid-row-start: foo;` cela sélectionnera le début de la grille nommée correspondante (sauf si une autre ligne `foo-start` a été explicitement déclarée).
+    > [!NOTE]
+    > Les noms des zones de grille sont générés implicitement. Ainsi, en utilisant `grid-row-start: foo;` cela sélectionnera le début de la grille nommée correspondante (sauf si une autre ligne `foo-start` a été explicitement déclarée).
 
     Sinon, la valeur est traitée comme si on avait utilisé `<custom-ident>` et la valeur `1`.
 
@@ -71,11 +68,15 @@ La valeur de cette propriété prend la forme d'une seule valeur `<grid-line>`. 
 
     Si l'entier n'est pas défini, la valeur par défaut qui sera utilisée sera `1`. Les entiers négatifs ou nuls sont invalides.
 
-    ` <custom-ident``> ` ne peut pas prendre la valeur `span`.
+    `<custom-ident>` ne peut pas prendre la valeur `span`.
 
-### Syntaxe formelle
+## Définition formelle
 
-{{csssyntax}}
+{{CSSInfo}}
+
+## Syntaxe formelle
+
+{{CSSSyntax}}
 
 ## Exemples
 
@@ -111,7 +112,9 @@ La valeur de cette propriété prend la forme d'une seule valeur `<grid-line>`. 
 ```
 
 ```css hidden
-* {box-sizing: border-box;}
+* {
+  box-sizing: border-box;
+}
 
 .wrapper {
   border: 2px solid #f76707;
@@ -139,15 +142,11 @@ La valeur de cette propriété prend la forme d'une seule valeur `<grid-line>`. 
 
 ## Spécifications
 
-| Spécification                                                                                | État                         | Commentaires         |
-| -------------------------------------------------------------------------------------------- | ---------------------------- | -------------------- |
-| {{SpecName("CSS3 Grid", "#propdef-grid-row-start", "grid-row-start")}} | {{Spec2("CSS3 Grid")}} | Définition initiale. |
-
-{{cssinfo}}
+{{Specifications}}
 
 ## Compatibilité des navigateurs
 
-{{Compat("css.properties.grid-row-start")}}
+{{Compat}}
 
 ## Voir aussi
 
@@ -156,5 +155,5 @@ La valeur de cette propriété prend la forme d'une seule valeur `<grid-line>`. 
 - {{cssxref("grid-column-start")}}
 - {{cssxref("grid-column-end")}}
 - {{cssxref("grid-column")}}
-- [Guide : Placer les éléments d'une grille sur les lignes](/fr/docs/Web/CSS/CSS_Grid_Layout/Line-based_Placement_with_CSS_Grid)
+- [Guide : Placer les éléments d'une grille sur les lignes](/fr/docs/Web/CSS/CSS_grid_layout/Grid_layout_using_line-based_placement)
 - Tutoriel vidéo : [le placement des éléments d'une grille sur les lignes (en anglais)](https://gridbyexample.com/video/series-line-based-placement/)

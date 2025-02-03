@@ -1,9 +1,8 @@
 ---
-title: 'CSP : style-src-elem'
+title: "CSP : style-src-elem"
 slug: Web/HTTP/Headers/Content-Security-Policy/style-src-elem
-translation_of: Web/HTTP/Headers/Content-Security-Policy/style-src-elem
-browser-compat: http.headers.csp.Content-Security-Policy.style-src-elem
 ---
+
 {{HTTPSidebar}}
 
 La directive HTTP [`Content-Security-Policy`](/fr/docs/Web/HTTP/Headers/Content-Security-Policy) **`style-src-elem`** indique les sources valides pour les feuilles de styles embarquées avec les éléments [`<style>`](/fr/docs/Web/HTML/Element/style) et avec les éléments [`<link>`](/fr/docs/Web/HTML/Element/link) portant l'attribut `rel="stylesheet"`.
@@ -45,9 +44,9 @@ Content-Security-Policy: style-src-elem <source>;
 
 ### Sources
 
-`<source>` peut être n'importe quelle valeur parmi celles énumérées dans [l'article sur les valeurs sources CSP](/fr/docs/Web/HTTP/Headers/Content-Security-Policy/Sources#sources).
+`<source>` peut être n'importe quelle valeur parmi celles énumérées dans [l'article sur les valeurs sources CSP](/fr/docs/Web/HTTP/Headers/Content-Security-Policy#fetch_directive_syntax#sources).
 
-On notera que cet ensemble de valeurs peut être utilisé pour toutes les [directives de récupération](/fr/docs/Glossary/Fetch_directive) (et pour [certaines autres directives](/fr/docs/Web/HTTP/Headers/Content-Security-Policy/Sources#directives_associées)).
+On notera que cet ensemble de valeurs peut être utilisé pour toutes les [directives de récupération](/fr/docs/Glossary/Fetch_directive) (et pour [certaines autres directives](/fr/docs/Web/HTTP/Headers/Content-Security-Policy#fetch_directive_syntax#directives_associ%c3%a9es)).
 
 ## Spécifications
 

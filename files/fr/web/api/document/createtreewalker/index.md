@@ -1,16 +1,8 @@
 ---
 title: Document.createTreeWalker()
 slug: Web/API/Document/createTreeWalker
-tags:
-  - API
-  - Arborescence
-  - DOM
-  - Document
-  - Filtre
-  - Méthodes
-  - Noeuds
-translation_of: Web/API/Document/createTreeWalker
 ---
+
 {{ApiRef("Document")}}
 
 La méthode de création **`Document.createTreeWalker()`** renvoie un nouvel objet {{domxref("TreeWalker")}}.
@@ -18,7 +10,12 @@ La méthode de création **`Document.createTreeWalker()`** renvoie un nouvel obj
 ## Syntaxe
 
 ```js
-treeWalker = document.createTreeWalker(root, whatToShow, filter, entityReferenceExpansion);
+treeWalker = document.createTreeWalker(
+  root,
+  whatToShow,
+  filter,
+  entityReferenceExpansion,
+);
 ```
 
 ### Paramètres
@@ -27,7 +24,7 @@ treeWalker = document.createTreeWalker(root, whatToShow, filter, entityReference
   - : est le {{domxref("Node")}} (_noeud_) racine du {{domxref("TreeWalker")}} à traverser. Généralement, ce sera un élément appartenant au document.
 - _whatToShow {{optional_inline}}_
 
-  - : est un `unsigned long` (_long non signé_) facultatif représentant un masque de bits créé par combinaison des propriétés de constante de [`NodeFilter`](http://www.w3.org/TR/DOM-Level-2-Traversal-Range/traversal.html#Traversal-NodeFilter). C'est un moyen pratique de filtrage pour certains types de nœuds. Par défaut `0xFFFFFFFF` représentant la constante `SHOW_ALL`.
+  - : est un `unsigned long` (_long non signé_) facultatif représentant un masque de bits créé par combinaison des propriétés de constante de [`NodeFilter`](https://www.w3.org/TR/DOM-Level-2-Traversal-Range/traversal.html#Traversal-NodeFilter). C'est un moyen pratique de filtrage pour certains types de nœuds. Par défaut `0xFFFFFFFF` représentant la constante `SHOW_ALL`.
 
     <table class="standard-table">
       <tbody>
@@ -155,25 +152,26 @@ L'exemple suivant passe à travers tous les noeuds du "body" (_corps du document
 var treeWalker = document.createTreeWalker(
   document.body,
   NodeFilter.SHOW_ELEMENT,
-  { acceptNode: function(node) { return NodeFilter.FILTER_ACCEPT; } },
-  false
+  {
+    acceptNode: function (node) {
+      return NodeFilter.FILTER_ACCEPT;
+    },
+  },
+  false,
 );
 
 var nodeList = [];
 
-while(treeWalker.nextNode()) nodeList.push(treeWalker.currentNode);
+while (treeWalker.nextNode()) nodeList.push(treeWalker.currentNode);
 ```
 
 ## Spécifications
 
-| Spécification                                                                                                                                                    | Statut                                       | Commentaire                                                                                               |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| {{SpecName('DOM WHATWG', '#dom-document-createtreewalker', 'Document.createTreeWalker')}}                                         | {{Spec2('DOM WHATWG')}}             | Suppression du paramètre `expandEntityReferences`. Les paramètres facultatifs  `whatToShow` et `filter` . |
-| {{SpecName('DOM2 Traversal_Range', 'traversal.html#NodeIteratorFactory-createTreeWalker', 'Document.createTreeWalker')}} | {{Spec2('DOM2 Traversal_Range')}} | Définition initiale.                                                                                      |
+{{Specifications}}
 
 ## Compatibilité des navigateurs
 
-{{Compat("api.Document.createTreeWalker")}}
+{{Compat}}
 
 ## Voir aussi
 

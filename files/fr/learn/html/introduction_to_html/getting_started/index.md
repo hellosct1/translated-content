@@ -1,19 +1,8 @@
 ---
 title: Commencer avec le HTML
 slug: Learn/HTML/Introduction_to_HTML/Getting_started
-tags:
-  - Attributs
-  - Codage
-  - Commentaires
-  - Débutant
-  - Elements
-  - Entités
-  - Guide
-  - HTML
-  - espace
-translation_of: Learn/HTML/Introduction_to_HTML/Getting_started
-original_slug: Apprendre/HTML/Introduction_à_HTML/Getting_started
 ---
+
 {{LearnSidebar}}{{NextMenu("Apprendre/HTML/Introduction_à_HTML/The_head_metadata_in_HTML", "Apprendre/HTML/Introduction_à_HTML")}}
 
 Cet article porte sur les fondements du HTML, pour prendre un bon départ — nous définissons les éléments, les attributs et tout autre terme important que vous avez peut‑être entendu, ainsi que leur emplacement adéquat dans le langage. Nous montrons comment un élément HTML est structuré, comment une page HTML classique est structurée et expliquons les autres importants traits de base du langage. Dans ce parcours, nous jouons avec certains HTML pour exciter votre intérêt.
@@ -29,7 +18,7 @@ Cet article porte sur les fondements du HTML, pour prendre un bon départ — no
           >logiciels de base</a
         >
         et savoir
-        <a href="/fr/Apprendre/Commencer_avec_le_web/G%C3%A9rer_les_fichiers"
+        <a href="/fr/Apprendre/Commencer_avec_le_web/Gérer_les_fichiers"
           >gérer les fichiers</a
         >.
       </td>
@@ -58,7 +47,8 @@ Si nous voulons que cette ligne reste en l'état, nous pouvons dire qu'il s'agit
 <p>Mon chat est très grincheux</p>
 ```
 
-> **Note :** Les éléments en HTML ne sont pas sensibles à la casse, c'est-à-dire qu'ils peuvent être écrits en majuscules ou en minuscules. Par exemple, un élément {{htmlelement("title")}} peut être écrit `<title>`, `<TITLE>`, `<Title>`, `<TiTlE>`, etc. et il fonctionnera parfaitement. La meilleure pratique, cependant, est d'écrire tous les éléments en minuscules pour des raisons de cohérence, de lisibilité et autres.
+> [!NOTE]
+> Les éléments en HTML ne sont pas sensibles à la casse, c'est-à-dire qu'ils peuvent être écrits en majuscules ou en minuscules. Par exemple, un élément {{htmlelement("title")}} peut être écrit `<title>`, `<TITLE>`, `<Title>`, `<TiTlE>`, etc. et il fonctionnera parfaitement. La meilleure pratique, cependant, est d'écrire tous les éléments en minuscules pour des raisons de cohérence, de lisibilité et autres.
 
 ## Anatomie d'un élément HTML
 
@@ -82,11 +72,13 @@ Si vous faites une erreur, vous pouvez toujours réinitialiser avec le bouton _R
 
 ```html hidden
 <h2>Zone de rendu</h2>
-<div class="output" style="min-height: 50px;">
-</div>
+<div class="output" style="min-height: 50px;"></div>
 
 <h2>Code modifiable</h2>
-<p class="a11y-label">Pressez Esc pour sortir le focus de la Zone de saisie (Tab insère une tabulation).</p>
+<p class="a11y-label">
+  Pressez Esc pour sortir le focus de la Zone de saisie (Tab insère une
+  tabulation).
+</p>
 
 <textarea id="code" class="playable-code" style="min-height: 100px;width: 95%">
   Ceci est mon texte.
@@ -100,7 +92,7 @@ Si vous faites une erreur, vous pouvez toujours réinitialiser avec le bouton _R
 
 ```css hidden
 html {
-  font-family: 'Open Sans Light',Helvetica,Arial,sans-serif;
+  font-family: "Open Sans Light", Helvetica, Arial, sans-serif;
 }
 
 h2 {
@@ -121,10 +113,10 @@ body {
 ```
 
 ```js hidden
-var textarea = document.getElementById('code');
-var reset = document.getElementById('reset');
-var solution = document.getElementById('solution');
-var output = document.querySelector('.output');
+var textarea = document.getElementById("code");
+var reset = document.getElementById("reset");
+var solution = document.getElementById("solution");
+var output = document.querySelector(".output");
 var code = textarea.value;
 var userEntry = textarea.value;
 
@@ -132,38 +124,38 @@ function updateCode() {
   output.innerHTML = textarea.value;
 }
 
-reset.addEventListener('click', function() {
+reset.addEventListener("click", function () {
   textarea.value = code;
   userEntry = textarea.value;
   solutionEntry = htmlSolution;
-  solution.value = 'Voir la solution';
+  solution.value = "Voir la solution";
   updateCode();
 });
 
-solution.addEventListener('click', function() {
-  if(solution.value === 'Voir la solution') {
+solution.addEventListener("click", function () {
+  if (solution.value === "Voir la solution") {
     textarea.value = solutionEntry;
-    solution.value = 'Cacher la solution';
+    solution.value = "Cacher la solution";
   } else {
     textarea.value = userEntry;
-    solution.value = 'Voir la solution';
+    solution.value = "Voir la solution";
   }
   updateCode();
 });
 
-var htmlSolution = '<em>Ceci est mon texte.</em>';
+var htmlSolution = "<em>Ceci est mon texte.</em>";
 var solutionEntry = htmlSolution;
 
-textarea.addEventListener('input', updateCode);
-window.addEventListener('load', updateCode);
+textarea.addEventListener("input", updateCode);
+window.addEventListener("load", updateCode);
 
 // stop tab key tabbing out of textarea and
 // make it write a tab at the caret position instead
 
-textarea.onkeydown = function(e){
+textarea.onkeydown = function (e) {
   if (e.keyCode === 9) {
     e.preventDefault();
-    insertAtCaret('\t');
+    insertAtCaret("\t");
   }
 
   if (e.keyCode === 27) {
@@ -175,8 +167,11 @@ function insertAtCaret(text) {
   var scrollPos = textarea.scrollTop;
   var caretPos = textarea.selectionStart;
 
-  var front = (textarea.value).substring(0, caretPos);
-  var back = (textarea.value).substring(textarea.selectionEnd, textarea.value.length);
+  var front = textarea.value.substring(0, caretPos);
+  var back = textarea.value.substring(
+    textarea.selectionEnd,
+    textarea.value.length,
+  );
   textarea.value = front + text + back;
   caretPos = caretPos + text.length;
   textarea.selectionStart = caretPos;
@@ -187,10 +182,10 @@ function insertAtCaret(text) {
 
 // Update the saved userCode every time the user updates the text area code
 
-textarea.onkeyup = function(){
+textarea.onkeyup = function () {
   // We only want to save the state when the user code is being shown,
   // not the solution, so that solution is not saved over the user code
-  if(solution.value === 'Voir la solution') {
+  if (solution.value === "Voir la solution") {
     userEntry = textarea.value;
   } else {
     solutionEntry = textarea.value;
@@ -200,7 +195,7 @@ textarea.onkeyup = function(){
 };
 ```
 
-{{ EmbedLiveSample('Apprentissage_actif_créer_votre_premier_élément_HTML', 700, 400, "", "")}}
+{{ EmbedLiveSample('Apprentissage_actif_créer_votre_premier_élément_HTML', 700, 400)}}
 
 ### Éléments imbriqués
 
@@ -230,36 +225,42 @@ Prenez l'exemple suivant :
 ```html
 <em>premier</em><em>deuxième</em><em>troisième</em>
 
-<p>quatrième</p><p>cinquième</p><p>sixième</p>
+<p>quatrième</p>
+<p>cinquième</p>
+<p>sixième</p>
 ```
 
 {{htmlelement("em")}} est un élément en ligne et, comme vous pouvez le voir ci-dessous, les trois premiers éléments s'affichent sur la même ligne sans qu'il n'y ait d'espace entre eux. Par contre, {{htmlelement("p")}} est un élément de niveau bloc, donc chaque élément apparaît sur une nouvelle ligne et un espace apparaît au-dessus et au-dessous de chacun d'eux (l'espacement est dû au [style CSS](/fr/docs/Learn/CSS/First_steps) par défaut du navigateur qui s'applique aux paragraphes).
 
-{{ EmbedLiveSample('Éléments_bloc_vs_en_ligne', 700, 200, "", "") }}
+{{ EmbedLiveSample('Éléments_bloc_vs_en_ligne', 700, 200) }}
 
-> **Note :** HTML5 a redéfini les catégories d'éléments dans HTML5 : voir [catégories de contenu d'éléments](https://html.spec.whatwg.org/multipage/indices.html#element-content-categories). Bien que ces définitions soient plus précises et moins ambiguës que celles qui précèdent, elles sont beaucoup plus compliquées à comprendre que « block » et « inline ». Nous nous en tiendrons donc à ces dernières tout au long de ce sujet.
+> [!NOTE]
+> HTML5 a redéfini les catégories d'éléments dans HTML5 : voir [catégories de contenu d'éléments](https://html.spec.whatwg.org/multipage/indices.html#element-content-categories). Bien que ces définitions soient plus précises et moins ambiguës que celles qui précèdent, elles sont beaucoup plus compliquées à comprendre que « block » et « inline ». Nous nous en tiendrons donc à ces dernières tout au long de ce sujet.
 
-> **Note :** Les termes « block » et « inline », tels qu'utilisés dans cet article, ne doivent pas être confondus avec [les types de boîtes des CSS](/fr/docs/Learn/CSS/Building_blocks/The_box_model) portant les mêmes noms. Alors qu'ils sont corrélés par défaut, modifier le type d'affichage des CSS ne modifie pas la catégorie d'un élément et n'affecte pas les éléments qu'il pourrait contenir ni ceux dans lequel il pourrait être contenu. Une des raisons pour lesquelles HTML5 a abandonné ces termes était d'éviter cette confusion assez courante.
+> [!NOTE]
+> Les termes « block » et « inline », tels qu'utilisés dans cet article, ne doivent pas être confondus avec [les types de boîtes des CSS](/fr/docs/Learn/CSS/Building_blocks/The_box_model) portant les mêmes noms. Alors qu'ils sont corrélés par défaut, modifier le type d'affichage des CSS ne modifie pas la catégorie d'un élément et n'affecte pas les éléments qu'il pourrait contenir ni ceux dans lequel il pourrait être contenu. Une des raisons pour lesquelles HTML5 a abandonné ces termes était d'éviter cette confusion assez courante.
 
-> **Note :** Vous trouverez des pages de référence utiles incluant des listes d'[éléments de niveau bloc](/fr/docs/Web/HTML/Block-level_elements) et d'[éléments en ligne](/fr/docs/Web/HTML/Inline_elements).
+> [!NOTE]
+> Vous trouverez des pages de référence utiles incluant des listes d'[éléments de niveau bloc](/fr/docs/Glossary/Block-level_content) et d'[éléments en ligne](/fr/docs/Glossary/Inline-level_content).
 
 ### Éléments vides
 
 Tous les éléments ne suivent pas le modèle ci-dessus d'ouverture de balise, puis contenu, puis fermeture de balise. Certains éléments ne sont composés que d'une balise. Ils servent généralement à insérer / incorporer quelque chose dans le document à l'endroit où ils sont mis. Par exemple, l'élément `<img />` ou {{htmlelement("img")}} insère une image dans une page à l'endroit où il est placé (la balise auto-fermante `<img />` est à privilégier) :
 
 ```html
-<img src="https://raw.githubusercontent.com/mdn/beginner-html-site/gh-pages/images/firefox-icon.png" />
+<img
+  src="https://raw.githubusercontent.com/mdn/beginner-html-site/gh-pages/images/firefox-icon.png" />
 ```
 
 Cela affichera l'élément suivant sur votre page :
 
-{{ EmbedLiveSample('Éléments_vides', 700, 300, "", "") }}
+{{ EmbedLiveSample('Éléments_vides', 700, 300) }}
 
 ## Attributs
 
 Les éléments peuvent aussi avoir des attributs, qui comme suit:
 
-![&amp;lt;p class="editor-note">My cat is very grumpy&amp;lt;/p>](attribut-chat-grincheux.png)
+![My cat is very grumpy](attribut-chat-grincheux.png)
 
 Les attributs contiennent des informations supplémentaires sur l'élément sans qu'elles n'apparaissent dans le contenu réel. Dans ce cas, l'attribut **`class`** vous permet de donner à l'élément un nom d'identification qui peut ensuite être utilisé pour cibler l'élément afin de lui attribuer un [style CSS](/fr/docs/Web/CSS) ou un comportement particulier, par exemple.
 
@@ -273,9 +274,12 @@ Pour créer un attribut, il faut :
 
 Un autre exemple d'un élément est {{htmlelement("a")}}. Il représente une ancre et permet de transformer en lien l'élément qu'il enveloppe. Il peut recevoir un certain nombre d'attributs, mais voici les deux principaux :
 
-- **`href`** : cet attribut spécifie l'adresse web vers laquelle vous souhaitez que le lien pointe, c'est-à-dire l'adresse vers laquelle le navigateur redirigera lorsqu'on cliquera sur le lien. Par exemple, `href="https://www.mozilla.org/"`.
-- **`title`** : l'attribut `title` apporte des informations supplémentaires sur le lien, comme le nom de la page vers laquelle le lien pointe. Par exemple, `title="Page d'Accueil Mozilla"`, qui apparaîtra comme une info-bulle lorsque le curseur passera sur le lien.
-- **`target`** : l'attribut `target` définit le contexte de navigation utilisé pour afficher le lien. Par exemple, `target="_blank"` affichera le lien dans un nouvel onglet. Si vous voulez afficher le lien dans l'onglet courant, il suffit de ne pas mettre cet attribut.
+- `href`
+  - : cet attribut spécifie l'adresse web vers laquelle vous souhaitez que le lien pointe, c'est-à-dire l'adresse vers laquelle le navigateur redirigera lorsqu'on cliquera sur le lien. Par exemple, `href="https://www.mozilla.org/"`.
+- `title`
+  - : l'attribut `title` apporte des informations supplémentaires sur le lien, comme le nom de la page vers laquelle le lien pointe. Par exemple, `title="Page d'Accueil Mozilla"`, qui apparaîtra comme une info-bulle lorsque le curseur passera sur le lien.
+- `target`
+  - : l'attribut `target` définit le contexte de navigation utilisé pour afficher le lien. Par exemple, `target="_blank"` affichera le lien dans un nouvel onglet. Si vous voulez afficher le lien dans l'onglet courant, il suffit de ne pas mettre cet attribut.
 
 Modifiez la ligne ci-dessous dans la _Zone de saisie_ pour la transformer en lien vers votre site web préféré.
 
@@ -290,19 +294,21 @@ Si vous faites une erreur, vous pouvez toujours réinitialiser la _zone de saisi
 ```html hidden
 <h2>Zone de rendu</h2>
 
-<div class="output" style="min-height: 50px;">
-</div>
+<div class="output" style="min-height: 50px;"></div>
 
 <h2>Code modifiable</h2>
-<p class="a11y-label">Pressez Esc pour sortir le focus de la Zone de saisie (Tab insère une tabulation).</p>
+<p class="a11y-label">
+  Pressez Esc pour sortir le focus de la Zone de saisie (Tab insère une
+  tabulation).
+</p>
 
 <textarea id="code" class="input" style="min-height: 100px;width: 95%">
   &lt;p&gt;Un lien vers mon site Web préféré.&lt;/p&gt;
 </textarea>
 
 <div class="playable-buttons">
-  <input id="reset" type="button" value="Réinitialiser">
-  <input id="solution" type="button" value="Voir la solution">
+  <input id="reset" type="button" value="Réinitialiser" />
+  <input id="solution" type="button" value="Voir la solution" />
 </div>
 ```
 
@@ -329,10 +335,10 @@ body {
 ```
 
 ```js hidden
-var textarea = document.getElementById('code');
-var reset = document.getElementById('reset');
-var solution = document.getElementById('solution');
-var output = document.querySelector('.output');
+var textarea = document.getElementById("code");
+var reset = document.getElementById("reset");
+var solution = document.getElementById("solution");
+var output = document.querySelector(".output");
 var code = textarea.value;
 var userEntry = textarea.value;
 
@@ -340,38 +346,39 @@ function updateCode() {
   output.innerHTML = textarea.value;
 }
 
-reset.addEventListener('click', function() {
+reset.addEventListener("click", function () {
   textarea.value = code;
   userEntry = textarea.value;
   solutionEntry = htmlSolution;
-  solution.value = 'Voir la solution';
+  solution.value = "Voir la solution";
   updateCode();
 });
 
-solution.addEventListener('click', function() {
-  if(solution.value === 'Voir la solution') {
+solution.addEventListener("click", function () {
+  if (solution.value === "Voir la solution") {
     textarea.value = solutionEntry;
-    solution.value = 'Cacher la solution';
+    solution.value = "Cacher la solution";
   } else {
     textarea.value = userEntry;
-    solution.value = 'Voir la solution';
+    solution.value = "Voir la solution";
   }
   updateCode();
 });
 
-var htmlSolution = '<p>Un lien vers mon <a href="https://www.mozilla.org/" title="Page d\'accueil de Mozilla" target="_blank">site Web préféré</a>.</p>';
+var htmlSolution =
+  '<p>Un lien vers mon <a href="https://www.mozilla.org/" title="Page d\'accueil de Mozilla" target="_blank">site Web préféré</a>.</p>';
 var solutionEntry = htmlSolution;
 
-textarea.addEventListener('input', updateCode);
-window.addEventListener('load', updateCode);
+textarea.addEventListener("input", updateCode);
+window.addEventListener("load", updateCode);
 
 // stop tab key tabbing out of textarea and
 // make it write a tab at the caret position instead
 
-textarea.onkeydown = function(e){
+textarea.onkeydown = function (e) {
   if (e.keyCode === 9) {
     e.preventDefault();
-    insertAtCaret('\t');
+    insertAtCaret("\t");
   }
 
   if (e.keyCode === 27) {
@@ -383,8 +390,11 @@ function insertAtCaret(text) {
   var scrollPos = textarea.scrollTop;
   var caretPos = textarea.selectionStart;
 
-  var front = (textarea.value).substring(0, caretPos);
-  var back = (textarea.value).substring(textarea.selectionEnd, textarea.value.length);
+  var front = textarea.value.substring(0, caretPos);
+  var back = textarea.value.substring(
+    textarea.selectionEnd,
+    textarea.value.length,
+  );
   textarea.value = front + text + back;
   caretPos = caretPos + text.length;
   textarea.selectionStart = caretPos;
@@ -395,10 +405,10 @@ function insertAtCaret(text) {
 
 // Update the saved userCode every time the user updates the text area code
 
-textarea.onkeyup = function(){
+textarea.onkeyup = function () {
   // We only want to save the state when the user code is being shown,
   // not the solution, so that solution is not saved over the user code
-  if(solution.value === 'Voir la solution') {
+  if (solution.value === "Voir la solution") {
     userEntry = textarea.value;
   } else {
     solutionEntry = textarea.value;
@@ -408,24 +418,24 @@ textarea.onkeyup = function(){
 };
 ```
 
-{{ EmbedLiveSample('Apprentissage_actif_ajouter_des_attributs_à_un_élément', 700, 400,"","") }}
+{{ EmbedLiveSample('Apprentissage_actif_ajouter_des_attributs_à_un_élément', 700, 400) }}
 
 ### Les attributs booléens
 
-Vous verrez parfois des attributs sans valeur définie : c'est tout à fait autorisé. Ils sont appelés attributs booléens ; ils ne peuvent avoir qu'une seule valeur, généralement la même que le nom de l'attribut. Par exemple, prenez l'attribut {{htmlattrxref("disabled", "input")}}, que vous pouvez affecter aux éléments `input` (éléments de saisie d'un formulaire) si vous voulez les _désactiver_ (ils seront alors grisés) afin que l'utilisateur ne puisse pas y saisir de données.
+Vous verrez parfois des attributs sans valeur définie : c'est tout à fait autorisé. Ils sont appelés attributs booléens ; ils ne peuvent avoir qu'une seule valeur, généralement la même que le nom de l'attribut. Par exemple, prenez l'attribut [`disabled`](/fr/docs/Web/HTML/Element/input#disabled), que vous pouvez affecter aux éléments `input` (éléments de saisie d'un formulaire) si vous voulez les _désactiver_ (ils seront alors grisés) afin que l'utilisateur ne puisse pas y saisir de données.
 
 ```html
-<input type="text" disabled="disabled">
+<input type="text" disabled="disabled" />
 ```
 
 Pour aller plus vite, il est parfaitement possible d'écrire cette même ligne de la façon suivante (nous avons également inclus un élément `input` non-désactivé pour référence, pour que vous puissiez vous faire une meilleure idée de ce qui se passe) :
 
 ```html
 <!-- la présence de l'attribut disabled empêche l'utilisateur final d'entrer du texte dans le champ de saisie -->
-<input type="text" disabled>
+<input type="text" disabled />
 
 <!-- la saisie de texte est autorisée puisque l'attribut disabled est omis -->
-<input type="text">
+<input type="text" />
 ```
 
 Ces deux exemples vous donneront le résultat suivant :
@@ -436,7 +446,7 @@ Ces deux exemples vous donneront le résultat suivant :
 
 Si vous regardez ce qui se passe sur le Web, vous rencontrerez tous types de styles de balises étranges, y compris des valeurs d'attribut sans guillemets. C'est permis dans certaines circonstances, mais cela va briser votre balisage dans d'autres. Par exemple, si nous revisitons notre exemple de lien ci-dessus, nous pourrons écrire une version de base avec _seulement_ l'attribut `href`, comme ceci :
 
-```html 
+```html
 <a href=https://www.mozilla.org>mon site web favori</a>
 ```
 
@@ -448,7 +458,7 @@ Cependant, si nous ajoutons l'attribut `title` dans ce même style, cela devient
 
 En effet, le navigateur interprétera mal la balise, pensant que l'attribut `title` est en fait quatre attributs — un attribut `title` avec la valeur « La » et trois attributs booléens, « `page` », « `d'accueil` » et « `Mozilla` ». Ce n'est évidemment pas ce qui était prévu et cela provoquera des erreurs ou un comportement inattendu dans le code, comme on le voit dans l'exemple en direct ci-dessous. Essayez de passer la souris sur le lien pour voir ce que le texte de `title` donne.
 
-{{ EmbedLiveSample("Omettre_des_guillemets_autour_des_valeurs_dattribut", 700, 100, "", "") }}
+{{ EmbedLiveSample("Omettre_des_guillemets_autour_des_valeurs_dattribut", 700, 100) }}
 
 Nous vous recommandons de toujours inclure les guillemets afin d'éviter ce type de problèmes, mais aussi pour que le code soit plus lisible.
 
@@ -456,10 +466,10 @@ Nous vous recommandons de toujours inclure les guillemets afin d'éviter ce type
 
 Dans cet article, vous remarquerez que les valeurs des attributs sont toutes entre des guillemets doubles ("&nbsp;"). Vous pouvez cependant voir des guillemets simples ('&nbsp;') dans le code HTML de certaines personnes. C'est purement une question de style, et vous êtes libre de choisir la solution que vous préférez. Les deux lignes suivantes sont équivalentes :
 
-```html
-<a href="http://www.exemple.com">Un lien vers mon exemple.</a>
+```html-nolint
+<a href='http://www.exemple.com'>Un lien vers mon exemple.</a>
 
-<a href='http://www.example.com'>Un lien vers mon exemple</a>
+<a href="http://www.example.com">Un lien vers mon exemple</a>
 ```
 
 Vous devez cependant vous assurer de ne pas les mélanger. Ce qui suit n'est pas correct :
@@ -471,7 +481,9 @@ Vous devez cependant vous assurer de ne pas les mélanger. Ce qui suit n'est pas
 Si vous avez utilisé un type de guillemets dans votre code HTML, vous pouvez imbriquer l'autre type :
 
 ```html
-<a href="http://www.exemple.com" title="N'est-ce pas drôle ?">Un lien vers mon exemple.</a>
+<a href="http://www.exemple.com" title="N'est-ce pas drôle ?"
+  >Un lien vers mon exemple.</a
+>
 ```
 
 Si vous souhaitez imbriquer le même type de guillemets, vous devez utiliser [une entité HTML](/fr/docs/Glossary/Entity) pour représenter ce caractère spécial. Sinon, le code ne fonctionnera pas :
@@ -483,7 +495,9 @@ Si vous souhaitez imbriquer le même type de guillemets, vous devez utiliser [un
 Faites plutôt ceci :
 
 ```html
-<a href='http://www.exemple.com' title='N&apos;est-ce pas drôle ?'>Un lien vers mon exemple.</a>
+<a href="http://www.exemple.com" title="N'est-ce pas drôle ?"
+  >Un lien vers mon exemple.</a
+>
 ```
 
 ## Anatomie d'un document HTML
@@ -491,10 +505,10 @@ Faites plutôt ceci :
 Les éléments HTML basiques ne sont pas très utiles si on les prend séparément. Nous allons voir comment combiner des éléments individuels pour former une page HTML entière :
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Ma page test</title>
   </head>
   <body>
@@ -507,12 +521,11 @@ Ici, nous avons :
 
 1. `<!DOCTYPE html>` : le type de document. Quand HTML était jeune (vers 1991/2), les `doctypes` étaient censés agir comme des liens vers un ensemble de règles que la page HTML devait suivre pour être considérée comme un bon HTML, ce qui pouvait signifier la vérification automatique des erreurs et d'autres choses utiles. Habituellement, ils ressemblaient à ceci :
 
-    ```html
-    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-    ```
+   ```html
+   <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   ```
 
-    Cependant, de nos jours personne ne se soucie vraiment d'eux, et ils sont juste un artefact historique qui doit être inclus pour que tout fonctionne bien. `<!DOCTYPE html>` est la chaîne de caractères la plus courte qui soit un `doctype` valide. C'est tout ce que vous avez vraiment besoin de savoir.
+   Cependant, de nos jours personne ne se soucie vraiment d'eux, et ils sont juste un artefact historique qui doit être inclus pour que tout fonctionne bien. `<!DOCTYPE html>` est la chaîne de caractères la plus courte qui soit un `doctype` valide. C'est tout ce que vous avez vraiment besoin de savoir.
 
 2. `<html></html>` : l'élément {{htmlelement("html")}}. Cet élément est le contenant de tout le code de la page et est parfois connu comme l'élément racine.
 3. `<head></head>` : l'élément {{htmlelement("head")}}. Cet élément a le rôle de conteneur pour toute chose que vous souhaitez inclure dans la page HTML **qui ne soit pas du contenu** à afficher aux visiteurs de la page : mots clés, description de page que vous souhaitez voir apparaître dans les résultats de recherche, style CSS, déclarations de jeu de caractères et plus encore. Nous vous en dirons plus à ce sujet dans l'article suivant de la série.
@@ -529,7 +542,8 @@ Si vous voulez essayer d'écrire du HTML sur votre ordinateur en local, vous pou
 3. Coller le code dans le nouveau fichier texte.
 4. Enregistrer le fichier sous `index.html`.
 
-> **Note :** Vous pouvez également trouver ce modèle HTML dans le [dépôt GitHub MDN Learning Area](https://github.com/mdn/learning-area/blob/master/html/introduction-to-html/getting-started/index.html).
+> [!NOTE]
+> Vous pouvez également trouver ce modèle HTML dans le [dépôt GitHub MDN Learning Area](https://github.com/mdn/learning-area/blob/master/html/introduction-to-html/getting-started/index.html).
 
 Vous pouvez maintenant ouvrir ce fichier dans un navigateur Web pour voir à quoi ressemble le rendu, puis modifier le code et actualiser le navigateur pour voir le résultat. Initialement, il ressemblera à ceci:
 
@@ -546,19 +560,21 @@ Si vous faites une erreur, vous pouvez toujours recommencer en utilisant le bout
 ```html hidden
 <h2>Zone de rendu</h2>
 
-<div class="output" style="min-height: 50px;">
-</div>
+<div class="output" style="min-height: 50px;"></div>
 
 <h2>Code modifiable</h2>
-<p class="a11y-label">Pressez Esc pour sortir le focus de la Zone de saisie (Tab insère une tabulation).</p>
+<p class="a11y-label">
+  Pressez Esc pour sortir le focus de la Zone de saisie (Tab insère une
+  tabulation).
+</p>
 
 <textarea id="code" class="input" style="min-height: 100px;width: 95%">
   &lt;p&gt;Voici ma page&lt;/p&gt;
 </textarea>
 
 <div class="playable-buttons">
-  <input id="reset" type="button" value="Réinitialiser">
-  <input id="solution" type="button" value="Voir la solution">
+  <input id="reset" type="button" value="Réinitialiser" />
+  <input id="solution" type="button" value="Voir la solution" />
 </div>
 ```
 
@@ -589,10 +605,10 @@ body {
 ```
 
 ```js hidden
-var textarea = document.getElementById('code');
-var reset = document.getElementById('reset');
-var solution = document.getElementById('solution');
-var output = document.querySelector('.output');
+var textarea = document.getElementById("code");
+var reset = document.getElementById("reset");
+var solution = document.getElementById("solution");
+var output = document.querySelector(".output");
 var code = textarea.value;
 var userEntry = textarea.value;
 
@@ -600,38 +616,39 @@ function updateCode() {
   output.innerHTML = textarea.value;
 }
 
-reset.addEventListener('click', function() {
+reset.addEventListener("click", function () {
   textarea.value = code;
   userEntry = textarea.value;
   solutionEntry = htmlSolution;
-  solution.value = 'Voir la solution';
+  solution.value = "Voir la solution";
   updateCode();
 });
 
-solution.addEventListener('click', function() {
-  if(solution.value === 'Voir la solution') {
+solution.addEventListener("click", function () {
+  if (solution.value === "Voir la solution") {
     textarea.value = solutionEntry;
-    solution.value = 'Cacher la solution';
+    solution.value = "Cacher la solution";
   } else {
     textarea.value = userEntry;
-    solution.value = 'Voir la solution';
+    solution.value = "Voir la solution";
   }
   updateCode();
 });
 
-var htmlSolution = '<h1>Un peu de musique</h1><p>J\'aime vraiment beaucoup <strong>jouer de la batterie</strong>. Un de mes batteurs préférés est Neal Peart, qui\ joue dans le groupe <a href="https://fr.wikipedia.org/wiki/Rush_%28groupe%29" title="Article Wikipedia sur Rush">Rush</a>.\Actuellement, mon album Rush de prédilection est <a href="http://www.deezer.com/album/942295">Moving Pictures</a>.</p>\ <img src="http://www.cygnus-x1.net/links/rush/images/albums/sectors/sector2-movingpictures-cover-s.jpg">';
+var htmlSolution =
+  '<h1>Un peu de musique</h1><p>J\'aime vraiment beaucoup <strong>jouer de la batterie</strong>. Un de mes batteurs préférés est Neal Peart, qui joue dans le groupe <a href="https://fr.wikipedia.org/wiki/Rush_%28groupe%29" title="Article Wikipédia sur Rush">Rush</a>.Actuellement, mon album Rush de prédilection est <a href="http://www.deezer.com/album/942295">Moving Pictures</a>.</p> <img src="http://www.cygnus-x1.net/links/rush/images/albums/sectors/sector2-movingpictures-cover-s.jpg">';
 var solutionEntry = htmlSolution;
 
-textarea.addEventListener('input', updateCode);
-window.addEventListener('load', updateCode);
+textarea.addEventListener("input", updateCode);
+window.addEventListener("load", updateCode);
 
 // stop tab key tabbing out of textarea and
 // make it write a tab at the caret position instead
 
-textarea.onkeydown = function(e){
+textarea.onkeydown = function (e) {
   if (e.keyCode === 9) {
     e.preventDefault();
-    insertAtCaret('\t');
+    insertAtCaret("\t");
   }
 
   if (e.keyCode === 27) {
@@ -643,8 +660,11 @@ function insertAtCaret(text) {
   var scrollPos = textarea.scrollTop;
   var caretPos = textarea.selectionStart;
 
-  var front = (textarea.value).substring(0, caretPos);
-  var back = (textarea.value).substring(textarea.selectionEnd, textarea.value.length);
+  var front = textarea.value.substring(0, caretPos);
+  var back = textarea.value.substring(
+    textarea.selectionEnd,
+    textarea.value.length,
+  );
   textarea.value = front + text + back;
   caretPos = caretPos + text.length;
   textarea.selectionStart = caretPos;
@@ -655,10 +675,10 @@ function insertAtCaret(text) {
 
 // Update the saved userCode every time the user updates the text area code
 
-textarea.onkeyup = function(){
+textarea.onkeyup = function () {
   // We only want to save the state when the user code is being shown,
   // not the solution, so that solution is not saved over the user code
-  if(solution.value === 'Voir la solution') {
+  if (solution.value === "Voir la solution") {
     userEntry = textarea.value;
   } else {
     solutionEntry = textarea.value;
@@ -668,13 +688,13 @@ textarea.onkeyup = function(){
 };
 ```
 
-{{ EmbedLiveSample('Apprentissage_actif_ajouter_certaines_fonctionnalités_à_un_document_HTML', 700, 600, "", "") }}
+{{ EmbedLiveSample('Apprentissage_actif_ajouter_certaines_fonctionnalités_à_un_document_HTML', 700, 600) }}
 
 ### Espace vide en HTML
 
 Dans les exemples ci-dessus, vous avez peut-être remarqué que beaucoup d'espaces sont inclus dans le code — ce n'est pas nécessaire du tout. Les deux extraits de code suivants sont équivalents:
 
-```html
+```html-nolint
 <p>Les chiens sont idiots.</p>
 
 <p>Les chiens        sont
@@ -699,12 +719,13 @@ Nous devons utiliser les références des caractères — des codes spéciaux qu
 | '            | `&apos;`             |
 | &            | `&amp;`              |
 
-> **Note :** Un graphique de toutes les références d'entité de caractères HTML est disponible sur Wikipédia : [Liste des entités caractère de XML et HTML](https://fr.wikipedia.org/wiki/Liste_des_entit%C3%A9s_caract%C3%A8re_de_XML_et_HTML).
+> [!NOTE]
+> Un graphique de toutes les références d'entité de caractères HTML est disponible sur Wikipédia : [Liste des entités caractère de XML et HTML](https://fr.wikipedia.org/wiki/Liste_des_entités_caractère_de_XML_et_HTML).
 
 Dans l'exemple ci-dessous, voici deux paragraphes parlant de techniques Web :
 
 ```html
-<p>En HTML, un paragraphe se définit avec l'élément <p>.</p>
+<p>En HTML, un paragraphe se définit avec l'élément.</p>
 
 <p>En HTML, un paragraphe se définit avec l'élément &lt;p&gt;.</p>
 ```
@@ -713,7 +734,8 @@ Dans la zone de rendu en direct ci-dessous, vous pouvez voir que le premier para
 
 {{ EmbedLiveSample("Références_d\'entités_inclure_les_caractères_spéciaux_en_HTML", 700, 200) }}
 
-> **Note :** Vous n'avez pas besoin d'utiliser des références d'entité de caractères pour d'autres symboles — les navigateurs modernes les restitueront sans problème à condition que [vous définissiez votre encodage de caractères en UTF-8](/fr/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML#définition_de_lencodage_des_caractères_du_document).
+> [!NOTE]
+> Vous n'avez pas besoin d'utiliser des références d'entité de caractères pour d'autres symboles — les navigateurs modernes les restitueront sans problème à condition que [vous définissiez votre encodage de caractères en UTF-8](/fr/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML#définition_de_lencodage_des_caractères_du_document).
 
 ## Commentaires en HTML
 
@@ -729,7 +751,7 @@ Pour transformer une section de contenu dans votre fichier HTML en commentaire, 
 
 Comme vous pouvez le voir ci-dessous, le premier paragraphe apparaît dans le rendu de l'éditeur en ligne, mais le second n'apparaît pas.
 
-{{ EmbedLiveSample('Commentaires_en_HTML', 700, 100, "", "") }}
+{{ EmbedLiveSample('Commentaires_en_HTML', 700, 100) }}
 
 ## Résumé
 
@@ -737,22 +759,11 @@ Vous avez atteint la fin de l'article — nous espérons que vous avez appréci�
 
 À ce stade, vous devez comprendre à quoi ce langage ressemble, comment il fonctionne à un niveau de base, et être en mesure d'écrire quelques éléments et attributs. C'est parfait pour le moment, car dans les articles suivants, nous allons approfondir certaines des choses que vous venez de voir, et introduire de nouveaux aspects du langage. Restez à l'écoute !
 
-> **Note :** À ce stade, lorsque vous commencez à en apprendre davantage sur le langage HTML, vous pouvez également commencer à explorer les bases des feuilles de style [CSS](/fr/docs/Learn/CSS). CSS est le langage utilisé pour composer vos pages Web (par exemple, changer la police ou les couleurs, ou modifier la mise en page). HTML et CSS vont très bien ensemble, comme vous allez bientôt le découvrir.
+> [!NOTE]
+> À ce stade, lorsque vous commencez à en apprendre davantage sur le langage HTML, vous pouvez également commencer à explorer les bases des feuilles de style [CSS](/fr/docs/Learn/CSS). CSS est le langage utilisé pour composer vos pages Web (par exemple, changer la police ou les couleurs, ou modifier la mise en page). HTML et CSS vont très bien ensemble, comme vous allez bientôt le découvrir.
 
 ## Voir aussi
 
-- [Appliquer une couleur aux éléments HTML avec les CSS](/fr/docs/Web/HTML/Applying_color)
+- [Appliquer une couleur aux éléments HTML avec les CSS](/fr/docs/Web/CSS/CSS_colors/Applying_color)
 
 {{NextMenu("Apprendre/HTML/Introduction_à_HTML/The_head_metadata_in_HTML", "Apprendre/HTML/Introduction_à_HTML")}}
-
-## Dans ce module
-
-- [Commencer avec le HTML](/fr/docs/Learn/HTML/Introduction_to_HTML/Getting_started)
-- [Qu'y a-t-il dans l'en-tête ? Métadonnées en HTML](/fr/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML)
-- [Fondamentaux du texte HTML](/fr/docs/Learn/HTML/Introduction_to_HTML/HTML_text_fundamentals)
-- [Création d'hyperliens](/fr/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks)
-- [Formatage avancé du texte](/fr/docs/Learn/HTML/Introduction_to_HTML/Advanced_text_formatting)
-- [Structure de Site Web et de document](/fr/docs/Learn/HTML/Introduction_to_HTML/Document_and_website_structure)
-- [Déboguer de l'HTML](/fr/docs/Learn/HTML/Introduction_to_HTML/Debugging_HTML)
-- [Faire une lettre](/fr/docs/Learn/HTML/Introduction_to_HTML/Marking_up_a_letter)
-- [Structurer une page de contenu](/fr/docs/Learn/HTML/Introduction_to_HTML/Structuring_a_page_of_content)

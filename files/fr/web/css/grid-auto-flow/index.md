@@ -1,12 +1,8 @@
 ---
 title: grid-auto-flow
 slug: Web/CSS/grid-auto-flow
-tags:
-  - CSS
-  - Propriété
-  - Reference
-translation_of: Web/CSS/grid-auto-flow
 ---
+
 {{CSSRef}}
 
 La propriété **`grid-auto-flow`** permet de contrôler la façon dont fonctionne l'algorithme de placement automatique. Celui-ci définit exactement comme les objets placés automatiquement s'inscrivent dans la grille.
@@ -46,9 +42,13 @@ Cette propriété peut prendre deux formes :
 
     Si cette valeur est absente, le moteur utilisera un algorithme simple qui ne fait que se déplacer vers l'avant, sans revenir vers les espaces vides. De cette façon, les éléments apparaitront nécessairement dans l'ordre mais pourront laisser des trous.
 
-### Syntaxe formelle
+## Définition formelle
 
-{{csssyntax}}
+{{CSSInfo}}
+
+## Syntaxe formelle
+
+{{CSSSyntax}}
 
 ## Exemples
 
@@ -61,7 +61,7 @@ Cette propriété peut prendre deux formes :
   display: grid;
   grid-gap: 10px;
   grid-template: repeat(4, 1fr) / repeat(2, 1fr);
-  grid-auto-flow: column;  /* ou 'row', 'row dense', 'column dense' */
+  grid-auto-flow: column; /* ou 'row', 'row dense', 'column dense' */
 }
 
 #item1 {
@@ -101,7 +101,7 @@ Cette propriété peut prendre deux formes :
   <option value="column">column</option>
   <option value="row">row</option>
 </select>
-<input id="dense" type="checkbox" onchange="changeGridAutoFlow()">
+<input id="dense" type="checkbox" onchange="changeGridAutoFlow()" />
 <label for="dense">dense</label>
 ```
 
@@ -128,20 +128,16 @@ function changeGridAutoFlow() {
 
 ## Spécifications
 
-| Spécification                                                                                | État                         | Commentaires         |
-| -------------------------------------------------------------------------------------------- | ---------------------------- | -------------------- |
-| {{SpecName("CSS3 Grid", "#propdef-grid-auto-flow", "grid-auto-flow")}} | {{Spec2("CSS3 Grid")}} | Définition initiale. |
-
-{{cssinfo}}
+{{Specifications}}
 
 ## Compatibilité des navigateurs
 
-{{Compat("css.properties.grid-auto-flow")}}
+{{Compat}}
 
 ## Voir aussi
 
 - {{cssxref("grid-auto-rows")}}
 - {{cssxref("grid-auto-columns")}}
 - {{cssxref("grid")}}
-- [Guide : le placement automatique sur la grille](/fr/docs/Web/CSS/CSS_Grid_Layout/Placement_automatique_sur_une_grille_CSS)
-- Tutoriel vidéo : [Introduction au placement automatique sur la grille et à l'ordre des éléments (en anglais)](http://gridbyexample.com/video/series-auto-placement-order/)
+- [Guide : le placement automatique sur la grille](/fr/docs/Web/CSS/CSS_grid_layout/Auto-placement_in_grid_layout)
+- Tutoriel vidéo : [Introduction au placement automatique sur la grille et à l'ordre des éléments (en anglais)](https://gridbyexample.com/video/series-auto-placement-order/)

@@ -1,14 +1,8 @@
 ---
 title: Politique de sécurité de contenu
 slug: Web/HTTP/Headers/Content-Security-Policy
-tags:
-  - CSP
-  - HTTP
-  - Référence(2)
-  - Sécurité
-  - en-tête
-translation_of: Web/HTTP/Headers/Content-Security-Policy
 ---
+
 {{HTTPSidebar}}
 
 L'en-tête de réponse HTTP **`Content-Security-Policy`** permet aux administrateurs d'un site web de contrôler les ressources que l'agent utilisateur est autorisé à charger pour une page donnée. Bien qu'il y ait quelques exceptions, ces règles impliquent la plupart du temps de définir les origines du serveur et les points d'accès pour les scripts. Cet en-tête aide à se protéger contre les attaques de _cross-site scripting_ ({{Glossary("XSS")}}).
@@ -43,7 +37,8 @@ Les directives de récupération (ou _fetch directives_ en anglais) contrôlent 
 - {{CSP("child-src")}}
   - : Définit les sources valides pour les [web workers](/fr/docs/Web/API/Web_Workers_API) et les éléments qui représentent des contextes de navigation imbriqués tels que {{HTMLElement("frame")}} et {{HTMLElement("iframe")}}.
 
-> **Attention :** Plutôt que la directive **`child-src`**, si vous souhaitez réguler les contextes de navigation imbriqués et les workers séparément, vous pouvez utiliser respectivement les directives {{CSP("frame-src")}} et {{CSP("worker-src")}}.
+> [!WARNING]
+> Plutôt que la directive **`child-src`**, si vous souhaitez réguler les contextes de navigation imbriqués et les workers séparément, vous pouvez utiliser respectivement les directives {{CSP("frame-src")}} et {{CSP("worker-src")}}.
 
 - {{CSP("connect-src")}}
   - : Restreint les URL qui peuvent être chargées via des scripts.
@@ -62,7 +57,8 @@ Les directives de récupération (ou _fetch directives_ en anglais) contrôlent 
 - {{CSP("object-src")}}
   - : Définit les sources valides pour les ressources des éléments {{HTMLElement("object")}}, {{HTMLElement("embed")}} et {{HTMLElement("applet")}}.
 
-> **Note :** Les éléments contrôlés pa ar `object-src` sont considérés peut-être par coïcidence comme des éléments HTML du passé et ne recevront de nouvelles fonctionnalités normalisées (comme les attributs de sécurité `sandbox` et `allow` pour `<iframe>`). De ce fait, il est **recommandé** de restreindre cette directive, c'est-à-dire la définir explicitement à `object-src 'none'` dans la mesure du possible.
+> [!NOTE]
+> Les éléments contrôlés pa ar `object-src` sont considérés peut-être par coïcidence comme des éléments HTML du passé et ne recevront de nouvelles fonctionnalités normalisées (comme les attributs de sécurité `sandbox` et `allow` pour `<iframe>`). De ce fait, il est **recommandé** de restreindre cette directive, c'est-à-dire la définir explicitement à `object-src 'none'` dans la mesure du possible.
 
 - {{CSP("prefetch-src")}}
   - : Définit .
@@ -90,7 +86,7 @@ Les directives de document permettent de paramétrer les propriétés d'un docum
 - {{CSP("plugin-types")}}
   - : Restreint le type de plugin qui peut être intégré dans un document en limitant le type de ressource qui peut être chargé.
 - {{CSP("sandbox")}}
-  - : Active un bac-à-sable (_sandbox_) pour la ressource visée. Cela fonctionne de façon analogue à l'attribut {{htmlattrxref("sandbox", "iframe")}} de {{HTMLElement("iframe")}}.
+  - : Active un bac-à-sable (_sandbox_) pour la ressource visée. Cela fonctionne de façon analogue à l'attribut [`sandbox`](/fr/docs/Web/HTML/Element/iframe#sandbox) de {{HTMLElement("iframe")}}.
 
 ### Directives de navigation
 
@@ -110,13 +106,14 @@ Les directives de rapport permettent de contrôler ce qui se passe lorsqu'une r�
 - {{CSP("report-uri")}}{{deprecated_inline}}
   - : Indique à l'agent utilisateur de rapporter les tentatives d'enfreintes du CSP. Un rapport d'enfreinte est un ensemble de documents JSON envoyés via une requête HTTP `POST` à l'URI indiquée.
 
-> **Attention :** Bien que la directive [`report-to`](/fr/docs/Web/HTTP/Headers/Content-Security-Policy/report-to "La directive HTTP Content-Security-Policy (CSP) report-to demande à l'agent utilisateur de rapporter les violations de règles CSP à l'adresse fournie dans un groupe de l'en-tête HTTP Report-To.") est prévue remplacer la directive **`report-uri`** maintenant dépréciée, [`report-to`](/fr/docs/Web/HTTP/Headers/Content-Security-Policy/report-to "La directive HTTP Content-Security-Policy (CSP) report-to demande à l'agent utilisateur de rapporter les violations de règles CSP à l'adresse fournie dans un groupe de l'en-tête HTTP Report-To.") n'est pas encore supportée par la plupart des navigateurs modernes. Par rétrocompatibilité avec les navigateurs courants et tout en prévoyant une compatibilité future quand les navigateurs supporteront [`report-to`](/fr/docs/Web/HTTP/Headers/Content-Security-Policy/report-to "La directive HTTP Content-Security-Policy (CSP) report-to demande à l'agent utilisateur de rapporter les violations de règles CSP à l'adresse fournie dans un groupe de l'en-tête HTTP Report-To."), vous pouvez spécifier les deux directives **`report-uri`** et [`report-to`](/fr/docs/Web/HTTP/Headers/Content-Security-Policy/report-to "La directive HTTP Content-Security-Policy (CSP) report-to demande à l'agent utilisateur de rapporter les violations de règles CSP à l'adresse fournie dans un groupe de l'en-tête HTTP Report-To."):
+> [!WARNING]
+> Bien que la directive [`report-to`](/fr/docs/Web/HTTP/Headers/Content-Security-Policy/report-to) est prévue remplacer la directive **`report-uri`** maintenant dépréciée, [`report-to`](/fr/docs/Web/HTTP/Headers/Content-Security-Policy/report-to) n'est pas encore supportée par la plupart des navigateurs modernes. Par rétrocompatibilité avec les navigateurs courants et tout en prévoyant une compatibilité future quand les navigateurs supporteront [`report-to`](/fr/docs/Web/HTTP/Headers/Content-Security-Policy/report-to), vous pouvez spécifier les deux directives **`report-uri`** et [`report-to`](/fr/docs/Web/HTTP/Headers/Content-Security-Policy/report-to):
 >
 > ```
 > Content-Security-Policy: ...; report-uri https://endpoint.com; report-to groupname
 > ```
 >
-> Dans les navigateurs qui supportent [`report-to`](/fr/docs/Web/HTTP/Headers/Content-Security-Policy/report-to "La directive HTTP Content-Security-Policy (CSP) report-to demande à l'agent utilisateur de rapporter les violations de règles CSP à l'adresse fournie dans un groupe de l'en-tête HTTP Report-To."), la directive **`report-uri`** sera ignorée.
+> Dans les navigateurs qui supportent [`report-to`](/fr/docs/Web/HTTP/Headers/Content-Security-Policy/report-to), la directive **`report-uri`** sera ignorée.
 
 - {{CSP("report-to")}}{{experimental_inline}}
   - : Déclenche un évènement `SecurityPolicyViolationEvent`.
@@ -187,21 +184,14 @@ Pour plus d'exemples, consulter [les recommandations de Mozilla pour la sécurit
 
 ## Spécifications
 
-| Spécification                                            | État                                                 | Commentaires                                                                                                                                                                |
-| -------------------------------------------------------- | ---------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| {{specName("CSP 3.0")}}                         | {{Spec2('CSP 3.0')}}                         | Ajout de `manifest-src`, `navigation-to`, `report-to`, `strict-dynamic`, `worker-src`. `frame-src` n'est plus déprécié. `report-uri` est déprécié au profit de `report-to`. |
-| {{specName("Mixed Content")}}                 | {{Spec2("Mixed Content")}}                 | Ajout de `block-all-mixed-content`.                                                                                                                                         |
-| {{specName("Subresource Integrity")}}         | {{Spec2("Subresource Integrity")}}         | Ajout de `require-sri-for`.                                                                                                                                                 |
-| {{specName("Upgrade Insecure Requests")}} | {{Spec2("Upgrade Insecure Requests")}} | Ajout de `upgrade-insecure-requests`.                                                                                                                                       |
-| {{specName("CSP 1.1")}}                         | {{Spec2("CSP 1.1")}}                         | Ajout de `base-uri`, `child-src`, `form-action`, `frame-ancestors`, `plugin-types`, `referrer`, `reflected-xss` et `report-uri`. Dépréciation de `frame-src`.               |
-| {{specName("CSP 1.0")}}                         | {{Spec2("CSP 1.0")}}                         | Définition de `connect-src`, `default-src`, `font-src`, `frame-src`, `img-src`, `media-src`, `object-src`, report-uri, `sandbox`, `script-src` et `style-src`.              |
+{{Specifications}}
 
 ## Compatibilité des navigateurs
 
-{{Compat("http.headers.csp.Content-Security-Policy")}}
+{{Compat}}
 
 ## Voir aussi
 
 - {{HTTPHeader("Content-Security-Policy-Report-Only")}}
-- [La sécurité du contenu pour les WebExtensions](/fr/Add-ons/WebExtensions/Content_Security_Policy)
+- [La sécurité du contenu pour les WebExtensions](/fr/docs/Mozilla/Add-ons/WebExtensions/Content_Security_Policy)
 - [Les sécurités pour l'affichage et la confidentialité dans les outils de développement de Firefox](/fr/docs/Outils/Barre_de_développement/Display_security_and_privacy_policies)

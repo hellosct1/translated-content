@@ -1,11 +1,9 @@
 ---
 title: webRequest.RequestFilter
 slug: Mozilla/Add-ons/WebExtensions/API/webRequest/RequestFilter
-tags:
-  - webRequest
-translation_of: Mozilla/Add-ons/WebExtensions/API/webRequest/RequestFilter
 ---
-{{AddonSidebar()}}
+
+{{AddonSidebar}}
 
 webRequest 事件参数
 
@@ -14,7 +12,7 @@ webRequest 事件参数
 该参数值是一个对象，包括以下属性：
 
 - `urls`
-  - : 字符串数组类型，数组内的每个字符串为[模式匹配](/zh-CN/Add-ons/WebExtensions/Match_patterns)格式。当请求地址符合给定模式时，事件监听器才会响应。需注意的是，仅支持 http 和 HTTPS 协议的参数地址，其他协议即使与该给定模式匹配也不会响应。
+  - : 字符串数组类型，数组内的每个字符串为[模式匹配](/zh-CN/docs/Mozilla/Add-ons/WebExtensions/Match_patterns)格式。当请求地址符合给定模式时，事件监听器才会响应。需注意的是，仅支持 http 和 HTTPS 协议的参数地址，其他协议即使与该给定模式匹配也不会响应。
 - `types`{{optional_inline}}
   - : webRequest.ResourceType 类型的数组，表示资源类型列表。例如：stylesheets、images、scripts。事件监听器仅响应出现在该指定列表的资源类型。
 - `tabId`{{optional_inline}}
@@ -24,15 +22,15 @@ webRequest 事件参数
 
 ## Browser compatibility
 
-{{Compat("webextensions.api.webRequest.RequestFilter")}}
+{{Compat}}
 
 {{WebExtExamples}}
 
-> **备注：** 该 API 基于 Chromium 的 [`chrome.webRequest`](https://developer.chrome.com/extensions/webRequest#type-RequestFilter) API. 该文档来源于 Chromium 代码中的 [`web_request.json`](https://chromium.googlesource.com/chromium/src/+/master/extensions/common/api/web_request.json) 。
->
-> Microsoft Edge 兼容性数据由 Microsoft Corporation 提供，并包含在 Creative Commons Attribution 3.0 United States License 下。
+> [!NOTE]
+> 该 API 基于 Chromium 的 [`chrome.webRequest`](https://developer.chrome.google.cn/docs/extensions/reference/api/webRequest#type-RequestFilter) API. 该文档来源于 Chromium 代码中的 [`web_request.json`](https://chromium.googlesource.com/chromium/src/+/master/extensions/common/api/web_request.json) 。
 
-<div class="hidden"><pre>// Copyright 2015 The Chromium Authors. All rights reserved.
+<!--
+// Copyright 2015 The Chromium Authors. All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -59,4 +57,4 @@ webRequest 事件参数
 // THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-</pre></div>
+-->

@@ -1,15 +1,8 @@
 ---
 title: Reflect.set()
 slug: Web/JavaScript/Reference/Global_Objects/Reflect/set
-tags:
-  - ECMAScript 2015
-  - JavaScript
-  - Méthode
-  - Reference
-  - Reflect
-translation_of: Web/JavaScript/Reference/Global_Objects/Reflect/set
-original_slug: Web/JavaScript/Reference/Objets_globaux/Reflect/set
 ---
+
 {{JSRef}}
 
 La méthode statique **`Reflect.set()`** permet de définir ou de modifier une propriété sur un objet.
@@ -43,7 +36,7 @@ Une erreur {{jsxref("TypeError")}} si `cible` n'est pas un {{jsxref("Object")}}.
 
 ## Description
 
-La méthode `Reflect.set` permet de définir une propriété sur un objet. Elle effectue une affectation de propriété et est semblable à la syntaxe pour [accéder à un propriété](/fr/docs/Web/JavaScript/Reference/Opérateurs/Opérateurs_de_membres) mais sous la forme d'une fonction.
+La méthode `Reflect.set` permet de définir une propriété sur un objet. Elle effectue une affectation de propriété et est semblable à la syntaxe pour [accéder à un propriété](/fr/docs/Web/JavaScript/Reference/Operators/Property_accessors) mais sous la forme d'une fonction.
 
 ## Exemples
 
@@ -74,16 +67,13 @@ Reflect.getOwnPropertyDescriptor(obj, "undefined");
 
 ## Spécifications
 
-| Spécification                                                                | État                         | Commentaires         |
-| ---------------------------------------------------------------------------- | ---------------------------- | -------------------- |
-| {{SpecName('ES2015', '#sec-reflect.set', 'Reflect.set')}} | {{Spec2('ES2015')}}     | Définition initiale. |
-| {{SpecName('ESDraft', '#sec-reflect.set', 'Reflect.set')}} | {{Spec2('ESDraft')}} |                      |
+{{Specifications}}
 
 ## Compatibilité des navigateurs
 
-{{Compat("javascript.builtins.Reflect.set")}}
+{{Compat}}
 
 ## Voir aussi
 
 - {{jsxref("Reflect")}}
-- [Accesseurs de propriété](/fr/docs/Web/JavaScript/Reference/Opérateurs/Opérateurs_de_membres)
+- [Accesseurs de propriété](/fr/docs/Web/JavaScript/Reference/Operators/Property_accessors)
