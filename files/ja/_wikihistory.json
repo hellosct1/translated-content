@@ -17698,33 +17698,8 @@
       "oreno4649"
     ]
   },
-  "Web/API/Range/collapsed": {
-    "modified": "2020-07-23T11:30:31.557Z",
-    "contributors": [
-      "mfuji09",
-      "fscholz",
-      "basemnassar11",
-      "Luna8bit",
-      "Mgjbot",
-      "Shimono"
-    ]
-  },
   "Web/API/Range/commonAncestorContainer": {
     "modified": "2020-10-15T22:23:26.049Z",
-    "contributors": [
-      "mfuji09",
-      "oreno4649"
-    ]
-  },
-  "Web/API/Range/endContainer": {
-    "modified": "2020-10-15T22:23:26.617Z",
-    "contributors": [
-      "mfuji09",
-      "oreno4649"
-    ]
-  },
-  "Web/API/Range/endOffset": {
-    "modified": "2020-10-15T22:23:26.521Z",
     "contributors": [
       "mfuji09",
       "oreno4649"
@@ -17745,20 +17720,6 @@
       "mfuji09",
       "fscholz",
       "sou3ilow"
-    ]
-  },
-  "Web/API/Range/startContainer": {
-    "modified": "2020-10-15T22:23:26.223Z",
-    "contributors": [
-      "mfuji09",
-      "oreno4649"
-    ]
-  },
-  "Web/API/Range/startOffset": {
-    "modified": "2020-10-15T22:23:26.372Z",
-    "contributors": [
-      "mfuji09",
-      "oreno4649"
     ]
   },
   "Web/API/ReadableByteStreamController": {
@@ -41465,6 +41426,15 @@
       "chrisdavidmills"
     ]
   },
+  "Web/Privacy/Guides/Referer_header:_privacy_and_security_concerns": {
+    "modified": "2020-10-24T06:28:29.243Z",
+    "contributors": [
+      "silverskyvicto",
+      "soratako",
+      "mfuji09",
+      "ShowGoTagami"
+    ]
+  },
   "Web/Progressive_web_apps": {
     "modified": "2020-05-17T10:04:50.272Z",
     "contributors": [
@@ -42381,13 +42351,7 @@
       "silverskyvicto"
     ]
   },
-  "Web/Security/Certificate_Transparency": {
-    "modified": "2020-10-24T06:27:55.333Z",
-    "contributors": [
-      "silverskyvicto"
-    ]
-  },
-  "Web/Security/Insecure_passwords": {
+  "Web/Security/Authentication/Passwords": {
     "modified": "2020-09-24T14:12:23.139Z",
     "contributors": [
       "mfuji09",
@@ -42395,13 +42359,71 @@
       "hashedhyphen"
     ]
   },
-  "Web/Security/Mixed_content": {
+  "Web/Security/Defenses/Certificate_Transparency": {
+    "modified": "2020-10-24T06:27:55.333Z",
+    "contributors": [
+      "silverskyvicto"
+    ]
+  },
+  "Web/Security/Defenses/Mixed_content": {
     "modified": "2020-08-31T12:56:43.359Z",
     "contributors": [
       "mfuji09",
       "YuichiNukiyama",
       "hashedhyphen",
       "clariroid"
+    ]
+  },
+  "Web/Security/Defenses/Same-origin_policy": {
+    "modified": "2020-09-26T14:15:25.418Z",
+    "contributors": [
+      "mfuji09",
+      "commis1059",
+      "hashedhyphen",
+      "hamasaki",
+      "yyss",
+      "geckotang+gh",
+      "ethertank",
+      "Ghostheaven",
+      "Potappo",
+      "Kohei"
+    ]
+  },
+  "Web/Security/Defenses/Secure_Contexts": {
+    "modified": "2020-10-22T14:39:53.506Z",
+    "contributors": [
+      "silverskyvicto",
+      "mfuji09",
+      "Uemmra3",
+      "YuichiNukiyama",
+      "hashedhyphen"
+    ]
+  },
+  "Web/Security/Defenses/Secure_Contexts/features_restricted_to_secure_contexts": {
+    "modified": "2020-10-23T09:50:39.875Z",
+    "contributors": [
+      "silverskyvicto",
+      "mfuji09",
+      "YuichiNukiyama"
+    ]
+  },
+  "Web/Security/Defenses/Subresource_Integrity": {
+    "modified": "2020-10-23T10:16:42.622Z",
+    "contributors": [
+      "silverskyvicto",
+      "mfuji09",
+      "reioto",
+      "hashedhyphen",
+      "satakeh"
+    ]
+  },
+  "Web/Security/Defenses/Transport_Layer_Security": {
+    "modified": "2020-10-23T09:47:35.770Z",
+    "contributors": [
+      "silverskyvicto",
+      "pcw",
+      "mfuji09",
+      "hashedhyphen"
     ]
   },
   "Web/Security/Practical_implementation_guides": {
@@ -42417,75 +42439,6 @@
     "modified": "2020-07-25T12:03:22.245Z",
     "contributors": [
       "pcw",
-      "mfuji09",
-      "hashedhyphen"
-    ]
-  },
-  "Web/Security/Referer_header:_privacy_and_security_concerns": {
-    "modified": "2020-10-24T06:28:29.243Z",
-    "contributors": [
-      "silverskyvicto",
-      "soratako",
-      "mfuji09",
-      "ShowGoTagami"
-    ]
-  },
-  "Web/Security/Same-origin_policy": {
-    "modified": "2020-09-26T14:15:25.418Z",
-    "contributors": [
-      "mfuji09",
-      "commis1059",
-      "hashedhyphen",
-      "hamasaki",
-      "yyss",
-      "geckotang+gh",
-      "ethertank",
-      "Ghostheaven",
-      "Potappo",
-      "Kohei"
-    ]
-  },
-  "Web/Security/Secure_Contexts": {
-    "modified": "2020-10-22T14:39:53.506Z",
-    "contributors": [
-      "silverskyvicto",
-      "mfuji09",
-      "Uemmra3",
-      "YuichiNukiyama",
-      "hashedhyphen"
-    ]
-  },
-  "Web/Security/Secure_Contexts/features_restricted_to_secure_contexts": {
-    "modified": "2020-10-23T09:50:39.875Z",
-    "contributors": [
-      "silverskyvicto",
-      "mfuji09",
-      "YuichiNukiyama"
-    ]
-  },
-  "Web/Security/Subresource_Integrity": {
-    "modified": "2020-10-23T10:16:42.622Z",
-    "contributors": [
-      "silverskyvicto",
-      "mfuji09",
-      "reioto",
-      "hashedhyphen",
-      "satakeh"
-    ]
-  },
-  "Web/Security/Transport_Layer_Security": {
-    "modified": "2020-10-23T09:47:35.770Z",
-    "contributors": [
-      "silverskyvicto",
-      "pcw",
-      "mfuji09",
-      "hashedhyphen"
-    ]
-  },
-  "Web/Security/Weak_Signature_Algorithm": {
-    "modified": "2020-10-23T09:55:17.907Z",
-    "contributors": [
-      "silverskyvicto",
       "mfuji09",
       "hashedhyphen"
     ]
@@ -43536,6 +43489,14 @@
       "kadokura"
     ]
   },
+  "conflicting/Glossary/Hash_function": {
+    "modified": "2020-10-23T09:55:17.907Z",
+    "contributors": [
+      "silverskyvicto",
+      "mfuji09",
+      "hashedhyphen"
+    ]
+  },
   "conflicting/Learn/JavaScript/Client-side_web_APIs/Fetching_data": {
     "modified": "2020-08-12T11:49:11.332Z",
     "contributors": [
@@ -43842,6 +43803,45 @@
     "contributors": [
       "Uemmra3",
       "kenji-yamasaki"
+    ]
+  },
+  "conflicting/Web/API/AbstractRange/collapsed_bb573fe51b2b71e08a41fd32a8812e0ceb60cca4ac78752b2db7aa6902dbe001": {
+    "modified": "2020-07-23T11:30:31.557Z",
+    "contributors": [
+      "mfuji09",
+      "fscholz",
+      "basemnassar11",
+      "Luna8bit",
+      "Mgjbot",
+      "Shimono"
+    ]
+  },
+  "conflicting/Web/API/AbstractRange/endContainer_b288c8bbc401b6148515c83684e709465dc1b909d4ab5b3802a2a6c7ac383188": {
+    "modified": "2020-10-15T22:23:26.617Z",
+    "contributors": [
+      "mfuji09",
+      "oreno4649"
+    ]
+  },
+  "conflicting/Web/API/AbstractRange/endOffset_3301e460a31a527ddc988c3a3f1e76a177a4d5481f654f21598be4387f3121b2": {
+    "modified": "2020-10-15T22:23:26.521Z",
+    "contributors": [
+      "mfuji09",
+      "oreno4649"
+    ]
+  },
+  "conflicting/Web/API/AbstractRange/startContainer": {
+    "modified": "2020-10-15T22:23:26.223Z",
+    "contributors": [
+      "mfuji09",
+      "oreno4649"
+    ]
+  },
+  "conflicting/Web/API/AbstractRange/startOffset_d3baad9005e54379315cd1f8ad09df13a49c4066b6cc3794c54617dc5b6f8ec2": {
+    "modified": "2020-10-15T22:23:26.372Z",
+    "contributors": [
+      "mfuji09",
+      "oreno4649"
     ]
   },
   "conflicting/Web/API/Document": {

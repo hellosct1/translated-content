@@ -3,7 +3,7 @@ title: "ARIA : rôle rowheader"
 short-title: rowheader
 slug: Web/Accessibility/ARIA/Reference/Roles/rowheader_role
 l10n:
-  sourceCommit: a8b25483994fa47cf949b432ddf34a6bce2ddb2e
+  sourceCommit: 2d78abb3e793352e24e976ce0e68c08d817bd7f3
 ---
 
 Le rôle `role="rowheader"` désigne une [cellule](/fr/docs/Web/Accessibility/ARIA/Reference/Roles/cell_role) contenant l'information d'en-tête d'une [ligne](/fr/docs/Web/Accessibility/ARIA/Reference/Roles/row_role) au sein d'une structure tabulaire, comme une [`grid`](/fr/docs/Web/Accessibility/ARIA/Reference/Roles/grid_role), une [`table`](/fr/docs/Web/Accessibility/ARIA/Reference/Roles/table_role) ou un [`treegrid`](/fr/docs/Web/Accessibility/ARIA/Reference/Roles/treegrid_role).
@@ -134,7 +134,7 @@ Utilisez uniquement {{HTMLElement('table')}}, {{HTMLElement('tbody')}}, {{HTMLEl
 </table>
 ```
 
-Ci‑dessus, la manière sémantique d'écrire un tableau. Les rôles ARIA ne sont nécessaires que si la sémantique native du tableau (et donc des en‑têtes de lignes) est supprimée, par exemple en appliquant la [propriété `display` à `flex` ou `grid`](/fr/docs/Web/CSS/Reference/Properties/display#accessibilit%C3%A9).
+Ci‑dessus, la manière sémantique d'écrire un tableau. Les rôles ARIA ne sont nécessaires que si la sémantique native du tableau (et donc des en‑têtes de lignes) est supprimée, par exemple en appliquant la [propriété `display` à `flex` ou `grid`](/fr/docs/Web/CSS/Reference/Properties/display#accessibilité).
 
 ### Bénéfices supplémentaires
 

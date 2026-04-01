@@ -3,7 +3,7 @@ title: "Accessibilité Web : crises et réactions physiques"
 short-title: Prévenir crises et réactions physiques
 slug: Web/Accessibility/Guides/Seizure_disorders
 l10n:
-  sourceCommit: 277a8954951c900ef60a5175503976284c1d328d
+  sourceCommit: b56ef42f1aac2481bfe42bfcf6c235ceb22624c4
 ---
 
 Cet article présente les concepts permettant de rendre le contenu Web accessible aux personnes souffrant de troubles vestibulaires, ainsi que les méthodes pour mesurer et prévenir les contenus susceptibles d'entraîner des crises ou d'autres réactions physiques.
@@ -187,6 +187,9 @@ En n'indexant pas la page (`noindex`) et en ne suivant pas les liens de la page 
     <title>…</title>
     <meta name="robots" content="noindex, nofollow" />
   </head>
+  <body>
+    …
+  </body>
 </html>
 ```
 
@@ -219,7 +222,7 @@ div {
 }
 ```
 
-[Les transitions CSS](/fr/docs/Web/CSS/CSS_transitions) peuvent être utilisées pour définir la durée à zéro pour l'étape initiale de l'animation.
+[Les transitions CSS](/fr/docs/Web/CSS/Guides/Transitions) peuvent être utilisées pour définir la durée à zéro pour l'étape initiale de l'animation.
 
 ```css
 div {
@@ -321,7 +324,7 @@ La propriété animation est déjà puissante seule, mais combinée à d'autres 
 
 JavaScript est souvent utilisé pour contrôler les éléments HTML {{HTMLElement('canvas')}} et SVG. La plupart du code JavaScript qui s'applique à la vidéo HTML s'applique aussi à l'audio. `HTMLMediaElement.playbackRate` permet de contrôler la vitesse de lecture pour la vidéo et l'audio. Une valeur de 1.0 est la vitesse normale&nbsp;; 0.5 est la moitié de la vitesse, 2.0 est deux fois plus rapide. Un nombre négatif lit la vidéo ou l'audio à l'envers. Définissez la propriété playback rate&nbsp;: `HTMLMediaElement.playbackRate = playbackSpeed`.
 
-{{DOMxRef("document.getAnimations()")}} est une technologie expérimentale, et inclut [Animations CSS](/fr/docs/Web/CSS/CSS_animations), [Transitions CSS](/fr/docs/Web/CSS/CSS_transitions) et [Web Animations](/fr/docs/Web/API/Web_Animations_API). La page MDN sur {{DOMxRef("Document.getAnimations()")}} propose l'exemple de code suivant pour ralentir toutes les animations d'une page à la moitié de la vitesse&nbsp;:
+{{DOMxRef("document.getAnimations()")}} est une technologie expérimentale, et inclut [Animations CSS](/fr/docs/Web/CSS/Guides/Animations), [Transitions CSS](/fr/docs/Web/CSS/Guides/Transitions) et [Web Animations](/fr/docs/Web/API/Web_Animations_API). La page MDN sur {{DOMxRef("Document.getAnimations()")}} propose l'exemple de code suivant pour ralentir toutes les animations d'une page à la moitié de la vitesse&nbsp;:
 
 ```js
 document.getAnimations().forEach((animation) => {

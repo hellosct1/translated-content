@@ -4,7 +4,7 @@ slug: Learn_web_development/Core/Styling_basics/Handling_different_text_directio
 original_slug: Learn/CSS/Building_blocks/Handling_different_text_directions
 ---
 
-{{LearnSidebar}}{{PreviousMenuNext("Learn/CSS/Building_blocks/Backgrounds_and_borders", "Learn/CSS/Building_blocks/Overflowing_content", "Learn/CSS/Building_blocks")}}
+{{LearnSidebar}}{{PreviousMenuNext("Learn_web_development/Core/Styling_basics/Backgrounds_and_borders", "Learn_web_development/Core/Styling_basics/Overflow", "Learn_web_development/Core/Styling_basics")}}
 
 Muchas de las propiedades y valores que hemos encontrado hasta ahora en nuestro aprendizaje de CSS han estado ligadas a las dimensiones físicas de nuestra pantalla. Creamos bordes arriba, a la derecha, abajo y a la izquierda de una caja, por ejemplo. Estas dimensiones físicas se ajustan adecuadamente al contenido que se visualiza de forma horizontal, y por defecto, la web tiende a apoyar lenguajes de izquierda a derecha, como el castellano o el francés, mejor que aquellos que se escriben de derecha a izquierda, como el árabe.
 
@@ -47,7 +47,7 @@ En el ejemplo siguiente existe un encabezado desplegado usando `writing-mode: ve
 
 {{EmbedGHLiveSample("css-examples/learn/writing-modes/simple-vertical.html", '100%', 800)}}
 
-Los tres valores posibles para la propiedad [`writing-mode`](/es/docs/Web/CSS/writing-mode) son:
+Los tres valores posibles para la propiedad [`writing-mode`](/es/docs/Web/CSS/Reference/Properties/writing-mode) son:
 
 - `horizontal-tb`: Dirección de flujo de bloque de arriba abajo. Las frases aparecen horizontales.
 - `vertical-rl`: Dirección de flujo de bloque de derecha a izquierda. Las frases aparecen verticales.
@@ -111,7 +111,7 @@ Puedes ver una comparación entre las propiedades físicas y lógicas a continua
 
 {{EmbedGHLiveSample("css-examples/learn/writing-modes/logical-mbp.html", '100%', 1200)}}
 
-Existe un gran número de propiedades cuando consideras cada uno de los bordes que puedes hacer a mano, y puedes ver todas las propiedades asignadas en la página de MDN para [propiedades Lógicas y Valores](/es/docs/Web/CSS/CSS_logical_properties_and_values)
+Existe un gran número de propiedades cuando consideras cada uno de los bordes que puedes hacer a mano, y puedes ver todas las propiedades asignadas en la página de MDN para [propiedades Lógicas y Valores](/es/docs/Web/CSS/Guides/Logical_properties_and_values)
 
 ### Valores lógicos
 
@@ -142,4 +142,4 @@ Los conceptos explicados en esta lección son cada vez más importantes en CSS. 
 
 En el módulo siguiente, vamos a echar un buen vistazo al desbordamiento en CSS
 
-{{PreviousMenuNext("Learn/CSS/Building_blocks/Backgrounds_and_borders", "Learn/CSS/Building_blocks/Overflowing_content", "Learn/CSS/Building_blocks")}}
+{{PreviousMenuNext("Learn_web_development/Core/Styling_basics/Backgrounds_and_borders", "Learn_web_development/Core/Styling_basics/Overflow", "Learn_web_development/Core/Styling_basics")}}

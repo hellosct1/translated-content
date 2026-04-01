@@ -2,7 +2,7 @@
 title: Référence de caractère
 slug: Glossary/Character_reference
 l10n:
-  sourceCommit: 2547f622337d6cbf8c3794776b17ed377d6aad57
+  sourceCommit: ff4dc3d43e814614df60ecdb7376b59698660ac2
 ---
 
 Une **référence de caractère** {{Glossary("HTML")}} est une {{Glossary("escape character", "séquence d'échappement")}} composée de {{Glossary("character", "caractères")}} utilisée pour représenter un autre caractère dans la page web affichée.
@@ -37,9 +37,9 @@ Un très petit sous-ensemble de références de caractères nommées utiles, ave
 |           | `&nbsp;`         | U+000A0               |
 | -         | `&ndash;`        | U+02013               |
 | —         | `&mdash;`        | U+02014               |
-| ©        | `&copy;`         | U+000A9               |
-| ®        | `&reg;`          | U+000AE               |
-| ™        | `&trade;`        | U+02122               |
+| ©         | `&copy;`         | U+000A9               |
+| ®         | `&reg;`          | U+000AE               |
+| ™         | `&trade;`        | U+02122               |
 | ≈         | `&asymp;`        | U+02248               |
 | ≠         | `&ne;`           | U+02260               |
 | £         | `&pound;`        | U+000A3               |

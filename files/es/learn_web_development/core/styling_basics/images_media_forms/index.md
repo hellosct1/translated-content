@@ -4,7 +4,7 @@ slug: Learn_web_development/Core/Styling_basics/Images_media_forms
 original_slug: Learn/CSS/Building_blocks/Images_media_form_elements
 ---
 
-{{LearnSidebar}}{{PreviousMenuNext("Learn/CSS/Building_blocks/Sizing_items_in_CSS", "Learn/CSS/Building_blocks/Styling_tables", "Learn/CSS/Building_blocks")}}
+{{LearnSidebar}}{{PreviousMenuNext("Learn_web_development/Core/Styling_basics/Sizing", "Learn_web_development/Core/Styling_basics/Tables", "Learn_web_development/Core/Styling_basics")}}
 
 En este artículo vamos a ver cómo se tratan ciertos elementos especiales en CSS. Las imágenes y otros medios y los elementos de formulario presentan un comportamiento algo distinto que otros elementos CSS, como las cajas, en cuanto a aplicación de estilo. Comprender qué es y qué no es posible te ahorrará frustraciones, y en este artículo vamos a destacar algunas de las cuestiones principales que necesitas saber.
 
@@ -40,7 +40,7 @@ En este artículo vamos a ver cómo se tratan ciertos elementos especiales en CS
 
 ## Elementos de reemplazo
 
-Las imágenes y los vídeos se describen como **[elementos de reemplazo](/es/docs/Web/CSS/CSS_images/Replaced_element_properties)**. Esto significa que el CSS no puede intervenir en aspectos del diseño interno de estos elementos, sino solo a su posición en la página y algunos otros aspectos. Sin embargo, como veremos, hay varias cosas que el CSS puede hacer con una imagen.
+Las imágenes y los vídeos se describen como **[elementos de reemplazo](/es/docs/Web/CSS/Guides/Images/Replaced_element_properties)**. Esto significa que el CSS no puede intervenir en aspectos del diseño interno de estos elementos, sino solo a su posición en la página y algunos otros aspectos. Sin embargo, como veremos, hay varias cosas que el CSS puede hacer con una imagen.
 
 También se describen ciertos elementos de reemplazo que, como las imágenes y vídeos, presentan una **relación de aspecto**. Esto significa que tienen un tamaño definido tanto en la dimensión horizontal (x) como en la vertical (y), y por defecto se mostrarán con las dimensiones intrínsecas del archivo.
 
@@ -189,4 +189,4 @@ Para obtener más información sobre los formularios de estilo, echa un vistazo 
 
 En este artículo hemos destacado algunas de las diferencias que se presentan cuando trabajas con imágenes o media, y otros elementos inusuales, en CSS. En el artículo siguiente veremos algunos consejos que te resultarán útiles cuando tengas que diseñar tablas HTML.
 
-{{PreviousMenuNext("Learn/CSS/Building_blocks/Sizing_items_in_CSS", "Learn/CSS/Building_blocks/Styling_tables", "Learn/CSS/Building_blocks")}}
+{{PreviousMenuNext("Learn_web_development/Core/Styling_basics/Sizing", "Learn_web_development/Core/Styling_basics/Tables", "Learn_web_development/Core/Styling_basics")}}

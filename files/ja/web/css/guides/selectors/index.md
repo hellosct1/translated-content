@@ -1,12 +1,15 @@
 ---
 title: CSS セレクター
+short-title: セレクター
 slug: Web/CSS/Guides/Selectors
-original_slug: Web/CSS/CSS_selectors
 l10n:
-  sourceCommit: bc761c19c07b875eb889d4aad87b18d8443da339
+  sourceCommit: a397ab763a6686a4056af755e4da32ac735b9fa5
 ---
 
 **CSS セレクター**モジュールは、要素を選択するパターンを定義し、一連の CSS ルールをその[詳細度](/ja/docs/Web/CSS/Guides/Cascade/Specificity)とともに適用します。 CSS セレクターモジュールには、 60 以上のセレクターと 5 つの結合子が用意されています。[他のモジュール](#関連概念)は、さらに擬似クラスセレクターと擬似要素が提供されています。
+
+> [!NOTE]
+> このページでは CSS モジュールを紹介します。CSS 仕様で定義されているすべてのセレクターの完全な一覧を探すには、[セレクター](/ja/docs/Web/CSS/Reference/Selectors)リファレンスページを参照してください。
 
 CSS では、セレクターはスタイルを設定したい要素と照合、または選択するために使用されるパターンです。セレクターは JavaScript でも使用され、 [`NodeList`](/ja/docs/Web/API/NodeList) として返すDOMノードを選択することができます。
 
@@ -34,7 +37,7 @@ CSS セレクターモジュールでは、[列結合子](/ja/docs/Web/CSS/Refer
 - {{CSSXref(":checked")}}
 - {{CSSXref(":default")}}
 - {{CSSXref(":defined")}}
-- {{CSSXref(":dir", ":dir()")}}
+- {{cssxref(":dir()")}}
 - {{CSSXref(":disabled")}}
 - {{CSSXref(":empty")}}
 - {{CSSXref(":enabled")}}
@@ -45,24 +48,26 @@ CSS セレクターモジュールでは、[列結合子](/ja/docs/Web/CSS/Refer
 - {{CSSXref(":focus-within")}}
 - {{CSSXref(":fullscreen")}}
 - {{CSSXref(":future")}}
-- {{CSSXref(":has", ":has()")}}
+- {{cssxref(":has()")}}
 - {{CSSXref(":hover")}}
 - {{CSSXref(":in-range")}}
 - {{CSSXref(":indeterminate")}}
+- {{CSSXref(":interest-source")}}
+- {{CSSXref(":interest-target")}}
 - {{CSSXref(":invalid")}}
-- {{CSSXref(":is", ":is()")}}
-- {{CSSXref(":lang", ":lang()")}}
+- {{cssxref(":is()")}}
+- {{cssxref(":lang()")}}
 - {{CSSXref(":last-child")}}
 - {{CSSXref(":last-of-type")}}
 - {{CSSXref(":link")}}
 - `:matches()` （旧式のセレクターで、 {{CSSXref( ":is", ":is()")}} の別名）
 - {{CSSXref(":modal")}}
 - {{CSSXref(":muted")}}
-- {{CSSXref(":not", ":not()")}}
-- {{CSSXref(":nth-child", ":nth-child()")}}
-- {{CSSXref(":nth-of-type", ":nth-of-type()")}}
-- {{CSSXref(":nth-last-child", ":nth-last-child()")}}
-- {{CSSXref(":nth-last-of-type", ":nth-last-of-type()")}}
+- {{cssxref(":not()")}}
+- {{cssxref(":nth-child()")}}
+- {{cssxref(":nth-of-type()")}}
+- {{cssxref(":nth-last-child()")}}
+- {{cssxref(":nth-last-of-type()")}}
 - {{CSSXref(":only-child")}}
 - {{CSSXref(":only-of-type")}}
 - {{CSSXref(":open")}}
@@ -87,15 +92,15 @@ CSS セレクターモジュールでは、[列結合子](/ja/docs/Web/CSS/Refer
 - {{CSSXref(":valid")}}
 - {{CSSXref(":visited")}}
 - {{CSSXref(":volume-locked")}}
-- {{CSSXref(":where", ":where()")}}
-- [`:-webkit-` 擬似クラス](/ja/docs/Web/CSS/Reference/Webkit_extensions#pseudo-classes)
+- {{cssxref(":where()")}}
+- [`:-webkit-` 擬似クラス](/ja/docs/Web/CSS/Reference/Webkit_extensions#擬似クラス)
 - [属性セレクター](/ja/docs/Web/CSS/Reference/Selectors/Attribute_selectors)
 - [クラスセレクター](/ja/docs/Web/CSS/Reference/Selectors/Class_selectors)
 - [ID セレクター](/ja/docs/Web/CSS/Reference/Selectors/ID_selectors)
 - [要素型セレクター](/ja/docs/Web/CSS/Reference/Selectors/Type_selectors)
 - [全称セレクター](/ja/docs/Web/CSS/Reference/Selectors/Universal_selectors)
 
-CSS セレクターモジュールは、 {{CSSXref(":blank")}}、{{CSSXref(":current")}}、{{CSSXref(":local-link")}}、{{CSSXref(":target-within")}} の各擬似クラスも導入しています。現在のところ、これらの機能に対応しているブラウザーはありません。
+CSS セレクターモジュールは、 {{CSSXref(":blank")}}、{{CSSXref(":current")}}、{{CSSXref(":local-link")}} の各擬似クラスも導入しています。現在のところ、これらの機能に対応しているブラウザーはありません。
 
 ## 用語
 
@@ -141,8 +146,8 @@ CSS セレクターモジュールは、 {{CSSXref(":blank")}}、{{CSSXref(":cur
   - : [`&` 入れ子セレクター](/ja/docs/Web/CSS/Reference/Selectors/Nesting_selector)
 - [CSS スコープ](/ja/docs/Web/CSS/Guides/Scoping)モジュール
   - {{CSSXref(":host")}} 擬似クラス
-  - {{CSSXref(":host_function", ":host()")}} 擬似クラス
-  - {{CSSXref(":host-context", ":host-context()")}} 擬似クラス
+  - {{cssxref(":host()")}} 擬似クラス
+  - {{cssxref(":host-context()")}} 擬似クラス
   - {{CSSXref(":has-slotted")}} 擬似クラス
   - {{CSSXref("::slotted")}} 擬似要素
 
@@ -182,6 +187,9 @@ CSS セレクターモジュールは、 {{CSSXref(":blank")}}、{{CSSXref(":cur
 
 - その他の[擬似要素](/ja/docs/Web/CSS/Reference/Selectors/Pseudo-elements)
   - {{CSSxRef("::cue")}}
+
+- [CSS アニメーション](/ja/docs/Web/CSS/Guides/Animations)
+  - [`<keyframe-selector>`](/ja/docs/Web/CSS/Reference/Selectors/Keyframe_selectors)
 
 - {{CSSXref("@namespace")}} アットルール
 
